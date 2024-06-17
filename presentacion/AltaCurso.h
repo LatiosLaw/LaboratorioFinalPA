@@ -10,6 +10,7 @@ public:
 	virtual ~AltaCurso();
 	void altaCurso();
 	set<string> seleccionarIdiomas();
+	set<string> seleccionarCursosPrevios();
 };
 
 #endif /* PRESENTACION_ALTACURSO_H_ */

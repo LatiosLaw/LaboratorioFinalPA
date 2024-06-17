@@ -21,69 +21,94 @@ void AltaCurso::altaCurso() //faltan varios detalles
     cout << "Ingrese descripcion: ";
     cin >> descripcion;
     cout << "Ingrese dificultad: ";
-    cin>>dificultad;
+    cin >> dificultad;
     cout << "Ingrese nombre del profesor: ";
     set<string> nombreProfesores;
-    set<string> nombreIdiomas;
+    
     nombreProfesores = this->controlador->listarNombreProfesores();
     cout << "Seleccione un Profesor: ";
     cin >> nombreProfe;
 
+    set<string> nombreIdiomas;
     char opcion;
-    do {
-        cout << "¿Desea agregar idiomas? (s/n): ";
-        cin >> opcion;
-        if (opcion == 's' || opcion == 'S') {
-            cout << "Seleccione los idiomas disponibles:\n";
-            set<string> idiomas = this->controlador->listarIdiomas();
-            for (string idioma : idiomas) {
-                cout << idioma << endl;
-            }
-            
-            string idiomaSeleccionado;
-            cout << "Ingrese el idioma a agregar: ";
-            cin >> idiomaSeleccionado;
-            nombreIdiomas.insert(idiomaSeleccionado);
-        }
-    } while (opcion == 's' || opcion == 'S');
-    
+
+    cout << "¿Desea agregar idiomas? (s/n): ";
+    cin >> opcion;
+    if (opcion == 's' || opcion == 'S') {
+        nombreIdiomas = seleccionarIdiomas();
+    }
 
     Curso *nuevoCurso = this->controlador->ingresaElCurso(nombreCurso, descripcion, dificultad, nombreProfe, nombreIdiomas);
 
+    set<string> nombreCursos;
+
+    cout << "¿Desea agregar Cursos Previos? (s/n): ";
+    cin >> opcion;
+    if (opcion == 's' || opcion == 'S') {
+        nombreCursos = seleccionarCursosPrevios();
+        this->controlador->seleccionarCursosPrevios(nombreCursos, nuevoCurso);
+    }
+
+    
+
+    nuevoCurso->listarCursosPrevios();
+
     this->controlador->daDeAltaCurso(nuevoCurso);
 
-    nuevoCurso->listarIdiomasDelCurso();
-    nuevoCurso->listarProfesorDelCurso();
+    //nuevoCurso->listarIdiomasDelCurso();
+    //nuevoCurso->listarProfesorDelCurso();
 
-    cout << endl;
+    //cout << endl;
 
-    this->controlador->listarCursos();
+    //this->controlador->listarCursos();
 }
 
 set<string> AltaCurso::seleccionarIdiomas()
 {
-    set<string> idiomasExistentes = this->controlador->listarIdiomas();
-    set<string> idiomasSeleccionados;
+    set<string> nombreIdiomas;
+    char opcion;
 
-    for (string idioma : idiomasExistentes) {
-        cout << "Idioma: " << idioma << endl;
-    }
-
-    string idioma;
-    bool quiereIngresarIdiomas = true;
-    while (quiereIngresarIdiomas) {
-        cout << "Ingrese un idioma de la lista: (S/s para salir) ";
-        cin >> idioma;
-        if (idioma != "S" && idioma != "s") {
-            if (idiomasExistentes.find(idioma) != idiomasExistentes.end()) {
-                idiomasSeleccionados.insert(idioma);
-                cout << "Idioma ingresado: " << idioma << endl;
-            } else {
-                cout << "El idioma ingresado no existe" << endl;
-            }
-        } else {
-            quiereIngresarIdiomas = false;
+    do {
+        cout << "Idiomas disponibles: ";
+        set<string> idiomas = this->controlador->listarIdiomas();
+        for (const string& idioma : idiomas)
+        {
+            cout << idioma << endl;
         }
-    }
-    return idiomasSeleccionados;
+
+        string idiomaSeleccionado;
+        cout << "Ingrese el idioma a agregar: ";
+        cin >> idiomaSeleccionado;
+        nombreIdiomas.insert(idiomaSeleccionado);
+
+        cout << "¿Desea agregar otro idioma? (s/n): ";
+        cin >> opcion;
+    } while (opcion == 's' || opcion == 'S');
+
+    return nombreIdiomas;
+}
+
+set<string> AltaCurso::seleccionarCursosPrevios()
+{
+    set<string> nombreCursos;
+    char opcion;
+
+    do {
+        cout << "Cursos disponibles:\n";
+        set<string> cursos = this->controlador->listarCursos();
+        for (const string& curso : cursos)
+        {
+            cout << curso << endl;
+        }
+
+        string cursoSeleccionado;
+        cout << "Ingrese el curso a agregar a la lista de previas: ";
+        cin >> cursoSeleccionado;
+        nombreCursos.insert(cursoSeleccionado);
+
+        cout << "¿Desea agregar otro curso previo? (s/n): ";
+        cin >> opcion;
+    } while (opcion == 's' || opcion == 'S');
+
+    return nombreCursos;
 }

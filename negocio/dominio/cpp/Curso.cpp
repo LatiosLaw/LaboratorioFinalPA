@@ -105,3 +105,16 @@ void Curso::listarProfesorDelCurso()
 		cout << "No se ha asignado un profesor a este curso." << endl;
 	}
 }
+
+void Curso::seleccionarCursoPrevio(Curso* curso)
+{
+	this->ListaCursosPrevios.insert(curso);
+}
+
+void Curso::listarCursosPrevios()
+{
+	for(auto curso : ListaCursosPrevios)
+	{	
+		cout << curso->getNombreCurso() << endl;
+	}
+}

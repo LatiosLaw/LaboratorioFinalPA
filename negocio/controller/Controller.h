@@ -25,14 +25,18 @@ public:
 	
 	virtual Profesor* buscarProfesor(string nombreProfesor);
 	virtual Curso* buscarCurso(string nombreCurso);
+
 	virtual bool verificarNick(string nickname); // Nueva función para verificar el nick
 	virtual void agregarEstudiante(string nickname, string password, string nombre, string desc, string pais);
 	virtual void agregarProfesor(string nickname, string password,string nombre,string desc,string instituto, set<string> idioma);
 	virtual void altaIdioma(string nombre);
+
 	virtual set<string> listarIdiomas();
 	virtual set<string> listarNombreProfesores();
-	virtual void listarCursos();
+	virtual set<string> listarCursos();
+
 	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombre, set<string>idiomas);
+	virtual void seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso);
 	virtual Idioma* seleccionarIdioma(string nombreIdioma);
 	virtual void daDeAltaCurso(Curso* curso);
 	

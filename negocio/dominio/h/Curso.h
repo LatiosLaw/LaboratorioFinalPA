@@ -21,6 +21,7 @@ private:
 	Profesor* profe;
 	set<Idioma*>ListaIdiomas;
 	set<Registro*>ListaRegistros;
+	set<Curso*>ListaCursosPrevios;
 	
 public:
 	Curso();
@@ -41,6 +42,9 @@ public:
 	void agregarIdioma(Idioma* i);
 	void listarIdiomasDelCurso();
 	void listarProfesorDelCurso();
+
+	void seleccionarCursoPrevio(Curso* curso);
+	void listarCursosPrevios();
 	virtual ~Curso();
 };
 #endif

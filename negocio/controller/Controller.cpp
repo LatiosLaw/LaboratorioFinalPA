@@ -9,6 +9,26 @@ Controller::Controller() // Inicializar las listas del Controlador
 	ListaIdiomas = set<Idioma*>();
 	ListaCursos = set<Curso*>();
 	ListaRegistros = set<Registro*>();
+
+	Usuario* user1 = new Profesor("pepe","123","Pepe","Alto","Instituto1");
+	Usuario* user2 = new Profesor("juan","456","Juan","Bajo","Instituto2");
+	Usuario* user3 = new Estudiante("pedro","Pedro","789","Bajo","Uruguay");
+
+	Idioma* nuevoIdioma1 = new Idioma("ingles");
+	Idioma* nuevoIdioma2 = new Idioma("chino");
+	Idioma* nuevoIdioma3 = new Idioma("japones");
+
+	Curso* curso1 = new Curso("curso1","buenCurso",false,medio);
+
+	ListaUsuarios.insert(user1);
+	ListaUsuarios.insert(user2);
+	ListaUsuarios.insert(user3);
+
+	ListaIdiomas.insert(nuevoIdioma1);
+	ListaIdiomas.insert(nuevoIdioma2);
+	ListaIdiomas.insert(nuevoIdioma3);
+
+	ListaCursos.insert(curso1);
 }
 
 Controller::~Controller() // destructor
@@ -27,7 +47,6 @@ Controller *Controller::getInstance() // Singleton, se crea la instancia del con
 Profesor *Controller::buscarProfesor(string nombreProfesor)
 {
 	bool profesorEncontrado = false;
-
 
 	for (Usuario* usuario : ListaUsuarios)
 	{
@@ -51,7 +70,6 @@ Profesor *Controller::buscarProfesor(string nombreProfesor)
 
 Curso *Controller::buscarCurso(string nombreCurso)
 {
-
 	for (Curso *curso : ListaCursos)
 	{
 		if (curso->getNombreCurso() == nombreCurso)
@@ -192,12 +210,15 @@ set<string> Controller::listarNombreProfesores()
 	// }
 }
 
-void Controller::listarCursos()
+set<string> Controller::listarCursos()
 {
+	set<string> cursos;
 	for (Curso *curso : ListaCursos)
 	{
-		cout << curso->getNombreCurso() << endl;
+		//cout << curso->getNombreCurso() << endl;
+		cursos.insert(curso->getNombreCurso());
 	}
+	return cursos;
 }
 
 Curso *Controller::ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombreP, set<string> idiomasSeleccionados)
@@ -244,9 +265,21 @@ Curso *Controller::ingresaElCurso(string NombreCurso, string descripcion, string
 	return curso;
 }
 
+void Controller::seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso)
+{
+    for (string nombreCurso : cursos)
+    {
+        Curso* cEncontrado = buscarCurso(nombreCurso);
+        if (cEncontrado != nullptr)
+        {
+            nuevoCurso->seleccionarCursoPrevio(cEncontrado);
+        }
+    }
+}
+
 void Controller::daDeAltaCurso(Curso *curso)
 {
-	ListaCursos.insert(curso);
+	this->ListaCursos.insert(curso);
 }
 
 Idioma *Controller::seleccionarIdioma(string nombreIdioma) // Recibe el nombre de un idioma, lo busca en la ListaIdiomas, y retorna puntero a una instancia de Idioma
