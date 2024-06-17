@@ -15,3 +15,11 @@ Ejercicio::~Ejercicio()
 {
 
 }
+
+void Ejercicio::Pendiente(){
+
+}
+
+void Ejercicio::obtenerDataType(){
+
+}

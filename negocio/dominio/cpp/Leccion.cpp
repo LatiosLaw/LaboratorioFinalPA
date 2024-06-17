@@ -16,3 +16,11 @@ Leccion::~Leccion()
 {
 
 }
+
+int Leccion::getNumero(){
+
+}
+
+void Leccion::buscarEjerciciosPendientes(){
+
+}

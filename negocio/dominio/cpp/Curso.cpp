@@ -118,3 +118,23 @@ void Curso::listarCursosPrevios()
 		cout << curso->getNombreCurso() << endl;
 	}
 }
+
+void Curso::verificarUltimaLeccion(){
+
+}
+
+void Curso::obtenerDataType(){
+
+}
+
+void Curso::buscarEjerciciosLeccionPendiente(){
+
+}
+
+void Curso::obtenerEstadisticasP(){
+
+}
+
+void Curso::estadisticasCurso(){
+
+}

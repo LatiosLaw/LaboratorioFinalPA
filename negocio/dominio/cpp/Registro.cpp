@@ -15,3 +15,27 @@ Registro::~Registro()
 {
 
 }
+
+string Registro::getAvance(){
+
+}
+
+void Registro::obtenerDataCursoSiPendiente(){
+
+}
+
+void Registro::buscarEjerciciosPendientes(){
+
+}
+
+void Registro::IngresarSolucionEjercicio(){
+
+}
+
+void Registro::VerificarRespuesta(){
+
+}
+
+void Registro::obtenerEstadisticasE(){
+    
+}

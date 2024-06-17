@@ -24,6 +24,15 @@ public:
 	Fecha getFechaNacimiento();
 	void setPais(string pai);
 	void setFechaNacimiento(Fecha fecha);
+
+	// Metodos de los casos de Martin, faltan retornos y parametros
+
+	void buscarCursosPendientes();
+	void buscarCursoYEjercicios();
+	void obtenerDataType();
+	void estadisticasEstudiante();
+
+	///////////////////////////////////////////////////////////////
 };
 
 #endif

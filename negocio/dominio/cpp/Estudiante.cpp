@@ -32,3 +32,19 @@ string Estudiante::getNickname(){
 string Estudiante::getNombreProfesor(){
 	return "";
 }
+
+void Estudiante::buscarCursosPendientes(){
+
+}
+
+void Estudiante::buscarCursoYEjercicios(){
+
+}
+
+void Estudiante::obtenerDataType(){
+
+}
+
+void Estudiante::estadisticasEstudiante(){
+
+}

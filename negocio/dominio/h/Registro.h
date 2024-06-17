@@ -21,5 +21,16 @@ public:
 	Registro(Fecha fechaInscripcion, string avance);
 	
 	virtual ~Registro();
+
+	// Metodos de los casos de Martin, faltan retornos y parametros
+
+	void obtenerDataCursoSiPendiente();
+	void buscarEjerciciosPendientes();
+	void IngresarSolucionEjercicio();
+	void VerificarRespuesta();
+	void obtenerEstadisticasE();
+	string getAvance(); // Esto es un getter, por lo que no es realmente solo mio XD
+
+	///////////////////////////////////////////////////////////////
 };
 #endif

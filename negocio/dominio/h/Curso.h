@@ -46,5 +46,15 @@ public:
 	void seleccionarCursoPrevio(Curso* curso);
 	void listarCursosPrevios();
 	virtual ~Curso();
+
+	// Metodos de los casos de Martin, faltan retornos y parametros
+
+	void verificarUltimaLeccion();
+	void obtenerDataType();
+	void buscarEjerciciosLeccionPendiente();
+	void obtenerEstadisticasP();
+	void estadisticasCurso();
+
+	///////////////////////////////////////////////////////////////
 };
 #endif

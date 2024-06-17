@@ -50,3 +50,11 @@ Profesor* Profesor::seleccionarProfesor()
 void Profesor::agregarCurso(Curso* curso){
 	ListaCursos.insert(curso);
 }
+
+void Profesor::obtenerDataType(){
+
+}
+
+void Profesor::estadisticasProfesor(){
+
+}

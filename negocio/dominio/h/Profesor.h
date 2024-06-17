@@ -29,6 +29,12 @@ public:
 	void asociarIdioma(Idioma* idioma);
 	void listarMisIdiomas();
 
+	// Metodos de los casos de Martin, faltan retornos y parametros
+
+	void obtenerDataType();
+	void estadisticasProfesor();
+
+	///////////////////////////////////////////////////////////////
 };
 
 
