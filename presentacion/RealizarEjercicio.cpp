@@ -12,6 +12,16 @@ RealizarEjercicio::~RealizarEjercicio()
     // No eliminar el controlador, ya que es un singleton
 }
 
+void RealizarEjercicio::realizarEjercicio()
+{
+    //del menu venimos aca, y aca empezamos a hacer las operaciones que necesitemos
+
+    listarNicksEstudiantes();
+    listarCursosPendientesDeAlumno();
+    listarEjerciciosPendientesDeCurso();
+    IngresarSolucion();
+}
+
 void RealizarEjercicio::listarNicksEstudiantes(){
     // Al controller le pido una lista de los nicks de los usuarios de tipo estudiante
 }

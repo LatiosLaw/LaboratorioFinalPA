@@ -8,6 +8,7 @@ private:
 public:
 	RealizarEjercicio();
 	virtual ~RealizarEjercicio();
+	void realizarEjercicio();
 	void cosoEjercicio();
 	void listarCursosPendientesDeAlumno();
 	void listarEjerciciosPendientesDeCurso();
