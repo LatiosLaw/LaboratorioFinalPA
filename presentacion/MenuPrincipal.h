@@ -3,6 +3,7 @@
 #include "AltaUsuario.h" //Aqui hay que incluir la Presentacion de los Casos de Uso
 #include "AltaIdioma.h"
 #include "AltaCurso.h"
+#include "RealizarEjercicio.h"
 #include "InscribirseAlCurso.h"
 #include <iostream>
 

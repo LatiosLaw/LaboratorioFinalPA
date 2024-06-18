@@ -16,8 +16,20 @@ Ejercicio::~Ejercicio()
 
 }
 
-void Ejercicio::Pendiente(){
+string Ejercicio::getnombreEjercicio(){
+    return this->nombreEjercicio;
+}
 
+bool Ejercicio::Pendiente(set<Ejercicio*> aprobados){
+for (Ejercicio* ejercicio_aprobado : aprobados)
+    {
+        if (ejercicio_aprobado->getnombreEjercicio()==this->getnombreEjercicio())
+        {
+            return true;
+            break;
+        }
+    }
+    return false;
 }
 
 void Ejercicio::obtenerDataType(){

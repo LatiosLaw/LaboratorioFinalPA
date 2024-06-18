@@ -1,4 +1,6 @@
 #include "../h/Estudiante.h"
+#include "../h/Curso.h"
+#include "../h/Registro.h"
 
 Estudiante::Estudiante(string nick, string nom, string pass, string desc, string pai, Fecha fecha) : Usuario(nick, nom, pass, desc) {
 	pais = pai;
@@ -39,8 +41,16 @@ void Estudiante::agregarInscripcion(Registro* registro)
 	cout << "Registro agregado a la lista del estudiante." << endl;
 }
 
-void Estudiante::buscarCursosPendientes(){
-
+set<Curso*> Estudiante::buscarCursosPendientes(){
+set<Curso*>cursosPendientes;
+Curso* resultado;
+for (Registro* registros : ListaRegistros){
+resultado = registros->obtenerDataCursoSiPendiente();
+if(resultado!=nullptr){
+cursosPendientes.insert(resultado);
+}
+}
+return cursosPendientes;
 }
 
 void Estudiante::buscarCursoYEjercicios(){

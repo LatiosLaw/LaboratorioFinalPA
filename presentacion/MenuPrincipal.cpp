@@ -60,12 +60,16 @@ void MenuPrincipal::mostrarMenu()
             break;
         case 5:
             {
-                //siguiente caso de uso
-                //RealizarEjercicio realizarEjercicio;
-                //realizarEjercicio.realizarEjercicio();
+                RealizarEjercicio realizarEjercicio;
+                realizarEjercicio.realizarEjercicio();
             }
             break;
         case 6:
+            {
+                //siguiente caso de uso
+                //NombreCasoDeUso nombrecasodeuso;
+                //nombrecasodeuso.nombreCasoDeUso();
+            }
             break;
         default:
             cout << "Opcion desconocida." << endl;

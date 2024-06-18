@@ -114,36 +114,51 @@ void Curso::seleccionarCursoPrevio(Curso* curso)
 
 void Curso::listarCursosPrevios()
 {
-	for(auto curso : ListaCursosPrevios)
-	{	
+	for (auto curso : ListaCursosPrevios)
+	{
 		cout << curso->getNombreCurso() << endl;
 	}
 }
 
-void Curso::inscribirse(Estudiante* estudiante){
-	Registro* r = new Registro(this, estudiante);
+void Curso::inscribirse(Estudiante* estudiante)
+{
+	Registro *r = new Registro(this, estudiante);
 	cout << "Registro creado." << endl;
 	estudiante->agregarInscripcion(r);
 	ListaRegistros.insert(r);
 	cout << "Registro agregado a la lista del curso." << endl;
 }
 
-void Curso::verificarUltimaLeccion(){
-
+bool Curso::Pendiente(set<Ejercicio *> aprobados)
+{
+	for (Leccion* leccion : ListaLecciones)
+	{
+		if (leccion->Pendiente(aprobados))
+		{
+			return true;
+			break;
+		}
+	}
+	return false;
 }
 
-void Curso::obtenerDataType(){
-
+void Curso::verificarUltimaLeccion()
+{
 }
 
-void Curso::buscarEjerciciosLeccionPendiente(){
-
+Curso *Curso::obtenerDataType()
+{ // Temporal sabiendo que voy a tener que agregar un DATATYPE, por ahora se retorna a si misma (Osea Curso literal)
+	return this;
 }
 
-void Curso::obtenerEstadisticasP(){
-
+void Curso::buscarEjerciciosLeccionPendiente()
+{
 }
 
-void Curso::estadisticasCurso(){
+void Curso::obtenerEstadisticasP()
+{
+}
 
+void Curso::estadisticasCurso()
+{
 }

@@ -3,6 +3,7 @@
 #include "Ejercicio.h"
 #include "Idioma.h"
 #include "Estudiante.h"
+#include "Leccion.h"
 #include <set>
 
 class Registro;
@@ -23,6 +24,7 @@ private:
 	set<Idioma*>ListaIdiomas;
 	set<Registro*>ListaRegistros;
 	set<Curso*>ListaCursosPrevios;
+	set<Leccion*>ListaLecciones;
 	
 public:
 	Curso();
@@ -51,8 +53,10 @@ public:
 
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
+	bool Pendiente(set<Ejercicio*> aprobados); // FUNCIONANDO
+
 	void verificarUltimaLeccion();
-	void obtenerDataType();
+	Curso* obtenerDataType();
 	void buscarEjerciciosLeccionPendiente();
 	void obtenerEstadisticasP();
 	void estadisticasCurso();

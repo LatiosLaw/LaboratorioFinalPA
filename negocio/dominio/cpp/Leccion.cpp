@@ -2,7 +2,6 @@
 
 Leccion::Leccion()
 {
-
 }
 
 Leccion::Leccion(int numero, string tema, string objetivo)
@@ -11,17 +10,30 @@ Leccion::Leccion(int numero, string tema, string objetivo)
     this->tema = tema;
     this->objetivo = objetivo;
 }
-	
+
 Leccion::~Leccion()
 {
-
 }
 
-int Leccion::getNumero(){
+int Leccion::getNumero()
+{
     return this->numero;
-    //para no agregar esto si que le temias a la pala XD
+    // para no agregar esto si que le temias a la pala XD
 }
 
-void Leccion::buscarEjerciciosPendientes(){
+bool Leccion::Pendiente(set<Ejercicio *> aprobados)
+{
+    for (Ejercicio* ejercicio : ListaEjercicios)
+    {
+        if (ejercicio->Pendiente(aprobados))
+        {
+            return true;
+            break;
+        }
+    }
+    return false;
+}
 
+void Leccion::buscarEjerciciosPendientes()
+{
 }

@@ -29,7 +29,7 @@ public:
 
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
-	void buscarCursosPendientes();
+	set<Curso*> buscarCursosPendientes();
 	void buscarCursoYEjercicios();
 	void obtenerDataType();
 	void estadisticasEstudiante();

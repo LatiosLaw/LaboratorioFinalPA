@@ -13,6 +13,7 @@ private:
 	string avance;
 	Leccion* ultimaLeccion;
 	set<Ejercicio*>ListaEjercicios;
+	set<Ejercicio*>ListaEjerciciosAprobados;
 	Curso* curso;
 	Estudiante* estudiante;
 	
@@ -25,7 +26,7 @@ public:
 
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
-	void obtenerDataCursoSiPendiente();
+	Curso* obtenerDataCursoSiPendiente(); // FUNCIONANDO(? Falta reemplazar Curso por el DT con los mismos parametros pero menos.
 	void buscarEjerciciosPendientes();
 	void IngresarSolucionEjercicio();
 	void VerificarRespuesta();

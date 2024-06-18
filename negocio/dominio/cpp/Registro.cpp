@@ -26,8 +26,12 @@ string Registro::getAvance(){
     return this->avance;
 }
 
-void Registro::obtenerDataCursoSiPendiente(){
-
+Curso* Registro::obtenerDataCursoSiPendiente(){
+if(this->curso->Pendiente(this->ListaEjerciciosAprobados)){
+    return this->curso->obtenerDataType();
+}else{
+    return nullptr;
+}
 }
 
 void Registro::buscarEjerciciosPendientes(){
