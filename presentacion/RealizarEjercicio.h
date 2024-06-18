@@ -12,6 +12,7 @@ public:
 	void listarCursosPendientesDeAlumno();
 	void listarEjerciciosPendientesDeCurso();
 	void IngresarSolucion();
+	void listarNicksEstudiantes();
 };
 
 #endif /* PRESENTACION_REALIZAREJERCICIO_H_ */
