@@ -17,7 +17,7 @@ Registro::~Registro()
 }
 
 string Registro::getAvance(){
-
+    return this->avance;
 }
 
 void Registro::obtenerDataCursoSiPendiente(){

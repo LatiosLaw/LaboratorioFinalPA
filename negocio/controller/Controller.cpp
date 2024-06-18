@@ -35,7 +35,7 @@ Controller::~Controller() // destructor
 {
 }
 
-Controller *Controller::getInstance() // Singleton, se crea la instancia del controlador si no existe, y si ya existe simplemente la retorna.
+Controller* Controller::getInstance() // Singleton, se crea la instancia del controlador si no existe, y si ya existe simplemente la retorna.
 {
 	if (controlador == nullptr)
 	{
@@ -44,7 +44,7 @@ Controller *Controller::getInstance() // Singleton, se crea la instancia del con
 	return controlador;
 }
 
-Profesor *Controller::buscarProfesor(string nombreProfesor)
+Profesor* Controller::buscarProfesor(string nombreProfesor)
 {
 	bool profesorEncontrado = false;
 
@@ -175,10 +175,9 @@ void Controller::agregarProfesor(string nickname, string password, string nombre
 set<string> Controller::listarIdiomas() // Lista los nombres de los idiomas existentes en ListaIdiomas
 {
 	set<string> idiomasDisponibles;
-	set<Idioma *>::iterator itI;
-	for (itI = ListaIdiomas.begin(); itI != ListaIdiomas.end(); ++itI)
+	for (Idioma* idioma : ListaIdiomas)
 	{
-		idiomasDisponibles.insert((*itI)->getNombreIdioma());
+		idiomasDisponibles.insert(idioma->getNombreIdioma());
 	}
 	return idiomasDisponibles;
 }
@@ -221,7 +220,7 @@ set<string> Controller::listarCursos()
 	return cursos;
 }
 
-Curso *Controller::ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombreP, set<string> idiomasSeleccionados)
+Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombreP, set<string> idiomasSeleccionados)
 {
 	Profesor *profesor = buscarProfesor(nombreP);
 	if (profesor == nullptr)
@@ -282,20 +281,21 @@ void Controller::daDeAltaCurso(Curso *curso)
 	this->ListaCursos.insert(curso);
 }
 
-Idioma *Controller::seleccionarIdioma(string nombreIdioma) // Recibe el nombre de un idioma, lo busca en la ListaIdiomas, y retorna puntero a una instancia de Idioma
+Idioma* Controller::seleccionarIdioma(string nombreIdioma) // Recibe el nombre de un idioma, lo busca en la ListaIdiomas, y retorna puntero a una instancia de Idioma
 {
 	cout << "Realizando Seleccionar Idioma" << endl;
 
 	bool idiomaEncontrado = false;
-	set<Idioma *>::iterator itI;
 
-	for (itI = ListaIdiomas.begin(); itI != ListaIdiomas.end(); ++itI)
+	Idioma* idiomaSeleccionado;
+
+	for (auto idioma : ListaIdiomas)
 	{
-		if ((*itI)->getNombreIdioma() == nombreIdioma)
+		if (idioma->getNombreIdioma() == nombreIdioma)
 		{
 			cout << "Idioma encontrado" << endl;
 			idiomaEncontrado = true;
-			(*itI)->seleccionarIdioma();
+			idiomaSeleccionado->seleccionarIdioma();
 			break;
 		}
 	}
@@ -306,5 +306,6 @@ Idioma *Controller::seleccionarIdioma(string nombreIdioma) // Recibe el nombre d
 		return nullptr;
 	}
 
-	return *itI;
+	return idiomaSeleccionado;
+	//creo que funciona, toque algo
 }

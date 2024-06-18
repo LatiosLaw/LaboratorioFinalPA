@@ -22,9 +22,9 @@ void AltaCurso::altaCurso() //faltan varios detalles
     cin >> descripcion;
     cout << "Ingrese dificultad: ";
     cin >> dificultad;
+
     cout << "Ingrese nombre del profesor: ";
     set<string> nombreProfesores;
-    
     nombreProfesores = this->controlador->listarNombreProfesores();
     cout << "Seleccione un Profesor: ";
     cin >> nombreProfe;
@@ -71,7 +71,7 @@ set<string> AltaCurso::seleccionarIdiomas()
     do {
         cout << "Idiomas disponibles: ";
         set<string> idiomas = this->controlador->listarIdiomas();
-        for (const string& idioma : idiomas)
+        for (auto idioma : idiomas)
         {
             cout << idioma << endl;
         }
