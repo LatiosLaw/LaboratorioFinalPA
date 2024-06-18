@@ -25,6 +25,8 @@ public:
 	void setPais(string pai);
 	void setFechaNacimiento(Fecha fecha);
 
+	void agregarInscripcion(Registro* registro);
+
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
 	void buscarCursosPendientes();

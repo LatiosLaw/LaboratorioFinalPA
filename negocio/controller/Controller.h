@@ -24,6 +24,7 @@ public:
 	static Controller* getInstance(); // Paso 3
 	
 	virtual Profesor* buscarProfesor(string nombreProfesor);
+	virtual Estudiante* buscarEstudiante(string nick);
 	virtual Curso* buscarCurso(string nombreCurso);
 
 	virtual bool verificarNick(string nickname); // Nueva función para verificar el nick
@@ -39,6 +40,9 @@ public:
 	virtual void seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso);
 	virtual Idioma* seleccionarIdioma(string nombreIdioma);
 	virtual void daDeAltaCurso(Curso* curso);
+
+	virtual set<string> listarCursosDisponibles(string nick);
+	virtual void inscribirseACurso(string curso, string nick);
 	
 	virtual ~Controller();
 };

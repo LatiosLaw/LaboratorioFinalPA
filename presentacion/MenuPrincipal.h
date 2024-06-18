@@ -3,6 +3,7 @@
 #include "AltaUsuario.h" //Aqui hay que incluir la Presentacion de los Casos de Uso
 #include "AltaIdioma.h"
 #include "AltaCurso.h"
+#include "InscribirseAlCurso.h"
 #include <iostream>
 
 using namespace std;
@@ -12,6 +13,7 @@ class MenuPrincipal {
 public:
 	MenuPrincipal();
 	virtual ~MenuPrincipal();
+	void mostrarOpciones();
 	void mostrarMenu();
 };
 

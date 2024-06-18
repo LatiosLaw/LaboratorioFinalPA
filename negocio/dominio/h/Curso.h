@@ -2,6 +2,7 @@
 #define CURSO_H
 #include "Ejercicio.h"
 #include "Idioma.h"
+#include "Estudiante.h"
 #include <set>
 
 class Registro;
@@ -45,6 +46,7 @@ public:
 
 	void seleccionarCursoPrevio(Curso* curso);
 	void listarCursosPrevios();
+	void inscribirse(Estudiante* estudiante);
 	virtual ~Curso();
 
 	// Metodos de los casos de Martin, faltan retornos y parametros

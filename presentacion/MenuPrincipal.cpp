@@ -10,18 +10,25 @@ MenuPrincipal::~MenuPrincipal()
 	
 }
 
+void MenuPrincipal::mostrarOpciones()
+{
+    cout << "*** Menu principal ***" << endl <<endl;
+    cout << "1) Alta Usuario" << endl;
+    cout << "2) Alta Idioma" << endl;
+    cout << "3) Alta Curso" << endl;
+    cout << "4) Inscribirse al Curso" << endl;
+    cout << "5) Siguiente Operacion" << endl;
+    cout << "6) Salir" << endl << endl;
+    cout << "Ingrese una opcion: ";
+}
+
 void MenuPrincipal::mostrarMenu()
 {
     int opcion;
 
     do {
-        cout << "*** Menu principal ***" << endl;
-        cout << "1) Alta Usuario" << endl;
-        cout << "2) Alta Idioma" << endl;
-        cout << "3) Alta Curso" << endl;
-        cout << "4) Siguiente Operacion" << endl;
-        cout << "5) Salir" << endl << endl;
-        cout << "Ingrese una opcion: ";
+        
+        mostrarOpciones();
 
         cin >> opcion;
         cin.ignore(); // Limpiar el buffer de entrada
@@ -47,18 +54,24 @@ void MenuPrincipal::mostrarMenu()
             break;
         case 4:
             {
+               InscribirseAlCurso presentacionInscribirseAlCurso;
+               presentacionInscribirseAlCurso.inscribirse();
+            }
+            break;
+        case 5:
+            {
                 //siguiente caso de uso
                 //RealizarEjercicio realizarEjercicio;
                 //realizarEjercicio.realizarEjercicio();
             }
             break;
-        case 5:
+        case 6:
             break;
         default:
-            cout << "Opcion desconocida" << endl;
+            cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 5);
+    } while (opcion != 6);
 
     cout << "Fin del programa." << endl;
 }

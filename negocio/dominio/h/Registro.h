@@ -19,6 +19,7 @@ private:
 public:
 	Registro();
 	Registro(Fecha fechaInscripcion, string avance);
+	Registro(Curso* curso, Estudiante* estudiante);
 	
 	virtual ~Registro();
 

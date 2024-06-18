@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../dominio/h/Idioma.h"
 #include "../dominio/h/Curso.h"
+#include "../dominio/h/Estudiante.h"
 #include <list>
 #include <set>
 using namespace std;
@@ -10,7 +11,8 @@ using namespace std;
 class Icontroller{
 
 public:
-	virtual Profesor* buscarProfesor(string nombreProfesor) = 0;
+	virtual Profesor* buscarProfesor(string nombre) = 0;
+	virtual Estudiante* buscarEstudiante(string nick) = 0;
 	virtual Curso* buscarCurso(string nombreCurso) = 0;
 
 	virtual bool verificarNick(string nickname) = 0; // Nueva función para verificar el nick
@@ -26,5 +28,8 @@ public:
 	virtual void seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso) = 0;
 	virtual Idioma* seleccionarIdioma(string nombreIdioma) = 0;
 	virtual void daDeAltaCurso(Curso* curso) = 0;
+
+	virtual set<string> listarCursosDisponibles(string nick) = 0;
+	virtual void inscribirseACurso(string curso, string nick) = 0;
 };
 #endif

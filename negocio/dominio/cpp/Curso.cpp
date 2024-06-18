@@ -1,5 +1,6 @@
 #include "../h/Curso.h"
 #include "../h/Profesor.h" //esto soluciona algunos problemas del forward declaration
+#include "../h/Registro.h"
 #include <iostream>
 #include <string>
 
@@ -117,6 +118,14 @@ void Curso::listarCursosPrevios()
 	{	
 		cout << curso->getNombreCurso() << endl;
 	}
+}
+
+void Curso::inscribirse(Estudiante* estudiante){
+	Registro* r = new Registro(this, estudiante);
+	cout << "Registro creado." << endl;
+	estudiante->agregarInscripcion(r);
+	ListaRegistros.insert(r);
+	cout << "Registro agregado a la lista del curso." << endl;
 }
 
 void Curso::verificarUltimaLeccion(){

@@ -68,6 +68,26 @@ Profesor* Controller::buscarProfesor(string nombreProfesor)
 	return nullptr;
 }
 
+Estudiante* Controller::buscarEstudiante(string nick)
+{
+	for (Usuario* usuario : ListaUsuarios)
+	{
+		Estudiante* student = dynamic_cast<Estudiante*>(usuario);
+		if(student != nullptr)
+		{
+			if (student->getNickname() == nick)
+		{
+			cout << "Estudiante encontrado" << endl;
+			Estudiante* estudiante = dynamic_cast<Estudiante*>(usuario);
+			return estudiante;
+			break;
+		}
+		}
+	}
+	cout << "Estudiante no encontrado" << endl;
+	return nullptr;	
+}
+
 Curso *Controller::buscarCurso(string nombreCurso)
 {
 	for (Curso *curso : ListaCursos)
@@ -308,4 +328,31 @@ Idioma* Controller::seleccionarIdioma(string nombreIdioma) // Recibe el nombre d
 
 	return idiomaSeleccionado;
 	//creo que funciona, toque algo
+}
+
+set<string> Controller::listarCursosDisponibles(string nick)
+{
+	set<string>cursosDisponibles;
+	for(auto curso : ListaCursos)
+	{
+		cout << curso->getNombreCurso() << ", " << endl;
+		cursosDisponibles.insert(curso->getNombreCurso());
+	}
+	return cursosDisponibles;
+}
+
+void Controller::inscribirseACurso(string curso, string nick)
+{	
+	Curso* elCurso = buscarCurso(curso);
+	if (elCurso != nullptr)
+	{
+		Estudiante* elEstudiante = buscarEstudiante(nick);
+		if(elEstudiante != nullptr){
+			elCurso->inscribirse(elEstudiante);
+		}else{
+			cout << "Estudiante no encontrado." << endl;
+		}
+	} else {
+		cout << "Curso no encontrado." << endl;
+	}
 }

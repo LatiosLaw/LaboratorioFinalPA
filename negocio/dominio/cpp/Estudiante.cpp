@@ -33,6 +33,12 @@ string Estudiante::getNombreProfesor(){
 	return "";
 }
 
+void Estudiante::agregarInscripcion(Registro* registro)
+{
+	this->ListaRegistros.insert(registro);
+	cout << "Registro agregado a la lista del estudiante." << endl;
+}
+
 void Estudiante::buscarCursosPendientes(){
 
 }

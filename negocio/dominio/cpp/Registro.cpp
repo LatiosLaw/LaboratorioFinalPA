@@ -10,6 +10,12 @@ Registro::Registro(Fecha fechaInscripcion, string avance)//falta agregarle param
     this->fechaInscripcion = fechaInscripcion;
     this->avance = avance;
 }
+
+Registro::Registro(Curso* curso, Estudiante* estudiante)
+{
+    this->curso = curso;
+    this->estudiante = estudiante;
+}
 	
 Registro::~Registro()
 {

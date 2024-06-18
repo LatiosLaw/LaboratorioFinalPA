@@ -7,7 +7,7 @@ AltaIdioma::AltaIdioma() {
 }
 
 AltaIdioma::~AltaIdioma() {
-   
+
 }
 
 void AltaIdioma::altaIdioma(){

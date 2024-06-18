@@ -96,7 +96,7 @@ set<string> AltaCurso::seleccionarCursosPrevios()
     do {
         cout << "Cursos disponibles:\n";
         set<string> cursos = this->controlador->listarCursos();
-        for (const string& curso : cursos)
+        for (string curso : cursos)
         {
             cout << curso << endl;
         }
