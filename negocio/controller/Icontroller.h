@@ -21,6 +21,7 @@ public:
 	virtual void altaIdioma(string nombre) = 0;
 
 	virtual set<string> listarIdiomas() = 0;
+	virtual void ConsultarIdiomas() = 0;
 	virtual set<string> listarCursos() = 0;
 	virtual set<string> listarNombreProfesores() = 0;
 

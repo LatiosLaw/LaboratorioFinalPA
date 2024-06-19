@@ -33,6 +33,7 @@ public:
 	virtual void altaIdioma(string nombre);
 
 	virtual set<string> listarIdiomas();
+	virtual void ConsultarIdiomas();
 	virtual set<string> listarNombreProfesores();
 	virtual set<string> listarCursos();
 

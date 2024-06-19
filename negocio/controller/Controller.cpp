@@ -202,6 +202,14 @@ set<string> Controller::listarIdiomas() // Lista los nombres de los idiomas exis
 	return idiomasDisponibles;
 }
 
+void Controller::ConsultarIdiomas()
+{
+	for (Idioma* idioma : ListaIdiomas)
+	{
+		cout << idioma->getNombreIdioma() << ", ";
+	}
+}
+
 set<string> Controller::listarNombreProfesores()
 {
 	cout << endl << "Nombres de los Profesores existentes: " << endl;
