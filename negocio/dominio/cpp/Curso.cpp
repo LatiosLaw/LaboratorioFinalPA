@@ -1,6 +1,7 @@
 #include "../h/Curso.h"
 #include "../h/Profesor.h" //esto soluciona algunos problemas del forward declaration
 #include "../h/Registro.h"
+#include "../h/Estudiante.h"
 #include <iostream>
 #include <string>
 

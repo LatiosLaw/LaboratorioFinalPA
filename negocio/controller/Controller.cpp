@@ -404,3 +404,7 @@ set<Ejercicio*> Controller::listarEjerciciosPendientesDeCurso(){
 void Controller::IngresarSolucion(){
     // Al ejercicio selecionado en especifico, pedirle que verifique si la solucion que escribio el usuario es igual a la que el esperaba, en caso de que ahi sea, retorna true y por lo tanto el ejercicio deberia ser agregado a la lista de ejercicios aprobados del estudiante en ese curso. 
 }
+
+void Controller::cosoEjercicio(){
+
+}

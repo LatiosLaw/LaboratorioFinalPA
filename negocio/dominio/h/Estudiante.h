@@ -2,6 +2,7 @@
 #define ESTUDIANTE_H
 #include "Usuario.h"
 #include "Fecha.h"
+#include "Curso.h"
 #include <string>
 #include <set>
 

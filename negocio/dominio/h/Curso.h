@@ -2,10 +2,10 @@
 #define CURSO_H
 #include "Ejercicio.h"
 #include "Idioma.h"
-#include "Estudiante.h"
 #include "Leccion.h"
 #include <set>
 
+class Estudiante;
 class Registro;
 class Profesor;
 

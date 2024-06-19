@@ -17,8 +17,9 @@ void MenuPrincipal::mostrarOpciones()
     cout << "2) Alta Idioma" << endl;
     cout << "3) Alta Curso" << endl;
     cout << "4) Inscribirse al Curso" << endl;
-    cout << "5) Siguiente Operacion" << endl;
-    cout << "6) Salir" << endl << endl;
+    cout << "5) Realizar Ejercicio" << endl;
+    cout << "6) Siguiente Operacion" << endl;
+    cout << "7) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -36,26 +37,26 @@ void MenuPrincipal::mostrarMenu()
         switch (opcion) {
         case 1:
             {
-                AltaUsuario altaUsuario;
-                altaUsuario.altaUsuario();
+                AltaUsuario pAltaUsuario;
+                pAltaUsuario.altaUsuario();
             }
             break;
         case 2:
             {
-                AltaIdioma presentacionAltaIdioma;
-                presentacionAltaIdioma.altaIdioma();
+                AltaIdioma pAltaIdioma;
+                pAltaIdioma.altaIdioma();
             }
             break;
         case 3:
             {
-                AltaCurso presentacionAltaCurso;
-                presentacionAltaCurso.altaCurso();
+                AltaCurso pAltaCurso;
+                pAltaCurso.altaCurso();
             }
             break;
         case 4:
             {
-               InscribirseAlCurso presentacionInscribirseAlCurso;
-               presentacionInscribirseAlCurso.inscribirse();
+               InscribirseAlCurso pInscribirseAlCurso;
+               pInscribirseAlCurso.inscribirse();
             }
             break;
         case 5:
@@ -71,11 +72,13 @@ void MenuPrincipal::mostrarMenu()
                 //nombrecasodeuso.nombreCasoDeUso();
             }
             break;
+        case 7:
+            break;
         default:
             cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 6);
+    } while (opcion != 7);
 
     cout << "Fin del programa." << endl;
 }
