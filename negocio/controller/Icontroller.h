@@ -34,7 +34,7 @@ public:
 	virtual void inscribirseACurso(string curso, string nick) = 0;
 
 	virtual void cosoEjercicio()=0;
-	virtual void listarCursosPendientesDeAlumno(string nickname)=0;
+	virtual bool listarCursosPendientesDeAlumno(string nickname)=0;
 	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante)=0;
 	virtual void IngresarSolucion()=0;
 	virtual void listarNicksEstudiantes()=0;

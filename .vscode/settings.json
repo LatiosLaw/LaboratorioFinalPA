@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "set": "cpp",
+        "xstring": "cpp",
+        "list": "cpp",
+        "xtree": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}

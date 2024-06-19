@@ -50,8 +50,8 @@ for (Registro* registro : ListaRegistros){
 			break;
 		}
 	}
-	return nullptr;
 }
+return nullptr;
 }
 
 set<Curso *> Estudiante::buscarCursosPendientes()
