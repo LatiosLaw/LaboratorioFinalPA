@@ -25,11 +25,11 @@ for (Ejercicio* ejercicio_aprobado : aprobados)
     {
         if (ejercicio_aprobado->getnombreEjercicio()==this->getnombreEjercicio())
         {
-            return true;
+            return false;
             break;
         }
     }
-    return false;
+    return true;
 }
 
 void Ejercicio::obtenerDataType(){
