@@ -47,7 +47,7 @@ public:
 
 	virtual void cosoEjercicio();
 	virtual void listarCursosPendientesDeAlumno(string nickname); // FUNCIONANDO (Aparte de lo que ya dije de los cursos)
-	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso();
+	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante);
 	virtual void IngresarSolucion();
 	virtual void listarNicksEstudiantes();
 	

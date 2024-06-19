@@ -378,30 +378,33 @@ void Controller::listarNicksEstudiantes(){
 }
 
 void Controller::listarCursosPendientesDeAlumno(string nickname){
-	for (Usuario* usuario : ListaUsuarios)
-	{
-		Estudiante* student = dynamic_cast<Estudiante*>(usuario);
-		if(student != nullptr)
+	Estudiante* estudiante = this->buscarEstudiante(nickname);
+	if(estudiante!=nullptr){
+	set<Curso*>cursosPendientes;
+	cursosPendientes = estudiante->buscarCursosPendientes();
+		for (Curso* curso : cursosPendientes)
 		{
-			if (student->getNickname() == nickname)
-			{
-				cout << "Estudiante encontrado" << endl;
-				Estudiante* estudiante = dynamic_cast<Estudiante*>(usuario);
-				set<Curso*>cursosPendientes;
-				cursosPendientes = estudiante->buscarCursosPendientes();
-				for (Curso* curso : cursosPendientes)
-				{
-					if(curso!=nullptr){
-						cout << curso->getNombreCurso() << endl;
-					}
-				}
-			break;
+			if(curso!=nullptr){
+				cout << curso->getNombreCurso() << endl;
 			}
 		}
 	}
 }
 
-set<Ejercicio*> Controller::listarEjerciciosPendientesDeCurso(){
+set<Ejercicio*> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante){
+	set<Ejercicio*>EjerciciosPendientes;
+	EjerciciosPendientes = estudiante->buscarCursoYEjercicios(nom_cur);
+	cout << "El programa ahora listara los ejercicios pendientes de la ultima leccion que aun no ha completado en este curso, queda avisado, no todos los ejercicios pendientes DEL CURSO seran visibles." << endl;
+	cout << "Inicio de la lista de Ejercicios Pendientes" << endl;
+	for (Ejercicio* ejercicio : EjerciciosPendientes) //Esto lo deberiamos hacer con dynamic cast, por lo que convendria usar iteradores
+	{
+		if(ejercicio != nullptr)
+		{
+			cout << ejercicio->getnombreEjercicio() << endl;
+		}
+	}
+	cout << "Fin de la lista de Ejercicios Pendientes" << endl;
+	return EjerciciosPendientes;
     // En este caso le pasamos directamente a un curso que sabemos que esta pendiente, la lista de ejercicios completados del alumno desde el registro, para posteriormente pedirle al curso que pase por cada una de sus lecciones y verifique si todos sus ejercicios se encuentran en la lista
     // En caso de que todos los ejercicios de la leccion se encuentren en la lista, se sale de la leccion y se la considera completada (Cosa que no se refleja en ningun lado), pasando a la siguiente leccion y repitiendo, si todas las lecciones estan completadas, el curso no esta pendiente sino completado y el avance debe ser cambiado a 100.
     // En caso de que un ejercicio de una leccion no este en la lista de aprobados, se guarda hasta que se completa el for dentro de la leccion y se retorna la lista de aquellos ejercicios que no esten en la lista de aprobados.

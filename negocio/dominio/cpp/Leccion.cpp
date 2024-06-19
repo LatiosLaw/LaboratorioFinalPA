@@ -34,6 +34,15 @@ bool Leccion::Pendiente(set<Ejercicio *> aprobados)
     return false;
 }
 
-void Leccion::buscarEjerciciosPendientes()
+set<Ejercicio*> Leccion::buscarEjerciciosPendientes(set<Ejercicio*>aprobados)
 {
+    set<Ejercicio*>ejerciciosPendientes;
+    for (Ejercicio* ejercicio : ListaEjercicios)
+    {
+        if (ejercicio->Pendiente(aprobados))
+        {
+            ejerciciosPendientes.insert(ejercicio->obtenerDataType());
+        }
+    }
+    return ejerciciosPendientes;
 }

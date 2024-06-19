@@ -56,8 +56,9 @@ public:
 	bool Pendiente(set<Ejercicio*> aprobados); // FUNCIONANDO
 
 	void verificarUltimaLeccion();
+	bool compararNombre(string nom_cur);
 	Curso* obtenerDataType();
-	void buscarEjerciciosLeccionPendiente();
+	set<Ejercicio*> buscarEjerciciosLeccionPendiente(set<Ejercicio*>aprobados);
 	void obtenerEstadisticasP();
 	void estadisticasCurso();
 

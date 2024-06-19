@@ -20,7 +20,7 @@ public:
 
 	int getNumero(); // Esto es un getter, por lo que no es realmente solo mio XD
 	bool Pendiente(set<Ejercicio*> aprobados);
-	void buscarEjerciciosPendientes(); // Esto requiere una lista de ejercicios
+	set<Ejercicio*> buscarEjerciciosPendientes(set<Ejercicio*>aprobados); // Esto requiere una lista de ejercicios
 
 	///////////////////////////////////////////////////////////////
 };

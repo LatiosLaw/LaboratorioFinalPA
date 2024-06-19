@@ -27,7 +27,8 @@ public:
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
 	Curso* obtenerDataCursoSiPendiente(); // FUNCIONANDO(? Falta reemplazar Curso por el DT con los mismos parametros pero menos.
-	void buscarEjerciciosPendientes();
+	bool verificarCurso(string nom_cur);
+	set<Ejercicio*> buscarEjerciciosPendientes();
 	void IngresarSolucionEjercicio();
 	void VerificarRespuesta();
 	void obtenerEstadisticasE();

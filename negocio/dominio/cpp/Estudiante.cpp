@@ -41,6 +41,19 @@ void Estudiante::agregarInscripcion(Registro* registro)
 	cout << "Registro agregado a la lista del estudiante." << endl;
 }
 
+Registro* Estudiante::buscarRegistroACurso(string nom_cur){
+for (Registro* registro : ListaRegistros){
+	{
+		if (registro->verificarCurso(nom_cur))
+		{
+			return registro;
+			break;
+		}
+	}
+	return nullptr;
+}
+}
+
 set<Curso*> Estudiante::buscarCursosPendientes(){
 set<Curso*>cursosPendientes;
 Curso* resultado;
@@ -53,8 +66,13 @@ cursosPendientes.insert(resultado);
 return cursosPendientes;
 }
 
-void Estudiante::buscarCursoYEjercicios(){
-
+set<Ejercicio*> Estudiante::buscarCursoYEjercicios(string nom_cur){
+set<Ejercicio*>ejercicioPendientes;
+Registro* registro = this->buscarRegistroACurso(nom_cur); // De la lista de regitros del estudiante devuelve el registro vinculado al curso en cuestion
+if(registro!=nullptr){
+	ejercicioPendientes = registro->buscarEjerciciosPendientes();
+}
+return ejercicioPendientes;
 }
 
 void Estudiante::obtenerDataType(){

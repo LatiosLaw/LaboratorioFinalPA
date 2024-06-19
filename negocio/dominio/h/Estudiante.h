@@ -28,10 +28,12 @@ public:
 
 	void agregarInscripcion(Registro* registro);
 
+	Registro* buscarRegistroACurso(string nom_cur);
+	
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
 	set<Curso*> buscarCursosPendientes();
-	void buscarCursoYEjercicios();
+	set<Ejercicio*> buscarCursoYEjercicios(string nom_cur);
 	void obtenerDataType();
 	void estadisticasEstudiante();
 

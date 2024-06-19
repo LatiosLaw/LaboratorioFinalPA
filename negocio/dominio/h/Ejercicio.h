@@ -21,7 +21,7 @@ public:
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
 	bool Pendiente(set<Ejercicio*> aprobados); // FUNCIONANDO
-	void obtenerDataType();
+	Ejercicio* obtenerDataType();
 
 	///////////////////////////////////////////////////////////////
 };

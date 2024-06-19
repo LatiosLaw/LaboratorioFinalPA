@@ -34,8 +34,17 @@ if(this->curso->Pendiente(this->ListaEjerciciosAprobados)){
 }
 }
 
-void Registro::buscarEjerciciosPendientes(){
+bool Registro::verificarCurso(string nom_cur){
+    if(this->curso->compararNombre(nom_cur)){
+        return true;
+    }else{
+        return false;
+    }
+}
 
+set<Ejercicio*> Registro::buscarEjerciciosPendientes(){
+set<Ejercicio*>ejerciciosPendientes = this->curso->buscarEjerciciosLeccionPendiente(ListaEjerciciosAprobados);
+return ejerciciosPendientes;
 }
 
 void Registro::IngresarSolucionEjercicio(){

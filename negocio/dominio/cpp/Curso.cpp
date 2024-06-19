@@ -143,6 +143,14 @@ bool Curso::Pendiente(set<Ejercicio *> aprobados)
 	return false;
 }
 
+bool Curso::compararNombre(string nom_cur){
+if(this->getNombreCurso()==nom_cur){
+	return true;
+}else{
+	return false;
+}
+}
+
 void Curso::verificarUltimaLeccion()
 {
 }
@@ -152,8 +160,19 @@ Curso *Curso::obtenerDataType()
 	return this;
 }
 
-void Curso::buscarEjerciciosLeccionPendiente()
+set<Ejercicio*> Curso::buscarEjerciciosLeccionPendiente(set<Ejercicio*>aprobados)
 {
+	set<Ejercicio*>ejerciciosPendientes;
+	for (Leccion* leccion : ListaLecciones)
+	{
+		if (leccion->Pendiente(aprobados))
+		{
+			ejerciciosPendientes = leccion->buscarEjerciciosPendientes(aprobados);
+			return ejerciciosPendientes;
+			break;
+		}
+	}
+	return ejerciciosPendientes;
 }
 
 void Curso::obtenerEstadisticasP()
