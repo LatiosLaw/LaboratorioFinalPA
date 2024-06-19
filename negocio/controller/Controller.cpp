@@ -380,13 +380,19 @@ void Controller::listarNicksEstudiantes(){
 void Controller::listarCursosPendientesDeAlumno(string nickname){
 	Estudiante* estudiante = this->buscarEstudiante(nickname);
 	if(estudiante!=nullptr){
+		cout << "entre al if" << endl;
 	set<Curso*>cursosPendientes;
 	cursosPendientes = estudiante->buscarCursosPendientes();
-		for (Curso* curso : cursosPendientes)
+		if(cursosPendientes.empty()){
+			cout << "El estudiante no tiene cursos pendientes" << endl;
+		}else {
+			for (Curso* curso : cursosPendientes)
 		{
+			cout << "entre al for" << endl;
 			if(curso!=nullptr){
 				cout << curso->getNombreCurso() << endl;
 			}
+		}
 		}
 	}
 }

@@ -54,16 +54,19 @@ for (Registro* registro : ListaRegistros){
 }
 }
 
-set<Curso*> Estudiante::buscarCursosPendientes(){
-set<Curso*>cursosPendientes;
-Curso* resultado;
-for (Registro* registros : ListaRegistros){
-resultado = registros->obtenerDataCursoSiPendiente();
-if(resultado!=nullptr){
-cursosPendientes.insert(resultado);
-}
-}
-return cursosPendientes;
+set<Curso *> Estudiante::buscarCursosPendientes()
+{
+	set<Curso *> cursosPendientes;
+	Curso *resultado;
+	for (Registro *registros : ListaRegistros)
+	{
+		resultado = registros->obtenerDataCursoSiPendiente();
+		if (resultado != nullptr)
+		{
+			cursosPendientes.insert(resultado);
+		}
+	}
+	return cursosPendientes;
 }
 
 set<Ejercicio*> Estudiante::buscarCursoYEjercicios(string nom_cur){

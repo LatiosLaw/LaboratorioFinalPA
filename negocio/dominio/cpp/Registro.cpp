@@ -26,12 +26,16 @@ string Registro::getAvance(){
     return this->avance;
 }
 
-Curso* Registro::obtenerDataCursoSiPendiente(){
-if(this->curso->Pendiente(this->ListaEjerciciosAprobados)){
-    return this->curso->obtenerDataType();
-}else{
-    return nullptr;
-}
+Curso *Registro::obtenerDataCursoSiPendiente()
+{
+    if (this->curso->Pendiente(this->ListaEjerciciosAprobados))
+    {
+        return this->curso->obtenerDataType();
+    }
+    else
+    {
+        return nullptr;
+    }
 }
 
 bool Registro::verificarCurso(string nom_cur){
