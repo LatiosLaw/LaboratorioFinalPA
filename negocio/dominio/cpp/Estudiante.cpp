@@ -50,8 +50,8 @@ for (Registro* registro : ListaRegistros){
 			break;
 		}
 	}
+	return nullptr;
 }
-return nullptr;
 }
 
 set<Curso *> Estudiante::buscarCursosPendientes()
@@ -69,13 +69,15 @@ set<Curso *> Estudiante::buscarCursosPendientes()
 	return cursosPendientes;
 }
 
-set<Ejercicio*> Estudiante::buscarCursoYEjercicios(string nom_cur){
-set<Ejercicio*>ejercicioPendientes;
-Registro* registro = this->buscarRegistroACurso(nom_cur); // De la lista de regitros del estudiante devuelve el registro vinculado al curso en cuestion
-if(registro!=nullptr){
-	ejercicioPendientes = registro->buscarEjerciciosPendientes();
-}
-return ejercicioPendientes;
+set<Ejercicio *> Estudiante::buscarCursoYEjercicios(string nom_cur)
+{
+	set<Ejercicio *> ejercicioPendientes;
+	Registro *registro = this->buscarRegistroACurso(nom_cur); // De la lista de regitros del estudiante devuelve el registro vinculado al curso en cuestion
+	if (registro != nullptr)
+	{
+		ejercicioPendientes = registro->buscarEjerciciosPendientes();
+	}
+	return ejercicioPendientes;
 }
 
 void Estudiante::obtenerDataType(){

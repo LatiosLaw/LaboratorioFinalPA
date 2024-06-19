@@ -32,6 +32,7 @@ for (Ejercicio* ejercicio_aprobado : aprobados)
     return true;
 }
 
-Ejercicio* Ejercicio::obtenerDataType(){
-return this;
+Ejercicio *Ejercicio::obtenerDataType()
+{
+    return this;
 }

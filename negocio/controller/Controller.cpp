@@ -399,26 +399,27 @@ bool Controller::listarCursosPendientesDeAlumno(string nickname){
 	}
 }
 
-set<Ejercicio*> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante){
-	set<Ejercicio*>EjerciciosPendientes;
+set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante *estudiante)
+{
+	set<Ejercicio *> EjerciciosPendientes;
 	EjerciciosPendientes = estudiante->buscarCursoYEjercicios(nom_cur);
 	cout << "El programa ahora listara los ejercicios pendientes de la ultima leccion que aun no ha completado en este curso, queda avisado, no todos los ejercicios pendientes DEL CURSO seran visibles." << endl;
 	cout << "Inicio de la lista de Ejercicios Pendientes" << endl;
-	for (Ejercicio* ejercicio : EjerciciosPendientes) //Esto lo deberiamos hacer con dynamic cast, por lo que convendria usar iteradores
+	for (Ejercicio *ejercicio : EjerciciosPendientes) // Esto lo deberiamos hacer con dynamic cast, por lo que convendria usar iteradores
 	{
-		if(ejercicio != nullptr)
+		if (ejercicio != nullptr)
 		{
 			cout << ejercicio->getnombreEjercicio() << endl;
 		}
 	}
 	cout << "Fin de la lista de Ejercicios Pendientes" << endl;
 	return EjerciciosPendientes;
-    // En este caso le pasamos directamente a un curso que sabemos que esta pendiente, la lista de ejercicios completados del alumno desde el registro, para posteriormente pedirle al curso que pase por cada una de sus lecciones y verifique si todos sus ejercicios se encuentran en la lista
-    // En caso de que todos los ejercicios de la leccion se encuentren en la lista, se sale de la leccion y se la considera completada (Cosa que no se refleja en ningun lado), pasando a la siguiente leccion y repitiendo, si todas las lecciones estan completadas, el curso no esta pendiente sino completado y el avance debe ser cambiado a 100.
-    // En caso de que un ejercicio de una leccion no este en la lista de aprobados, se guarda hasta que se completa el for dentro de la leccion y se retorna la lista de aquellos ejercicios que no esten en la lista de aprobados.
+	// En este caso le pasamos directamente a un curso que sabemos que esta pendiente, la lista de ejercicios completados del alumno desde el registro, para posteriormente pedirle al curso que pase por cada una de sus lecciones y verifique si todos sus ejercicios se encuentran en la lista
+	// En caso de que todos los ejercicios de la leccion se encuentren en la lista, se sale de la leccion y se la considera completada (Cosa que no se refleja en ningun lado), pasando a la siguiente leccion y repitiendo, si todas las lecciones estan completadas, el curso no esta pendiente sino completado y el avance debe ser cambiado a 100.
+	// En caso de que un ejercicio de una leccion no este en la lista de aprobados, se guarda hasta que se completa el for dentro de la leccion y se retorna la lista de aquellos ejercicios que no esten en la lista de aprobados.
 }
 
-    // Falta un metodo para seleccionar el ejercicio de la lista :v (Me olvide de lo mas boludo), este metodo tambien debería de generar la visual del ejercicio para que la persona realice y demás.
+	// Falta un metodo para seleccionar el ejercicio de la lista :v (Me olvide de lo mas boludo), este metodo tambien debería de generar la visual del ejercicio para que la persona realice y demás.
 
 void Controller::IngresarSolucion(){
     // Al ejercicio selecionado en especifico, pedirle que verifique si la solucion que escribio el usuario es igual a la que el esperaba, en caso de que ahi sea, retorna true y por lo tanto el ejercicio deberia ser agregado a la lista de ejercicios aprobados del estudiante en ese curso. 

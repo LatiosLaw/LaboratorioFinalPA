@@ -46,9 +46,10 @@ bool Registro::verificarCurso(string nom_cur){
     }
 }
 
-set<Ejercicio*> Registro::buscarEjerciciosPendientes(){
-set<Ejercicio*>ejerciciosPendientes = this->curso->buscarEjerciciosLeccionPendiente(ListaEjerciciosAprobados);
-return ejerciciosPendientes;
+set<Ejercicio *> Registro::buscarEjerciciosPendientes()
+{
+    set<Ejercicio *> ejerciciosPendientes = this->curso->buscarEjerciciosLeccionPendiente(ListaEjerciciosAprobados);
+    return ejerciciosPendientes;
 }
 
 void Registro::IngresarSolucionEjercicio(){
