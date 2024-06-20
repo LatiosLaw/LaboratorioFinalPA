@@ -30,6 +30,11 @@ public:
 	Curso();
 	Curso(string nombreCurso, string descripcion, bool habilitado, dificultad df);
 	
+	int calcularNumLeccion();
+	Leccion* crearLeccion(string tema, string objetivo);
+	void crearEjercicio(string nombreEjer, string desc, int nroLecc);
+	
+	
 	string getNombreCurso();
 	string getDescripcion();
 	bool getHabilitado();

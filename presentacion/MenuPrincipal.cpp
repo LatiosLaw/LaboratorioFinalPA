@@ -72,6 +72,16 @@ void MenuPrincipal::mostrarMenu()
                 //nombrecasodeuso.nombreCasoDeUso();
             }
             break;
+		case 100:
+		{
+			AgregarLeccion agregarLeccion;
+			agregarLeccion.agregarLeccion();
+			
+		}
+		break;	
+			
+			
+			
         case 7:
             break;
         default:

@@ -20,8 +20,15 @@ public:
 
 	int getNumero(); // Esto es un getter, por lo que no es realmente solo mio XD
 	bool Pendiente(set<Ejercicio*> aprobados);
+<<<<<<< Updated upstream
 	set<Ejercicio*> buscarEjerciciosPendientes(set<Ejercicio*>aprobados); // Esto requiere una lista de ejercicios
 
+=======
+	void buscarEjerciciosPendientes(); // Esto requiere una lista de ejercicios
+	void crearEjercicio(string nombreEjer,string desc);
+	string getObjetivo();
+	string getTema();
+>>>>>>> Stashed changes
 	///////////////////////////////////////////////////////////////
 };
 #endif

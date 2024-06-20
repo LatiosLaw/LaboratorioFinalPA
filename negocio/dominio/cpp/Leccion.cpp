@@ -21,6 +21,13 @@ int Leccion::getNumero()
     // para no agregar esto si que le temias a la pala XD
 }
 
+string Leccion:: getObjetivo(){
+	return this->objetivo;
+}
+string Leccion:: getTema(){
+	return this->tema;
+}
+
 bool Leccion::Pendiente(set<Ejercicio *> aprobados)
 {
     for (Ejercicio* ejercicio : ListaEjercicios)
@@ -34,6 +41,7 @@ bool Leccion::Pendiente(set<Ejercicio *> aprobados)
     return false;
 }
 
+<<<<<<< Updated upstream
 set<Ejercicio*> Leccion::buscarEjerciciosPendientes(set<Ejercicio*>aprobados)
 {
     set<Ejercicio*>ejerciciosPendientes;
@@ -46,3 +54,13 @@ set<Ejercicio*> Leccion::buscarEjerciciosPendientes(set<Ejercicio*>aprobados)
     }
     return ejerciciosPendientes;
 }
+=======
+void Leccion::crearEjercicio(string nombreEjer,string desc){
+	cout << "WIP in progress" <<endl;
+}
+
+
+void Leccion::buscarEjerciciosPendientes()
+{
+}
+>>>>>>> Stashed changes

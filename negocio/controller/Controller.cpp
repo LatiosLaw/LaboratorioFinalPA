@@ -19,7 +19,17 @@ Controller::Controller() // Inicializar las listas del Controlador
 	Idioma* nuevoIdioma3 = new Idioma("japones");
 
 	Curso* curso1 = new Curso("curso1","buenCurso",false,medio);
-
+	Curso* curso2 = new Curso("curso2","buenCurso",true,medio);
+	Curso* curso3 = new Curso("curso3","buenCurso",true,medio);
+	Curso* curso4 = new Curso("curso4","buenCurso",false,medio);
+	Curso* curso5 = new Curso("curso5","buenCurso",false,medio);
+	Curso* curso6 = new Curso("curso6","buenCurso",true,medio);
+	
+	
+	
+	
+	
+	
 	ListaUsuarios.insert(user1);
 	ListaUsuarios.insert(user2);
 	ListaUsuarios.insert(user3);
@@ -29,6 +39,13 @@ Controller::Controller() // Inicializar las listas del Controlador
 	ListaIdiomas.insert(nuevoIdioma3);
 
 	ListaCursos.insert(curso1);
+	ListaCursos.insert(curso2);
+	ListaCursos.insert(curso3);
+	ListaCursos.insert(curso4);
+	ListaCursos.insert(curso5);
+	ListaCursos.insert(curso6);
+	
+	
 }
 
 Controller::~Controller() // destructor
@@ -247,6 +264,19 @@ set<string> Controller::listarCursos()
 	}
 	return cursos;
 }
+set<string> Controller::listarNombreCursosHabilitados(){
+	set<string> cursos;
+	for (Curso *curso : ListaCursos)
+	{
+		if(curso->getHabilitado() == true){
+			cursos.insert(curso->getNombreCurso());
+		}
+	}
+	return cursos;
+}
+	
+
+
 
 Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombreP, set<string> idiomasSeleccionados)
 {
@@ -399,6 +429,7 @@ bool Controller::listarCursosPendientesDeAlumno(string nickname){
 	}
 }
 
+<<<<<<< Updated upstream
 set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante *estudiante)
 {
 	set<Ejercicio *> EjerciciosPendientes;
@@ -417,6 +448,71 @@ set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, E
 	// En este caso le pasamos directamente a un curso que sabemos que esta pendiente, la lista de ejercicios completados del alumno desde el registro, para posteriormente pedirle al curso que pase por cada una de sus lecciones y verifique si todos sus ejercicios se encuentran en la lista
 	// En caso de que todos los ejercicios de la leccion se encuentren en la lista, se sale de la leccion y se la considera completada (Cosa que no se refleja en ningun lado), pasando a la siguiente leccion y repitiendo, si todas las lecciones estan completadas, el curso no esta pendiente sino completado y el avance debe ser cambiado a 100.
 	// En caso de que un ejercicio de una leccion no este en la lista de aprobados, se guarda hasta que se completa el for dentro de la leccion y se retorna la lista de aquellos ejercicios que no esten en la lista de aprobados.
+=======
+
+
+
+Leccion* Controller :: confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo){
+	
+	bool token = false;
+	set<string> cursos;
+	string nombreCurso;
+	Curso *cursoEncontrado;
+	Leccion* lecci;
+	for (Curso *curso : ListaCursos)
+	{
+		if(curso->getNombreCurso() == cursoNombre){
+			token = true;
+			nombreCurso = curso->getNombreCurso();
+			cursoEncontrado = curso;
+		}
+		if(token == true){
+			break;
+		}
+	}
+	
+	if (token == true){
+		
+		lecci = cursoEncontrado->crearLeccion(tema, objetivo);
+	}else{
+		cout << "No existe curso con ese nombre" <<endl;
+		lecci = nullptr;
+	}
+	
+	
+	
+	
+	return lecci;
+}
+
+bool Controller :: crearEjercicio(string desc, string nombreEjer, string nombreCurso){
+	
+	bool token = false;
+	Curso *cursoEncontrado;
+	
+	for (Curso *curso : ListaCursos)
+	{
+		if(curso->getNombreCurso() == nombreCurso){
+			token = true;
+			cursoEncontrado = curso;
+		}
+		if(token == true){
+			break;
+		}
+	}
+	cursoEncontrado->crearLeccion(nombreEjer,desc);
+	
+	
+	
+}
+
+
+
+set<Ejercicio*> Controller::listarEjerciciosPendientesDeCurso(){
+    // En este caso le pasamos directamente a un curso que sabemos que esta pendiente, la lista de ejercicios completados del alumno desde el registro, para posteriormente pedirle al curso que pase por cada una de sus lecciones y verifique si todos sus ejercicios se encuentran en la lista
+    // En caso de que todos los ejercicios de la leccion se encuentren en la lista, se sale de la leccion y se la considera completada (Cosa que no se refleja en ningun lado), pasando a la siguiente leccion y repitiendo, si todas las lecciones estan completadas, el curso no esta pendiente sino completado y el avance debe ser cambiado a 100.
+    // En caso de que un ejercicio de una leccion no este en la lista de aprobados, se guarda hasta que se completa el for dentro de la leccion y se retorna la lista de aquellos ejercicios que no esten en la lista de aprobados.
+>>>>>>> Stashed changes
 }
 
 	// Falta un metodo para seleccionar el ejercicio de la lista :v (Me olvide de lo mas boludo), este metodo tambien debería de generar la visual del ejercicio para que la persona realice y demás.
