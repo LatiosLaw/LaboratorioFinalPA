@@ -338,6 +338,15 @@ Idioma* Controller::seleccionarIdioma(string nombreIdioma) // Recibe el nombre d
 	//creo que funciona, toque algo
 }
 
+Leccion* Controller::agregarLeccion(Curso* curso, int numero, string tema, string objetivo){
+	Leccion* lec = curso->agregarLeccion(numero, tema, objetivo);
+	return lec;
+}
+
+void Controller::agregarEjercicio(Leccion* leccion, string nombreEjercicio, string descripcion, string fraseA, string fraseB, int opcion){
+	leccion->agregarEjercicio(nombreEjercicio, descripcion, fraseA, fraseB, opcion);
+}
+
 set<string> Controller::listarCursosDisponibles(string nick)
 {
 	set<string>cursosDisponibles;

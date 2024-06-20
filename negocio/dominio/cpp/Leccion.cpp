@@ -34,6 +34,29 @@ bool Leccion::Pendiente(set<Ejercicio *> aprobados)
     return false;
 }
 
+void Leccion::agregarEjercicio(string nombreEjercicio, string descripcion, string fraseA, string fraseB, int opcion)
+{
+
+    if (opcion == 1)
+    {
+        Ejercicio *ejercicio = new CompletarPalabra(nombreEjercicio, descripcion, fraseA, fraseB);
+        cout << "Ejercicio Creado Exitosamente " << endl;
+        ListaEjercicios.insert(ejercicio);
+        cout << "Ejercicio Agregado a la lista" << endl;
+    }
+    else if (opcion == 2)
+    {
+        Ejercicio *ejercicio = new Traduccion(nombreEjercicio, descripcion, fraseA, fraseB);
+        cout << "Ejercicio Creado Exitosamente " << endl;
+        ListaEjercicios.insert(ejercicio);
+        cout << "Ejercicio Agregado a la lista" << endl;
+    }
+    else
+    {
+        cout << "Tipo de ejercicio no reconocido" << endl;
+    }
+}
+
 set<Ejercicio*> Leccion::buscarEjerciciosPendientes(set<Ejercicio*>aprobados)
 {
     set<Ejercicio*>ejerciciosPendientes;

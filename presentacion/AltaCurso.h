@@ -11,6 +11,8 @@ public:
 	void altaCurso();
 	set<string> seleccionarIdiomas();
 	set<string> seleccionarCursosPrevios();
+	void agregarLeccion();
+	void agregarEjercicio();
 };
 
 #endif /* PRESENTACION_ALTACURSO_H_ */

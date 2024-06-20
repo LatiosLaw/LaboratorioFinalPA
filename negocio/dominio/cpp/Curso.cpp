@@ -130,6 +130,15 @@ void Curso::inscribirse(Estudiante* estudiante)
 	cout << "Registro agregado a la lista del curso." << endl;
 }
 
+Leccion* Curso::agregarLeccion(int numero, string tema, string objetivo){
+	Leccion* leccion = new Leccion(numero, tema, objetivo);
+	cout<<"Leccion Creada Exitosamente "<<endl;
+	ListaLecciones.insert(leccion);
+	cout<<"Leccion Agregada a la lista"<<endl;
+	
+	return leccion;
+}
+
 bool Curso::Pendiente(set<Ejercicio *> aprobados)
 {
 	for (Leccion* leccion : ListaLecciones)

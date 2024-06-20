@@ -28,6 +28,8 @@ public:
 	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombre, set<string>idiomas) = 0;
 	virtual void seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso) = 0;
 	virtual Idioma* seleccionarIdioma(string nombreIdioma) = 0;
+	virtual Leccion* agregarLeccion(Curso* curso, int numero, string tema, string objetivo) = 0;
+	virtual void agregarEjercicio(Leccion* leccion, string nombreEjercicio, string descripcion, string fraseA, string fraseB, int opcion) = 0;
 	virtual void daDeAltaCurso(Curso* curso) = 0;
 
 	virtual set<string> listarCursosDisponibles(string nick) = 0;
