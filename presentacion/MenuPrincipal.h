@@ -5,7 +5,6 @@
 #include "AltaCurso.h"
 #include "RealizarEjercicio.h"
 #include "InscribirseAlCurso.h"
-#include "AgregarLeccion.h"
 #include <iostream>
 
 using namespace std;

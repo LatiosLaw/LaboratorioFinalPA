@@ -51,9 +51,6 @@ public:
 	virtual void IngresarSolucion();
 	virtual void listarNicksEstudiantes();
 	
-	virtual set<string> listarNombreCursosHabilitados();
-	virtual Leccion* confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo);
 	virtual ~Controller();
-	virtual bool crearEjercicio(string desc, string nombreEjer, string nombreCurso);
 };
 #endif
