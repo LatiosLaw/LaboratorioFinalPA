@@ -35,6 +35,12 @@ string Estudiante::getNombreProfesor(){
 	return "";
 }
 
+void Estudiante::listarInformacion()
+{
+	Usuario::listarInformacion();
+	cout << "Pais: " <<this->pais << endl;
+}
+
 void Estudiante::agregarInscripcion(Registro* registro)
 {
 	this->ListaRegistros.insert(registro);
@@ -50,8 +56,8 @@ for (Registro* registro : ListaRegistros){
 			break;
 		}
 	}
-	return nullptr;
-}
+  }
+  return nullptr;
 }
 
 set<Curso *> Estudiante::buscarCursosPendientes()

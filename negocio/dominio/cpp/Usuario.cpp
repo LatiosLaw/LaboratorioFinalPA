@@ -42,3 +42,10 @@ void Usuario::setDescripcion(string desc) {
 string Usuario::getNombreProfesor(){
 	return "";
 }
+
+void Usuario::listarInformacion(){
+	cout << "Usuario: " << this->nickname << endl;
+	cout << "Nombre: " <<this->nombre << endl;
+	cout << "Contrasenia: " << this->password << endl;
+	cout << "Descripcion: " << this->descripcion << endl;
+}

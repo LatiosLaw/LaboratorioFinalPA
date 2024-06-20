@@ -25,6 +25,8 @@ public:
 	void setNombre(string nom);
 	void setPassword(string pass);
 	void setDescripcion(string desc);
+
+	virtual void listarInformacion();
 };
 
 #endif

@@ -25,6 +25,7 @@ public:
 	Fecha getFechaNacimiento();
 	void setPais(string pai);
 	void setFechaNacimiento(Fecha fecha);
+	virtual void listarInformacion();
 
 	void agregarInscripcion(Registro* registro);
 

@@ -7,6 +7,7 @@
 #include "../dominio/h/Profesor.h"
 #include "../dominio/h/Curso.h"
 #include "../dominio/h/Idioma.h" //tuve que agregarlo
+#include <iostream>
 #include <list>
 #include <set>
 
@@ -23,6 +24,7 @@ private:
 public:
 	static Controller* getInstance(); // Paso 3
 	
+	virtual Usuario* buscarUsuario(string nick);
 	virtual Profesor* buscarProfesor(string nombreProfesor);
 	virtual Estudiante* buscarEstudiante(string nick);
 	virtual Curso* buscarCurso(string nombreCurso);
@@ -36,6 +38,9 @@ public:
 	virtual void ConsultarIdiomas();
 	virtual set<string> listarNombreProfesores();
 	virtual set<string> listarCursos();
+	virtual set<string> listarNickNames();
+
+	virtual void listarInformacion(string nickname);
 
 	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombre, set<string>idiomas);
 	virtual void seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso);

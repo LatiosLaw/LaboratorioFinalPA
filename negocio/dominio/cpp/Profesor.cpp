@@ -40,6 +40,19 @@ string Profesor::getNombreProfesor()
 	return this->nombre;
 }
 
+void Profesor::listarInformacion()
+{
+	Usuario::listarInformacion();
+	cout << "Instituto: " <<this->instituto << endl;
+
+	cout << "Idiomas: ";
+	for(auto idioma : ListaIdiomas)
+	{
+		cout << idioma->getNombreIdioma() << ", ";
+	}
+	cout << endl;
+}
+
 
 Profesor* Profesor::seleccionarProfesor()
 {

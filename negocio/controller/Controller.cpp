@@ -44,6 +44,21 @@ Controller* Controller::getInstance() // Singleton, se crea la instancia del con
 	return controlador;
 }
 
+Usuario* Controller::buscarUsuario(string nick)
+{
+	for (Usuario* usuario : ListaUsuarios)
+	{
+		if (usuario->getNickname() == nick)
+		{
+			cout << "Usuario encontrado" << endl;
+			return usuario;
+			break;
+		}
+	}
+	cout << "Usuario no encontrado" << endl;
+	return nullptr;	
+}
+
 Profesor* Controller::buscarProfesor(string nombreProfesor)
 {
 	bool profesorEncontrado = false;
@@ -248,6 +263,27 @@ set<string> Controller::listarCursos()
 	return cursos;
 }
 
+set<string> Controller::listarNickNames()
+{
+	set<string>nicks;
+	for(auto usuario : ListaUsuarios)
+	{
+		nicks.insert(usuario->getNickname());
+	}
+	return nicks;
+}
+
+void Controller::listarInformacion(string nickname)
+{
+	Usuario* usuario = buscarUsuario(nickname);
+
+	if(usuario != nullptr){
+		usuario->listarInformacion();
+	}else{
+		cout << "El Usuario ingresado no existe." << endl;
+	}
+}
+
 Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombreP, set<string> idiomasSeleccionados)
 {
 	Profesor *profesor = buscarProfesor(nombreP);
@@ -386,26 +422,33 @@ void Controller::listarNicksEstudiantes(){
 	}
 }
 
-bool Controller::listarCursosPendientesDeAlumno(string nickname){
-	Estudiante* estudiante = this->buscarEstudiante(nickname);
-	if(estudiante!=nullptr){
+bool Controller::listarCursosPendientesDeAlumno(string nickname)
+{
+	Estudiante *estudiante = this->buscarEstudiante(nickname);
+	if (estudiante != nullptr)
+	{
 		cout << "entre al if" << endl;
-	set<Curso*>cursosPendientes;
-	cursosPendientes = estudiante->buscarCursosPendientes();
-		if(cursosPendientes.empty()){
+		set<Curso *> cursosPendientes;
+		cursosPendientes = estudiante->buscarCursosPendientes();
+		if (cursosPendientes.empty())
+		{
 			cout << "El estudiante no tiene cursos pendientes." << endl;
 			return false;
-		}else {
-			for (Curso* curso : cursosPendientes)
-		{
-			cout << "entre al for" << endl;
-			if(curso!=nullptr){
-				cout << curso->getNombreCurso() << endl;
-			}
 		}
-		return true;
+		else
+		{
+			for (Curso *curso : cursosPendientes)
+			{
+				cout << "entre al for" << endl;
+				if (curso != nullptr)
+				{
+					cout << curso->getNombreCurso() << endl;
+				}
+			}
+			return true;
 		}
 	}
+	return false;
 }
 
 set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante *estudiante)

@@ -18,8 +18,9 @@ void MenuPrincipal::mostrarOpciones()
     cout << "3) Alta Curso" << endl;
     cout << "4) Inscribirse al Curso" << endl;
     cout << "5) Realizar Ejercicio" << endl;
-    cout << "6) Siguiente Operacion" << endl;
-    cout << "7) Salir" << endl << endl;
+    cout << "6) Consulta de Usuario" << endl;
+    cout << "7) Siguiente Operacion" << endl;
+    cout << "8) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -30,8 +31,10 @@ void MenuPrincipal::mostrarMenu()
     do {
         
         mostrarOpciones();
-
+        
         cin >> opcion;
+        cout << endl;
+
         cin.ignore(); // Limpiar el buffer de entrada
 
         switch (opcion) {
@@ -67,18 +70,25 @@ void MenuPrincipal::mostrarMenu()
             break;
         case 6:
             {
+                ConsultaDeUsuario consulta;
+                consulta.consultarUsuarios();
+            }
+            break;
+        case 7:
+            {
+                
                 //siguiente caso de uso
                 //NombreCasoDeUso nombrecasodeuso;
                 //nombrecasodeuso.nombreCasoDeUso();
             }
             break;
-        case 7:
+        case 8:
             break;
         default:
             cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 7);
+    } while (opcion != 8);
 
     cout << "Fin del programa." << endl;
 }
