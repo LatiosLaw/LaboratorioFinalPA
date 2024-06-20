@@ -91,7 +91,7 @@ void Curso::listarIdiomasDelCurso()
 	cout << "Idiomas del curso: ";
 	for (Idioma *idioma : ListaIdiomas)
 	{
-		cout << idioma->getNombreIdioma();
+		cout << idioma->getNombreIdioma() << ", ";
 	}
 	cout << endl;
 }
@@ -105,6 +105,37 @@ void Curso::listarProfesorDelCurso()
 	else
 	{
 		cout << "No se ha asignado un profesor a este curso." << endl;
+	}
+}
+
+void Curso::mostrarInfo()
+{
+	cout << "Nombre: " << this->nombreCurso << endl;
+	cout << "Descripcion: " << this->descripcion << endl;
+	cout << "Dificultad: " << enumToString(this->dificultadCurso) << endl;
+	listarIdiomasDelCurso();
+
+	if(this->profe == nullptr){
+		cout << "Profesor: -----" << endl;
+	}else{
+		cout << "Profesor: " << this->profe->getNombre() << endl;
+	}
+	
+	if(this->habilitado == true){
+		cout << "Habilitado: si" << endl;
+	}else{
+		cout << "Habilitado: no" << endl;
+	}
+
+	if(this->ListaLecciones.empty()){
+		cout << "Lecciones: -----" << endl;
+	}else{
+		cout << "Lecciones: " << endl;
+		for(auto leccion : ListaLecciones)
+		{
+			cout << "Tema: "<< leccion->getTema() << ". " << "Objetivo: " << leccion->getObjetivo() << "." << endl;
+			leccion->mostrarInfoEjercicio();
+		}
 	}
 }
 

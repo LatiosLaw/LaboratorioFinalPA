@@ -35,9 +35,9 @@ string Estudiante::getNombreProfesor(){
 	return "";
 }
 
-void Estudiante::listarInformacion()
+void Estudiante::listarInfoUsuario()
 {
-	Usuario::listarInformacion();
+	Usuario::listarInfoUsuario();
 	cout << "Pais: " <<this->pais << endl;
 }
 

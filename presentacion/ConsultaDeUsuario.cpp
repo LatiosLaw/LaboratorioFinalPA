@@ -17,7 +17,7 @@ void ConsultaDeUsuario::consultarUsuarios(){
     string nick;
     cin >> nick;
 
-    this->controlador->listarInformacion(nick);
+    this->controlador->listarInfoUsuario(nick);
 }
 
 void ConsultaDeUsuario::listarNicks()
@@ -36,6 +36,6 @@ void ConsultaDeUsuario::listarNicks()
         {
             cout << nick << ",";
         }
-        cout << endl << "Seleccione un Usuario: " << endl;
+        cout << endl << "Seleccione un Usuario: ";
     }
 }

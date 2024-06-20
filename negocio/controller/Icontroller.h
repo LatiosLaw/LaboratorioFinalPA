@@ -27,7 +27,11 @@ public:
 	virtual set<string> listarNombreProfesores() = 0;
 	virtual set<string> listarNickNames() = 0;
 
-	virtual void listarInformacion(string nickname) = 0;
+	virtual void listarInfoCurso(string nombreCurso) = 0;
+	//virtual void listarInfoLeccion(string nombreCurso) = 0;
+	//virtual void listarInfoEjercicio(string nombreCurso) = 0;
+	//virtual void listarInfoInscripciones(string nombreCurso) = 0;
+	virtual void listarInfoUsuario(string nickname) = 0;
 
 
 	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombre, set<string>idiomas) = 0;

@@ -16,6 +16,7 @@ public:
 	Ejercicio();
 	Ejercicio(string nombreEjercicio, string descripcion);
 	string getnombreEjercicio();
+	string getDescripcion();
 	virtual ~Ejercicio();
 
 	// Metodos de los casos de Martin, faltan retornos y parametros

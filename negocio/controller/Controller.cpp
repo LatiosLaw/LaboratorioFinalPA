@@ -10,8 +10,8 @@ Controller::Controller() // Inicializar las listas del Controlador
 	ListaCursos = set<Curso*>();
 	ListaRegistros = set<Registro*>();
 
-	Usuario* user1 = new Profesor("pepe","123","Pepe","Alto","Instituto1");
-	Usuario* user2 = new Profesor("juan","456","Juan","Bajo","Instituto2");
+	Profesor* user1 = new Profesor("pepe","123","Pepe","Alto","Instituto1");
+	Profesor* user2 = new Profesor("juan","456","Juan","Bajo","Instituto2");
 	Usuario* user3 = new Estudiante("pedro","Pedro","789","Bajo","Uruguay");
 
 	Idioma* nuevoIdioma1 = new Idioma("ingles");
@@ -19,6 +19,8 @@ Controller::Controller() // Inicializar las listas del Controlador
 	Idioma* nuevoIdioma3 = new Idioma("japones");
 
 	Curso* curso1 = new Curso("curso1","buenCurso",false,medio);
+	Curso* curso2 = new Curso("curso2","impecable",false,facil);
+	Curso* curso3 = new Curso("curso3","malCurso",true,avanzado);
 
 	ListaUsuarios.insert(user1);
 	ListaUsuarios.insert(user2);
@@ -29,6 +31,11 @@ Controller::Controller() // Inicializar las listas del Controlador
 	ListaIdiomas.insert(nuevoIdioma3);
 
 	ListaCursos.insert(curso1);
+	ListaCursos.insert(curso2);
+	ListaCursos.insert(curso3);
+
+	curso3->linkearProfesor(user2);
+
 }
 
 Controller::~Controller() // destructor
@@ -273,12 +280,26 @@ set<string> Controller::listarNickNames()
 	return nicks;
 }
 
-void Controller::listarInformacion(string nickname)
+void Controller::listarInfoCurso(string nombreCurso)
+{
+	 /*Luego, el Sistema muestra el nombre del curso,
+    la descripción, la dificultad (Principiante, Medio, Avanzado), 
+    el nombre del idioma, el nombre del profesor y si se encuentra habilitado o no.*/
+	Curso* curso = buscarCurso(nombreCurso);
+
+	if(curso != nullptr){
+		curso->mostrarInfo();
+	}else{
+		cout << "El curso ingresado no existe." << endl;
+	}
+}
+
+void Controller::listarInfoUsuario(string nickname)
 {
 	Usuario* usuario = buscarUsuario(nickname);
 
 	if(usuario != nullptr){
-		usuario->listarInformacion();
+		usuario->listarInfoUsuario();
 	}else{
 		cout << "El Usuario ingresado no existe." << endl;
 	}

@@ -45,6 +45,7 @@ public:
 	void agregarIdioma(Idioma* i);
 	void listarIdiomasDelCurso();
 	void listarProfesorDelCurso();
+	void mostrarInfo();
 
 	void seleccionarCursoPrevio(Curso* curso);
 	void listarCursosPrevios();

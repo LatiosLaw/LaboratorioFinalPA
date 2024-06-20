@@ -17,6 +17,11 @@ public:
 	Leccion(int numero, string tema, string objetivo);
 
 	void agregarEjercicio(string nombreEjercicio, string descripcion, string fraseA, string fraseB, int num);
+
+	string getTema();
+	string getObjetivo();
+
+	void mostrarInfoEjercicio();
 	
 	virtual ~Leccion();
 

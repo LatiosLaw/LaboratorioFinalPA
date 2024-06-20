@@ -40,9 +40,9 @@ string Profesor::getNombreProfesor()
 	return this->nombre;
 }
 
-void Profesor::listarInformacion()
+void Profesor::listarInfoUsuario()
 {
-	Usuario::listarInformacion();
+	Usuario::listarInfoUsuario();
 	cout << "Instituto: " <<this->instituto << endl;
 
 	cout << "Idiomas: ";

@@ -21,6 +21,31 @@ int Leccion::getNumero()
     // para no agregar esto si que le temias a la pala XD
 }
 
+string Leccion::getTema()
+{
+    return this->tema;
+}
+
+string Leccion::getObjetivo()
+{
+    return this->objetivo;
+}
+
+void Leccion::mostrarInfoEjercicio()
+{
+    if (ListaEjercicios.empty())
+    {
+        cout << "Esta leccion no tiene ejercicios." << endl;
+    }
+    else
+    {
+        cout << "Ejercicios: " << endl;
+        for (auto ejercicio : ListaEjercicios)
+        {
+            cout << "Descripcion: " << ejercicio->getDescripcion() << endl;
+        }
+    }
+}
 bool Leccion::Pendiente(set<Ejercicio *> aprobados)
 {
     for (Ejercicio* ejercicio : ListaEjercicios)

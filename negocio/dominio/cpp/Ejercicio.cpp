@@ -16,6 +16,11 @@ Ejercicio::~Ejercicio()
 
 }
 
+string Ejercicio::getDescripcion(){
+    return this->descripcion;
+}
+
+
 string Ejercicio::getnombreEjercicio(){
     return this->nombreEjercicio;
 }

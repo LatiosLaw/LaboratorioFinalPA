@@ -43,7 +43,7 @@ string Usuario::getNombreProfesor(){
 	return "";
 }
 
-void Usuario::listarInformacion(){
+void Usuario::listarInfoUsuario(){
 	cout << "Usuario: " << this->nickname << endl;
 	cout << "Nombre: " <<this->nombre << endl;
 	cout << "Contrasenia: " << this->password << endl;

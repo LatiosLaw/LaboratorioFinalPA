@@ -23,7 +23,7 @@ public:
 	string getInstituto();
 	virtual string getNickname();
 	virtual string getNombreProfesor();
-	virtual void listarInformacion();
+	virtual void listarInfoUsuario();
 	void setInstituto(string inst);
 	Profesor* seleccionarProfesor();
 	void agregarCurso(Curso* curso);
