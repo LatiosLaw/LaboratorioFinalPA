@@ -23,6 +23,7 @@ private:
 
 public:
 	static Controller* getInstance(); // Paso 3
+	virtual void inicializarDatos();
 	
 	virtual Usuario* buscarUsuario(string nick);
 	virtual Profesor* buscarProfesor(string nombreProfesor);
@@ -42,9 +43,6 @@ public:
 
 
 	virtual void listarInfoCurso(string nombreCurso);
-	//virtual void listarInfoLeccion(string nombreCurso);
-	//virtual void listarInfoEjercicio(string nombreCurso);
-	//virtual void listarInfoInscripciones(string nombreCurso);
 	virtual void listarInfoUsuario(string nickname);
 
 	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombre, set<string>idiomas);

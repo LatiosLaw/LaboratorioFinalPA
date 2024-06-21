@@ -3,39 +3,104 @@
 
 Controller *Controller::controlador = nullptr; // Inicializar la variable de clase
 
-Controller::Controller() // Inicializar las listas del Controlador
+void Controller::inicializarDatos()
 {
-	ListaUsuarios = set<Usuario*>();
-	ListaIdiomas = set<Idioma*>();
-	ListaCursos = set<Curso*>();
-	ListaRegistros = set<Registro*>();
+    ListaUsuarios = set<Usuario*>();
+    ListaIdiomas = set<Idioma*>();
+    ListaCursos = set<Curso*>();
+    ListaRegistros = set<Registro*>();
 
-	Profesor* user1 = new Profesor("pepe","123","Pepe","Alto","Instituto1");
-	Profesor* user2 = new Profesor("juan","456","Juan","Bajo","Instituto2");
-	Usuario* user3 = new Estudiante("pedro","Pedro","789","Bajo","Uruguay");
+	// Idiomas
+    Idioma* I1 = new Idioma("Ingles");
+    Idioma* I2 = new Idioma("Aleman");
+    Idioma* I3 = new Idioma("Portugues");
 
-	Idioma* nuevoIdioma1 = new Idioma("ingles");
-	Idioma* nuevoIdioma2 = new Idioma("chino");
-	Idioma* nuevoIdioma3 = new Idioma("japones");
+	// Crear instancias de fechas para los estudiantes
+    Fecha F1(15,7,1995);
+    Fecha F2(28,2,1998);
+    Fecha F3(10,11,1994);
+    Fecha F4(22,4,1997);
+    Fecha F5(03,9,1996);
+    Fecha F6(12,1,1999);
+    Fecha F7(25,6,1993);
+    Fecha F8(8,12,1997);
+    Fecha F9(17,3,1995);
+    Fecha F10(02,8,1998);
 
-	Curso* curso1 = new Curso("curso1","buenCurso",false,medio);
-	Curso* curso2 = new Curso("curso2","impecable",false,facil);
-	Curso* curso3 = new Curso("curso3","malCurso",true,avanzado);
+    // Crear instancias de Estudiantes
+    Usuario* U1 = new Estudiante("jpidiom", "asdfg123", "Juan Perez", "Soy un apasionado del aprendizaje de idiomas.", F1, "Argentina");
+    Usuario* U2 = new Estudiante("marsilva", "qwer456", "Maria Silva", "Como amante de los idiomas disfruto explorando nuevas formas de interactuar.", F2, "Ecuador");
+    Usuario* U3 = new Estudiante("pero12", "789werty", "Pedro Rodriguez", "Soy un entusiasta del aprendizaje de idiomas.", F3, "Peru");
+    Usuario* U4 = new Estudiante("laugu", "c1v2b3m4", "Laura Gutierrez", "Estoy fascinada por la forma en que las palabras pueden unir a las personas", F4, "Chile");
+    Usuario* U5 = new Estudiante("carlo22", "tyuipz147", "Carlos Lopez", "Emocionado por adquirir fluidez en diferentes lenguas.", F5, "Uruguay");
+    Usuario* U6 = new Estudiante("anator", "1qsxc36", "Ana Torres", "Disfruto de la belleza de las diferentes estructuras y sonidos.", F6, "Argentina");
+    Usuario* U7 = new Estudiante("luher24", "t7h8y5u6", "Lucia Hernandez", "Emocionada en la riqueza cultural que cada idioma ofrece.", F7, "Colombia");
+    Usuario* U8 = new Estudiante("dagon", "1w2e3r4t5", "David Gonzalez", "Aprender nuevas lenguas y sumergirme en diferentes culturas.", F8, "Uruguay");
+    Usuario* U9 = new Estudiante("carmor", "6yu7i8m9", "Carmen Morales", "El aprendizaje de idiomas y expandir mis habilidades comunicativas en diferentes lenguas.", F9, "Chile");
+    Usuario* U10 = new Estudiante("jose24", "qwj789p", "Jose Fernandez", "Disfruto del proceso de descubrir nuevas formas de comunicarme", F10, "Bolivia");
 
-	ListaUsuarios.insert(user1);
-	ListaUsuarios.insert(user2);
-	ListaUsuarios.insert(user3);
+    // Crear instancias de Profesores y asociarles Idiomas
+    Profesor* U11 = new Profesor("langMaster", "P4s512", "Marta Grecia", "Soy una profesora apasionada por los idiomas.", "Instituto de Idiomas Moderno");
+	U11->asociarIdioma(I1);
+	U11->asociarIdioma(I3);
 
-	ListaIdiomas.insert(nuevoIdioma1);
-	ListaIdiomas.insert(nuevoIdioma2);
-	ListaIdiomas.insert(nuevoIdioma3);
+    Profesor* U12 = new Profesor("linguaPro", "Pess23", "Carlos Petro", "Mi objetivo es inspirar a mis estudiantes a explorar nuevas culturas e idiomas", "Centro Global");
+	U12->asociarIdioma(I1);
+	U12->asociarIdioma(I2);
+	U12->asociarIdioma(I3);
 
-	ListaCursos.insert(curso1);
-	ListaCursos.insert(curso2);
-	ListaCursos.insert(curso3);
+    Profesor* U13 = new Profesor("talkExpert", "Secret1", "Laura Perez", "Soy una profesora entusiasta del aprendizaje de idiomas", "Instituto de Idiomas Vanguardia");
+	U13->asociarIdioma(I2);
+	
+    Profesor* U14 = new Profesor("lingoSensei", "Secure2", "Franco Lopez", "Apasionada en guiar a mis estudiantes en su viaje por nuevos horizontes idiomaticos", "Centro de Idiomas");
+	U14->asociarIdioma(I3);
 
-	curso3->linkearProfesor(user2);
+    Profesor* U15 = new Profesor("wordMaestro", "Passw0", "Ana Morales", "Soy una profesora comprometida en desarrollo de habilidades idiomaticas", "Instituto de Idiomas Progreso");
+	U15->asociarIdioma(I1);
 
+    // Insertar los usuarios en la lista
+    ListaUsuarios.insert(U1);
+    ListaUsuarios.insert(U2);
+    ListaUsuarios.insert(U3);
+    ListaUsuarios.insert(U4);
+    ListaUsuarios.insert(U5);
+    ListaUsuarios.insert(U6);
+    ListaUsuarios.insert(U7);
+    ListaUsuarios.insert(U8);
+    ListaUsuarios.insert(U9);
+    ListaUsuarios.insert(U10);
+
+    ListaUsuarios.insert(U11);
+    ListaUsuarios.insert(U12);
+    ListaUsuarios.insert(U13);
+    ListaUsuarios.insert(U14);
+    ListaUsuarios.insert(U15);
+
+
+    Curso* C1 = new Curso("Ingles para principiantes","Curso para personas con poco o ningun conocimiento de ingles. Se enfoca en vocabulario basico, gramatica y habilidades de conversacion.", principiante, U11, I1, true);
+    Curso* C2 = new Curso("Curso de ingles basico","Construye una base solida en el idioma. Cubre gramatica, vocabulario, comprension auditiva y expresion oral.", principiante, U11, I1, false);
+    Curso* C3 = new Curso("Ingles intermedio: mejora tu nivel","Para estudiantes con conocimientos basicos de ingles que desean avanzar en su habilidad comunicativa. Se centra en la fluidez oral, lectura comprensiva y escritura.", medio, U12, I1, true);
+    Curso* C4 = new Curso("Curso avanzado de ingles","Dirigido a personas con un nivel intermedio-alto que desean perfeccionar sus habilidades en todos los aspectos del idioma. Incluye gramatica avanzada, vocabulario y comprension escrita y auditiva.", avanzado, U12, I1, true);
+    Curso* C5 = new Curso("Portugues intermedio","Curso para aquellos que tienen conocimientos basicos de portugues y desean mejorar su nivel. Incluye practica de lectura, escritura y comprension auditiva.", medio, U12, I3, true);
+    Curso* C6 = new Curso("Portugues avanzado","Curso avanzado para personas con un nivel intermedio-alto de portugues que desean perfeccionar su fluidez y dominio del idioma. Se trabaja en la gramatica avanzada y la expresion oral.", avanzado, U14, I3, false);
+
+    ListaIdiomas.insert(I1);
+    ListaIdiomas.insert(I2);
+    ListaIdiomas.insert(I3);
+
+    ListaCursos.insert(C1);
+    ListaCursos.insert(C2);
+    ListaCursos.insert(C3);
+    ListaCursos.insert(C4);
+    ListaCursos.insert(C5);
+    ListaCursos.insert(C6);
+
+    //C3->linkearProfesor(U12);
+}
+
+Controller::Controller() // Inicializar las listas del Controlador y datos precargados
+{
+	inicializarDatos();
 }
 
 Controller::~Controller() // destructor
@@ -321,7 +386,7 @@ Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string
 	}
 	else
 	{
-		curso = new Curso(NombreCurso, descripcion, false, facil);
+		curso = new Curso(NombreCurso, descripcion, false, principiante);
 
 		// Agregar los idiomas seleccionados al curso
 		for (string idiomaSeleccionado : idiomasSeleccionados)
@@ -501,3 +566,4 @@ void Controller::IngresarSolucion(){
 void Controller::cosoEjercicio(){
 
 }
+

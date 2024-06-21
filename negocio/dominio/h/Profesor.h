@@ -20,6 +20,7 @@ private:
 public:
 	Profesor(string nick, string pass, string nom, string desc, string inst, set<Idioma*>ListaIdiomas);
 	Profesor(string nick, string pass, string nom, string desc, string inst);
+	Profesor(string nick, string pass, string nom, string desc);
 	string getInstituto();
 	virtual string getNickname();
 	virtual string getNombreProfesor();

@@ -24,6 +24,16 @@ Curso::Curso(string nombreCurso, string descripcion, bool habilitado, dificultad
 	this->profe = nullptr;
 }
 
+Curso::Curso(string nombreCurso, string descripcion, dificultad df, Profesor* prof, Idioma* i, bool habilitado)
+{	
+	this->nombreCurso = nombreCurso;
+	this->descripcion = descripcion;
+	this->habilitado = habilitado;
+	this->dificultadCurso = df;
+	this->profe = prof;
+	this->ListaIdiomas.insert(i);
+}
+
 string Curso::getNombreCurso()
 {
 	return this->nombreCurso;
@@ -67,7 +77,7 @@ void Curso::setDificultad(dificultad df)
 string Curso::enumToString(int n)
 {
 	if (n == 0)
-		return "facil";
+		return "principiante";
 	else if (n == 1)
 		return "medio";
 	else if (n == 2)

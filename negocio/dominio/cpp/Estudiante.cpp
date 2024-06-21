@@ -2,13 +2,18 @@
 #include "../h/Curso.h"
 #include "../h/Registro.h"
 
-Estudiante::Estudiante(string nick, string nom, string pass, string desc, string pai, Fecha fecha) : Usuario(nick, nom, pass, desc) {
+Estudiante::Estudiante(string nick, string pass, string nom, string desc, Fecha fecha, string pai ) : Usuario(nick, pass, nom, desc) {
 	pais = pai;
 	fechaNacimiento = fecha;
 }
 
 Estudiante::Estudiante(string nick, string nom, string pass, string desc, string pai) : Usuario(nick, nom, pass, desc) {
 	pais = pai;
+}
+
+Estudiante::Estudiante(string nick, string pass, string nom, string desc) : Usuario(nick, pass, nom, desc)
+{
+
 }
 
 string Estudiante::getPais() {

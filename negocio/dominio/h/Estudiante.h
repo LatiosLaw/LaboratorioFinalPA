@@ -17,8 +17,9 @@ private:
 	set<Registro*>ListaRegistros;
 	
 public:
-	Estudiante(string nick, string nom, string pass, string desc, string pai, Fecha fecha);
+	Estudiante(string nick, string nom, string pass, string desc, Fecha fecha, string pai);
 	Estudiante(string nick, string nom, string pass, string desc, string pai);
+	Estudiante(string nick, string pass, string nom, string desc);
 	virtual string getNickname();
 	virtual string getNombreProfesor();
 	string getPais();

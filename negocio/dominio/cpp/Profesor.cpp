@@ -11,6 +11,10 @@ Profesor::Profesor(string nick, string pass, string nom, string desc, string ins
 	instituto = inst;
 }
 
+Profesor::Profesor(string nick, string pass, string nom, string desc) : Usuario(nick, nom, pass, desc) {
+
+}
+
 string Profesor::getInstituto() {
 	return this->instituto;
 }

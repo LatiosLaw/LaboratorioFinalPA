@@ -13,11 +13,11 @@ protected:
 	string descripcion;
 	
 public:
-	Usuario(string nick, string nom, string pass, string desc);
+	Usuario(string nick, string pass, string nom, string desc);
 	
-	virtual string getNickname() = 0;
+	virtual string getNickname();
 	string getNombre();
-	virtual string getNombreProfesor() = 0;
+	virtual string getNombreProfesor();
 	string getPassword();
 	string getDescripcion();
 

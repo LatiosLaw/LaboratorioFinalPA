@@ -1,10 +1,10 @@
 #include "../h/Usuario.h"
 
-Usuario::Usuario(string nick, string nom, string pass, string desc) {
-	nickname = nick;
-	nombre = nom;
-	password = pass;
-	descripcion = desc;
+Usuario::Usuario(string nick, string pass, string nom, string desc) {
+	this->nickname = nick;
+	this->nombre = nom;
+	this->password = pass;
+	this->descripcion = desc;
 }
 
 string Usuario::getNickname() {

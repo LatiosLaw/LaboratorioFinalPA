@@ -10,7 +10,7 @@ class Registro;
 class Profesor;
 
 enum dificultad{
-	facil, medio, avanzado
+	principiante, medio, avanzado
 };
 
 class Curso{
@@ -29,6 +29,7 @@ private:
 public:
 	Curso();
 	Curso(string nombreCurso, string descripcion, bool habilitado, dificultad df);
+	Curso(string nombreCurso, string descripcion, dificultad df, Profesor* prof, Idioma* i, bool habilitado);
 	
 	string getNombreCurso();
 	string getDescripcion();

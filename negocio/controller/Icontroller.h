@@ -11,6 +11,7 @@ using namespace std;
 class Icontroller{
 
 public:
+
 	virtual Usuario* buscarUsuario(string nick) = 0;
 	virtual Profesor* buscarProfesor(string nick) = 0;
 	virtual Estudiante* buscarEstudiante(string nick) = 0;
@@ -28,9 +29,6 @@ public:
 	virtual set<string> listarNickNames() = 0;
 
 	virtual void listarInfoCurso(string nombreCurso) = 0;
-	//virtual void listarInfoLeccion(string nombreCurso) = 0;
-	//virtual void listarInfoEjercicio(string nombreCurso) = 0;
-	//virtual void listarInfoInscripciones(string nombreCurso) = 0;
 	virtual void listarInfoUsuario(string nickname) = 0;
 
 
