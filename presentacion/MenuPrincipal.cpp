@@ -12,16 +12,18 @@ MenuPrincipal::~MenuPrincipal()
 
 void MenuPrincipal::mostrarOpciones()
 {
+    cout << endl;
     cout << "*** Menu principal ***" << endl <<endl;
-    cout << "1) Alta Usuario" << endl;
-    cout << "2) Alta Idioma" << endl;
-    cout << "3) Alta Curso" << endl;
-    cout << "4) Inscribirse al Curso" << endl;
-    cout << "5) Realizar Ejercicio" << endl;
-    cout << "6) Consulta de Usuario" << endl;
-    cout << "7) Consultar Curso" << endl;
-    cout << "8) Siguiente Operacion" << endl;
-    cout << "9) Salir" << endl << endl;
+    cout << "1) Cargar Datos" << endl;
+    cout << "2) Alta Usuario" << endl;
+    cout << "3) Alta Idioma" << endl;
+    cout << "4) Alta Curso" << endl;
+    cout << "5) Inscribirse al Curso" << endl;
+    cout << "6) Realizar Ejercicio" << endl;
+    cout << "7) Consulta de Usuario" << endl;
+    cout << "8) Consultar Curso" << endl;
+    cout << "9) Siguiente Operacion" << endl;
+    cout << "10) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -41,59 +43,65 @@ void MenuPrincipal::mostrarMenu()
         switch (opcion) {
         case 1:
             {
+                Controller *c = Controller::getInstance();
+                c->inicializarDatos();
+            }
+            break;
+        case 2:
+            {
                 AltaUsuario pAltaUsuario;
                 pAltaUsuario.altaUsuario();
             }
             break;
-        case 2:
+        case 3:
             {
                 AltaIdioma pAltaIdioma;
                 pAltaIdioma.altaIdioma();
             }
             break;
-        case 3:
+        case 4:
             {
                 AltaCurso pAltaCurso;
                 pAltaCurso.altaCurso();
             }
             break;
-        case 4:
+        case 5:
             {
                InscribirseAlCurso pInscribirseAlCurso;
                pInscribirseAlCurso.inscribirse();
             }
             break;
-        case 5:
+        case 6:
             {
                 RealizarEjercicio realizarEjercicio;
                 realizarEjercicio.realizarEjercicio();
             }
             break;
-        case 6:
+        case 7:
             {
                 ConsultaDeUsuario consulta;
                 consulta.consultarUsuarios();
             }
             break;
-        case 7:
+        case 8:
             {
                 ConsultarCurso consultaC;
                 consultaC.consultarCurso();
             }
-        case 8:
+        case 9:
             {
                 //siguiente caso de uso
                 //NombreCasoDeUso nombrecasodeuso;
                 //nombrecasodeuso.nombreCasoDeUso();
             }
             break;
-        case 9:
+        case 10:
             break;
         default:
             cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 9);
+    } while (opcion != 10);
 
     cout << "Fin del programa." << endl;
 }
