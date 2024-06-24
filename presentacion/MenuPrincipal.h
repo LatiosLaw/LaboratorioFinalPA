@@ -6,6 +6,7 @@
 #include "RealizarEjercicio.h"
 #include "InscribirseAlCurso.h"
 #include "ConsultaDeUsuario.h"
+#include "HabilitarCurso.h"
 #include "ConsultarCurso.h"
 #include <iostream>
 
