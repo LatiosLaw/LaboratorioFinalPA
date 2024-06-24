@@ -567,3 +567,41 @@ void Controller::cosoEjercicio(){
 
 }
 
+
+set<string> Controller::listarCursosNoHabilitados(){
+	set<string> nombresCursos;
+	for (auto c : ListaCursos){
+		if (c->getHabilitado() == false){
+			nombresCursos.insert(c->getNombreCurso());
+		}
+	}
+	return nombresCursos;
+}
+
+void Controller::habilitarCurso(string nombreCurso){
+	// busco el curso.
+	Curso *c;
+	c = buscarCurso(nombreCurso);
+	if (c == nullptr){
+		cout << "error Curso no existe. " << endl;
+	}
+	else{
+		// si existe pregunto si cumple los requisitos
+		// si tiene lecciones
+		if (c->tieneLecciones()){
+			// si toda leccion tiene almenos un ejercicio
+
+			if (c->todasLasLeccionesTienenEjercicios()){
+				c->Habilitate();
+				cout << "Curso Habilitado! " << endl;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
