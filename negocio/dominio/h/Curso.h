@@ -64,7 +64,11 @@ public:
 	set<Ejercicio*> buscarEjerciciosLeccionPendiente(set<Ejercicio*>aprobados);
 	void obtenerEstadisticasP();
 	void estadisticasCurso();
+	bool tieneLecciones();
+	bool todasLasLeccionesTienenEjercicios();
+	void Habilitate();
 
+	
 	///////////////////////////////////////////////////////////////
 };
 #endif
