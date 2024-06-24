@@ -232,3 +232,45 @@ void Curso::obtenerEstadisticasP()
 void Curso::estadisticasCurso()
 {
 }
+
+bool Curso::tieneLecciones()
+{
+	if (this->ListaLecciones.empty())
+	{
+		cout << "El curso no tiene lecciones. " << endl;
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool Curso::todasLasLeccionesTienenEjercicios()
+{
+	if (this->ListaLecciones.empty())
+	{
+		cout << "El curso no tiene lecciones. " << endl;
+		return false;
+	}
+	else
+	{
+		// si tiene almenos una leccion recorro todas las lecciones preguntando si tienen ejercicios.
+		for (auto l : ListaLecciones)
+		{
+			if (l->obtenerEjercicios().empty())
+			{
+				// Si almenos una leccion no tiene ejercicio return false
+				return false;
+			}
+		}
+		// toda leccion tiene ejerecicios
+		return true;
+	}
+}
+
+// habilitar el curso
+void Curso::Habilitate()
+{
+	this->setHabilitado(true);
+}
