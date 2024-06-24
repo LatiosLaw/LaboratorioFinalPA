@@ -60,6 +60,9 @@ public:
 	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante);
 	virtual void IngresarSolucion();
 	virtual void listarNicksEstudiantes();
+
+	virtual set<string> listarCursosNoHabilitados();
+	virtual void habilitarCurso(string nombreCurso);
 	
 	virtual ~Controller();
 };
