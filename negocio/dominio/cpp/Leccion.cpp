@@ -94,3 +94,7 @@ set<Ejercicio*> Leccion::buscarEjerciciosPendientes(set<Ejercicio*>aprobados)
     }
     return ejerciciosPendientes;
 }
+
+set<Ejercicio*> Leccion::obtenerEjercicios(){
+return this->ListaEjercicios;
+}
