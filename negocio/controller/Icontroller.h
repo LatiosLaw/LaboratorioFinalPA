@@ -47,5 +47,8 @@ public:
 	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante)=0;
 	virtual void IngresarSolucion()=0;
 	virtual void listarNicksEstudiantes()=0;
+
+	virtual set<string> listarCursosNoHabilitados() = 0;
+	virtual void habilitarCurso(string nombreCurso) = 0;
 };
 #endif
