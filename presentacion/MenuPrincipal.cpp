@@ -22,8 +22,9 @@ void MenuPrincipal::mostrarOpciones()
     cout << "6) Realizar Ejercicio" << endl;
     cout << "7) Consulta de Usuario" << endl;
     cout << "8) Consultar Curso" << endl;
-    cout << "9) Siguiente Operacion" << endl;
-    cout << "10) Salir" << endl << endl;
+    cout << "9) Habilitar Curso" << endl;
+    cout << "10) Siguiente Operacion" << endl;
+    cout << "11) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -90,12 +91,17 @@ void MenuPrincipal::mostrarMenu()
             }
         case 9:
             {
+                HabilitarCurso habilitarCurso;
+                habilitarCurso.habilitar();
+            }
+	case 10:
+            {
                 //siguiente caso de uso
                 //NombreCasoDeUso nombrecasodeuso;
                 //nombrecasodeuso.nombreCasoDeUso();
             }
             break;
-        case 10:
+        case 11:
             break;
         default:
             cout << "Opcion desconocida." << endl;
