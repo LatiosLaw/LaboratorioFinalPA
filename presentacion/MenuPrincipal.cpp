@@ -93,6 +93,7 @@ void MenuPrincipal::mostrarMenu()
             {
                 HabilitarCurso habilitarCurso;
                 habilitarCurso.habilitar();
+		break;
             }
 	case 10:
             {
