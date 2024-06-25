@@ -537,6 +537,7 @@ bool Controller::listarCursosPendientesDeAlumno(string nickname)
 	return false;
 }
 
+//<<<<<<< Updated upstream
 set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante *estudiante)
 {
 	set<Ejercicio *> EjerciciosPendientes;
@@ -555,7 +556,65 @@ set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, E
 	// En este caso le pasamos directamente a un curso que sabemos que esta pendiente, la lista de ejercicios completados del alumno desde el registro, para posteriormente pedirle al curso que pase por cada una de sus lecciones y verifique si todos sus ejercicios se encuentran en la lista
 	// En caso de que todos los ejercicios de la leccion se encuentren en la lista, se sale de la leccion y se la considera completada (Cosa que no se refleja en ningun lado), pasando a la siguiente leccion y repitiendo, si todas las lecciones estan completadas, el curso no esta pendiente sino completado y el avance debe ser cambiado a 100.
 	// En caso de que un ejercicio de una leccion no este en la lista de aprobados, se guarda hasta que se completa el for dentro de la leccion y se retorna la lista de aquellos ejercicios que no esten en la lista de aprobados.
+		
 }
+Leccion* Controller :: confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo){
+	
+	bool token = false;
+	set<string> cursos;
+	string nombreCurso;
+	Curso *cursoEncontrado;
+	Leccion* lecci;
+	for (Curso *curso : ListaCursos)
+	{
+		if(curso->getNombreCurso() == cursoNombre){
+			token = true;
+			nombreCurso = curso->getNombreCurso();
+			cursoEncontrado = curso;
+		}
+		if(token == true){
+			break;
+		}
+	}
+	
+	if (token == true){
+		
+		lecci = cursoEncontrado->crearLeccion(tema, objetivo);
+	}else{
+		cout << "No existe curso con ese nombre" <<endl;
+		lecci = nullptr;
+	}
+	
+	
+	
+	
+	return lecci;
+}
+
+bool Controller :: crearEjercicio(string desc, string nombreEjer, string nombreCurso){
+	
+	bool token = false;
+	Curso *cursoEncontrado;
+	
+	for (Curso *curso : ListaCursos)
+	{
+		if(curso->getNombreCurso() == nombreCurso){
+			token = true;
+			cursoEncontrado = curso;
+		}
+		if(token == true){
+			break;
+		}
+	}
+	cursoEncontrado->crearLeccion(nombreEjer,desc);
+	
+	
+	
+}
+
+
+
+
 
 	// Falta un metodo para seleccionar el ejercicio de la lista :v (Me olvide de lo mas boludo), este metodo tambien debería de generar la visual del ejercicio para que la persona realice y demás.
 

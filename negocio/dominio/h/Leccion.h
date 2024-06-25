@@ -31,7 +31,6 @@ public:
 	bool Pendiente(set<Ejercicio*> aprobados);
 	set<Ejercicio*> buscarEjerciciosPendientes(set<Ejercicio*>aprobados); // Esto requiere una lista de ejercicios
 
-	///////////////////////////////////////////////////////////////
 
 	set<Ejercicio*> obtenerEjercicios();
 };
