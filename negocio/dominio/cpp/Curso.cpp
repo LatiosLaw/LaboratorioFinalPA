@@ -274,3 +274,40 @@ void Curso::Habilitate()
 {
 	this->setHabilitado(true);
 }
+
+int Curso :: calcularNumLeccion(){
+	int tokenCount = 1;
+	for (Leccion *leccion : ListaLecciones)
+	{
+		tokenCount ++;
+	}
+	return tokenCount;
+}
+
+Leccion* Curso :: crearLeccion(string tema, string objetivo){
+	
+	int numLecc = calcularNumLeccion();
+	
+	Leccion *nuevaLeccion = new Leccion(numLecc, tema, objetivo);
+	
+	ListaLecciones.insert(nuevaLeccion);
+	
+	/*
+	for (Leccion *leccion : this->ListaLecciones){
+		
+		int token = leccion->getNumero();
+		//string tokenTema = 
+		cout << "Numero de Leccion:" << std::to_string(token) <<endl;
+		cout << "Tema: " << leccion->getTema()<<endl;
+		cout << "Objetivo: " << leccion->getObjetivo() <<endl;
+		cout << "------------------------------------------" <<endl;
+	
+	}
+	*/
+	return nuevaLeccion;
+}
+
+
+
+
+

@@ -76,25 +76,33 @@ void Controller::inicializarDatos()
     ListaUsuarios.insert(U14);
     ListaUsuarios.insert(U15);
 
-
+	
+	Curso* Cp = new Curso("cp",". Curso de Prueba", principiante, U11, I1, true);
+	
+	
     Curso* C1 = new Curso("Ingles para principiantes","Curso para personas con poco o ningun conocimiento de ingles. Se enfoca en vocabulario basico, gramatica y habilidades de conversacion.", principiante, U11, I1, true);
     Curso* C2 = new Curso("Curso de ingles basico","Construye una base solida en el idioma. Cubre gramatica, vocabulario, comprension auditiva y expresion oral.", principiante, U11, I1, false);
     Curso* C3 = new Curso("Ingles intermedio: mejora tu nivel","Para estudiantes con conocimientos basicos de ingles que desean avanzar en su habilidad comunicativa. Se centra en la fluidez oral, lectura comprensiva y escritura.", medio, U12, I1, true);
     Curso* C4 = new Curso("Curso avanzado de ingles","Dirigido a personas con un nivel intermedio-alto que desean perfeccionar sus habilidades en todos los aspectos del idioma. Incluye gramatica avanzada, vocabulario y comprension escrita y auditiva.", avanzado, U12, I1, true);
     Curso* C5 = new Curso("Portugues intermedio","Curso para aquellos que tienen conocimientos basicos de portugues y desean mejorar su nivel. Incluye practica de lectura, escritura y comprension auditiva.", medio, U12, I3, true);
     Curso* C6 = new Curso("Portugues avanzado","Curso avanzado para personas con un nivel intermedio-alto de portugues que desean perfeccionar su fluidez y dominio del idioma. Se trabaja en la gramatica avanzada y la expresion oral.", avanzado, U14, I3, false);
+	
+	
 
+	
+	
     ListaIdiomas.insert(I1);
     ListaIdiomas.insert(I2);
     ListaIdiomas.insert(I3);
 
+	
     ListaCursos.insert(C1);
     ListaCursos.insert(C2);
     ListaCursos.insert(C3);
     ListaCursos.insert(C4);
     ListaCursos.insert(C5);
     ListaCursos.insert(C6);
-
+	ListaCursos.insert(Cp);
     //C3->linkearProfesor(U12);
 }
 
@@ -612,7 +620,16 @@ bool Controller :: crearEjercicio(string desc, string nombreEjer, string nombreC
 	
 }
 
-
+set<string> Controller::listarNombreCursosHabilitados(){
+	set<string> cursos;
+	for (Curso *curso : ListaCursos)
+	{
+		if(curso->getHabilitado() == true){
+			cursos.insert(curso->getNombreCurso());
+		}
+	}
+	return cursos;
+}
 
 
 

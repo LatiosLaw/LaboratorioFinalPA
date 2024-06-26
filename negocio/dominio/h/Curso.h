@@ -67,7 +67,8 @@ public:
 	bool tieneLecciones();
 	bool todasLasLeccionesTienenEjercicios();
 	void Habilitate();
-
+	int calcularNumLeccion();
+	Leccion* crearLeccion(string tema, string objetivo);
 	
 	///////////////////////////////////////////////////////////////
 };

@@ -18,13 +18,14 @@ void MenuPrincipal::mostrarOpciones()
     cout << "2) Alta Usuario" << endl;
     cout << "3) Alta Idioma" << endl;
     cout << "4) Alta Curso" << endl;
-    cout << "5) Inscribirse al Curso" << endl;
-    cout << "6) Realizar Ejercicio" << endl;
-    cout << "7) Consulta de Usuario" << endl;
-    cout << "8) Consultar Curso" << endl;
-    cout << "9) Habilitar Curso" << endl;
-    cout << "10) Siguiente Operacion" << endl;
-    cout << "11) Salir" << endl << endl;
+	cout << "5) Agregar Leccion" << endl;
+    cout << "6) Inscribirse al Curso" << endl;
+    cout << "7) Realizar Ejercicio" << endl;
+    cout << "8) Consulta de Usuario" << endl;
+    cout << "9) Consultar Curso" << endl;
+    cout << "10) Habilitar Curso" << endl;
+    cout << "11) Siguiente Operacion" << endl;
+    cout << "12) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -60,55 +61,60 @@ void MenuPrincipal::mostrarMenu()
                 pAltaIdioma.altaIdioma();
             }
             break;
+			
         case 4:
             {
                 AltaCurso pAltaCurso;
                 pAltaCurso.altaCurso();
             }
             break;
-        case 5:
+		case 5:
+		{
+			AgregarLeccion agregarLeccionn;
+			agregarLeccionn.agregarLeccion();
+		}
+        case 6:
             {
                InscribirseAlCurso pInscribirseAlCurso;
                pInscribirseAlCurso.inscribirse();
             }
             break;
-        case 6:
+        case 7:
             {
                 RealizarEjercicio realizarEjercicio;
                 realizarEjercicio.realizarEjercicio();
             }
             break;
-        case 7:
+        case 8:
             {
                 ConsultaDeUsuario consulta;
                 consulta.consultarUsuarios();
             }
             break;
-        case 8:
+        case 9:
             {
                 ConsultarCurso consultaC;
                 consultaC.consultarCurso();
             }
-        case 9:
+        case 10:
             {
                 HabilitarCurso habilitarCurso;
                 habilitarCurso.habilitar();
 		break;
+		
             }
-	case 10:
-            {
-                //siguiente caso de uso
-                //NombreCasoDeUso nombrecasodeuso;
-                //nombrecasodeuso.nombreCasoDeUso();
-            }
-            break;
-        case 11:
-            break;
+		case 11:
+			{
+				//Sapletext
+			}
+			break;
+		case 12:
+			break;
         default:
             cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 10);
+    } while (opcion != 12);
 
     cout << "Fin del programa." << endl;
 }

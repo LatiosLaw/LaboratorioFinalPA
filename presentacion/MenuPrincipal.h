@@ -8,6 +8,7 @@
 #include "ConsultaDeUsuario.h"
 #include "HabilitarCurso.h"
 #include "ConsultarCurso.h"
+#include "AgregarLeccion.h"
 #include <iostream>
 
 using namespace std;
