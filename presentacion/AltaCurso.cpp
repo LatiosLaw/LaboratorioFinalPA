@@ -32,7 +32,7 @@ void AltaCurso::altaCurso()
     set<string> nombreIdiomas;
     char opcion;
 
-    cout << endl <<"Desea agregar idiomas? (s/n): ";
+    cout <<"Desea agregar idiomas? (s/n): ";
     cin >> opcion;
     if (opcion == 's' || opcion == 'S')
     {
@@ -43,7 +43,7 @@ void AltaCurso::altaCurso()
 
     set<string> nombreCursos;
 
-    cout << "¿Desea agregar Cursos Previos? (s/n): ";
+    cout << "Desea agregar Cursos Previos? (s/n): ";
     cin >> opcion;
     if (opcion == 's' || opcion == 'S')
     {
@@ -178,10 +178,11 @@ set<string> AltaCurso::seleccionarCursosPrevios()
 
         string cursoSeleccionado;
         cout << "Ingrese el curso a agregar a la lista de previas: ";
-        cin >> cursoSeleccionado;
+        cin.ignore();
+        getline(cin, cursoSeleccionado);
         nombreCursos.insert(cursoSeleccionado);
 
-        cout << "¿Desea agregar otro curso previo? (s/n): ";
+        cout << "Desea agregar otro curso previo? (s/n): ";
         cin >> opcion;
     } while (opcion == 's' || opcion == 'S');
 

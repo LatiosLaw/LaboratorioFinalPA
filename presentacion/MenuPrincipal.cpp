@@ -69,14 +69,14 @@ void MenuPrincipal::mostrarMenu()
             }
             break;
 		case 5:
-		{
-			AgregarLeccion agregarLeccionn;
-			agregarLeccionn.agregarLeccion();
-		}
+		    {
+			    AgregarLeccion agregarLeccionn;
+			    agregarLeccionn.agregarLeccion();
+		    }
         case 6:
             {
-               InscribirseAlCurso pInscribirseAlCurso;
-               pInscribirseAlCurso.inscribirse();
+                InscribirseAlCurso pInscribirseAlCurso;
+                pInscribirseAlCurso.inscribirse();
             }
             break;
         case 7:
@@ -96,16 +96,16 @@ void MenuPrincipal::mostrarMenu()
                 ConsultarCurso consultaC;
                 consultaC.consultarCurso();
             }
+            break;
         case 10:
             {
                 HabilitarCurso habilitarCurso;
                 habilitarCurso.habilitar();
-		break;
-		
             }
+            break;
 		case 11:
 			{
-				//Sapletext
+				//Sampletext
 			}
 			break;
 		case 12:

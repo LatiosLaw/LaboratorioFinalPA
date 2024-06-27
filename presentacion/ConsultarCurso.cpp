@@ -10,10 +10,9 @@ ConsultarCurso::~ConsultarCurso()
 
 }
 
-void ConsultarCurso::consultarCurso(){
+void ConsultarCurso::consultarCurso()
+{
 
-    this->controlador->listarCursos();
-    
     listarCursos();
 
     string nombreCurso;
