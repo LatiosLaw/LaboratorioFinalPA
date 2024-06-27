@@ -16,7 +16,7 @@ public:
 	Leccion();
 	Leccion(int numero, string tema, string objetivo);
 
-	//void agregarEjercicio(string nombreEjercicio, string descripcion, string fraseA, string fraseB, int num); quien hizo esto???
+	void agregarEjercicio(string nombreEjercicio, string descripcion, string fraseA, string fraseB, int num); //quien hizo esto???
 
 	string getTema();
 	string getObjetivo();
@@ -31,7 +31,7 @@ public:
 	bool Pendiente(set<Ejercicio*> aprobados);
 	set<Ejercicio*> buscarEjerciciosPendientes(set<Ejercicio*>aprobados); // Esto requiere una lista de ejercicios
 	set<Ejercicio*> obtenerEjercicios();
-	void agregarEjercicio(int tipo,string nom,string desc,string fraseA,string FraseB);
+	
 
 };
 #endif
