@@ -2,16 +2,16 @@
 #include <iostream>
 using namespace std;
 
-Profesor::Profesor(string nick, string pass, string nom, string desc, string inst, set<Idioma*>ListaIdiomas) : Usuario(nick, nom, pass, desc) {
-	instituto = inst;
-	ListaIdiomas = set<Idioma*>();
+Profesor::Profesor(string nick, string pass, string nom, string desc, string inst, set<Idioma*>ListaIdiomas) : Usuario(nick, pass, nom, desc) {
+	this->instituto = inst;
+	this->ListaIdiomas = ListaIdiomas;
 }
 
-Profesor::Profesor(string nick, string pass, string nom, string desc, string inst) : Usuario(nick, nom, pass, desc) {
-	instituto = inst;
+Profesor::Profesor(string nick, string pass, string nom, string desc, string inst) : Usuario(nick, pass, nom, desc) {
+	this->instituto = inst;
 }
 
-Profesor::Profesor(string nick, string pass, string nom, string desc) : Usuario(nick, nom, pass, desc) {
+Profesor::Profesor(string nick, string pass, string nom, string desc) : Usuario(nick, pass, nom, desc) {
 
 }
 

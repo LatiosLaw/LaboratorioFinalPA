@@ -17,7 +17,7 @@ void ConsultarCurso::consultarCurso(){
     listarCursos();
 
     string nombreCurso;
-    cin >> nombreCurso;
+    getline(cin, nombreCurso);
 
     this->controlador->listarInfoCurso(nombreCurso);
 }

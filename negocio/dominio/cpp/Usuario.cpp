@@ -2,9 +2,9 @@
 
 Usuario::Usuario(string nick, string pass, string nom, string desc) {
 	this->nickname = nick;
-	this->nombre = nom;
 	this->password = pass;
 	this->descripcion = desc;
+	this->nombre = nom;
 }
 
 string Usuario::getNickname() {
@@ -24,19 +24,19 @@ string Usuario::getDescripcion() {
 }
 
 void Usuario::setNickname(string nick) {
-	nickname = nick;
+	this->nickname = nick;
 }
 
 void Usuario::setNombre(string nom) {
-	nombre = nom;
+	this->nombre = nom;
 }
 
 void Usuario::setPassword(string pass) {
-	password = pass;
+	this->password = pass;
 }
 
 void Usuario::setDescripcion(string desc) {
-	descripcion = desc;
+	this->descripcion = desc;
 }
 
 string Usuario::getNombreProfesor(){

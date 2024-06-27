@@ -8,8 +8,8 @@ using namespace std;
 class Usuario {
 protected:
 	string nickname;
-	string nombre;
 	string password;
+	string nombre;
 	string descripcion;
 	
 public:
