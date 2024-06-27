@@ -69,7 +69,9 @@ public:
 	void Habilitate();
 	int calcularNumLeccion();
 	Leccion* crearLeccion(string tema, string objetivo);
-	
+	set<Leccion*> obtenerLecciones();
+	Leccion* buscarLeccion(int n);
+
 	///////////////////////////////////////////////////////////////
 };
 #endif
