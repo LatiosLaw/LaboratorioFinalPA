@@ -16,7 +16,7 @@ public:
 	Leccion();
 	Leccion(int numero, string tema, string objetivo);
 
-	void agregarEjercicio(string nombreEjercicio, string descripcion, string fraseA, string fraseB, int num);
+	//void agregarEjercicio(string nombreEjercicio, string descripcion, string fraseA, string fraseB, int num); quien hizo esto???
 
 	string getTema();
 	string getObjetivo();
@@ -30,8 +30,8 @@ public:
 	int getNumero(); // Esto es un getter, por lo que no es realmente solo mio XD
 	bool Pendiente(set<Ejercicio*> aprobados);
 	set<Ejercicio*> buscarEjerciciosPendientes(set<Ejercicio*>aprobados); // Esto requiere una lista de ejercicios
-
-
 	set<Ejercicio*> obtenerEjercicios();
+	void agregarEjercicio(int tipo,string nom,string desc,string fraseA,string FraseB);
+
 };
 #endif
