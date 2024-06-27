@@ -66,43 +66,5 @@ void AgregarEjercicio::agregarEjercicio()
             return;
         }
 
-        // AGREGAR el ejercicio.
-        cout << "Que tipo de ejercicio quieres agregar? /n 1- Traduccion /n 2- Completar Palabra" << endl;
-        cin >> num;
-        // atributos de los ej.
-        string nomE;
-        string descE;
-        string fraseA;
-        string fraseB;
-
-        cout << "Ingrese el nombre del ejercicio.." << endl;
-        cin >> nomE;
-        cout << "Ingrese la descripcion del ejercicio.." << endl;
-        cin >> descE;
-        if (num == 1)
-
-        { // traduccion
-
-            cout << "Ingrese la frase a traducir del ejercicio.." << endl;
-            cin >> fraseA;
-            cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
-            cin >> fraseB;
-        }
-        else if (num == 2)
-        { // completar palabra
-
-            cout << "Ingrese la frase a completar del ejercicio.." << endl;
-            cin >> fraseA;
-            cout << "Ingrese la frase correcta del ejercicio.." << endl;
-            cin >> fraseB;
-        }
-        else
-        {
-            cout << "Opcion invalida..." << endl;
-            return;
-        }
-
-        
-        l->agregarEjercicio(num, nomE, descE, fraseA, fraseB); // agregar leccion responsabilidad de leccion.
     }
 }
