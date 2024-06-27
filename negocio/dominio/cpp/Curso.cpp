@@ -307,7 +307,22 @@ Leccion* Curso :: crearLeccion(string tema, string objetivo){
 	return nuevaLeccion;
 }
 
+set<Leccion*> Curso::obtenerLecciones(){
 
+	return this->ListaLecciones;
+}
+
+Leccion* Curso::buscarLeccion(int n){
+set<Leccion*> l = this->ListaLecciones;
+for (auto &&i : l)
+{
+	if (i->getNumero() == n){
+		return i;
+	}
+}
+
+	return nullptr;
+}
 
 
 
