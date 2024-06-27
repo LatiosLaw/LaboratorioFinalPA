@@ -17,9 +17,9 @@ void AltaCurso::altaCurso()
     string nombreCurso, descripcion, dificultad, nombreProfe;
 
     cout << "Ingrese nombre del curso: ";
-    cin >> nombreCurso;
+    getline(cin, nombreCurso);
     cout << "Ingrese descripcion: ";
-    cin >> descripcion;
+    getline(cin, descripcion);
     cout << "Ingrese dificultad: ";
     cin >> dificultad;
 
@@ -27,12 +27,12 @@ void AltaCurso::altaCurso()
     set<string> nombreProfesores;
     nombreProfesores = this->controlador->listarNombreProfesores();
     cout << "Seleccione un Profesor: ";
-    cin >> nombreProfe;
-
+    cin.ignore();
+    getline(cin, nombreProfe);
     set<string> nombreIdiomas;
     char opcion;
 
-    cout << "¿Desea agregar idiomas? (s/n): ";
+    cout << endl <<"Desea agregar idiomas? (s/n): ";
     cin >> opcion;
     if (opcion == 's' || opcion == 'S')
     {

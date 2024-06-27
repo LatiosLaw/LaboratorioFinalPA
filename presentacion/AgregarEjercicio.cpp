@@ -7,7 +7,7 @@ AgregarEjercicio::AgregarEjercicio()
 
 AgregarEjercicio::~AgregarEjercicio() {}
 
-void AgregarEjercicio::agregarEjercicio()
+/*void AgregarEjercicio::agregarEjercicio()
 {
 
     // listamos los cursos no habilitados
@@ -97,3 +97,4 @@ void AgregarEjercicio::agregarEjercicio()
         
     }
 }
+*/
