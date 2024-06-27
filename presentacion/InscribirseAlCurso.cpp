@@ -45,7 +45,7 @@ set<string> InscribirseAlCurso::listarCursosDisponibles()
         cin >> cursoSeleccionado;
         nombreCursos.insert(cursoSeleccionado);
 
-        cout << "¿Desea agregar otro curso previo? (s/n): ";
+        cout << "Desea agregar otro curso previo? (s/n): ";
         cin >> opcion;
     } while (opcion == 's' || opcion == 'S');
 
