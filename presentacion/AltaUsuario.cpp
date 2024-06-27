@@ -18,7 +18,7 @@ void AltaUsuario::altaUsuario()
     bool existe = this->controlador->verificarNick(nick);
     if (!existe)
     {
-        cout << "¿Es estudiante o profesor? (1 estudiante, 2 profesor): " << endl;
+        cout << "Es estudiante o profesor? (1 estudiante, 2 profesor): " << endl;
         int tipoUsuario;
         cin >> tipoUsuario;
 
@@ -31,7 +31,7 @@ void AltaUsuario::altaUsuario()
             ingresarProfesor(nick);
         }
 
-        cout << "Fin ingreso de usuario" << endl;
+        cout << "Fin ingreso de usuario." << endl;
     }
     else
     {
@@ -46,9 +46,10 @@ void AltaUsuario::ingresarEstudiante(string nick)
     cout << "Ingresar pass: ";
     cin >> pass;
     cout << "Ingresar nombre: ";
-    cin >> nom;
+    cin.ignore();
+    getline(cin, nom);
     cout << "Ingresar descripcion: ";
-    cin >> descrip;
+    getline(cin, descrip);
     cout << "Ingresar pais: ";
     cin >> pais;
 
@@ -63,14 +64,15 @@ void AltaUsuario::ingresarProfesor(string nick)
     cout << "Ingresar pass: ";
     cin >> pass;
     cout << "Ingresar nombre: ";
-    cin >> nom;
+    cin.ignore();
+    getline(cin, nom);
     cout << "Ingresar descripcion: ";
-    cin >> descrip;
+    getline(cin, descrip);
     cout << "Ingresar instituto: ";
-    cin >> instituto;
+    getline(cin, instituto);
 
     int opcion;
-    cout << "¿Desea agregar idiomas? (1=si, 2=no): ";
+    cout << "Desea agregar idiomas? (1=si, 2=no): ";
     cin >> opcion;
     if (opcion == 1)
     {
