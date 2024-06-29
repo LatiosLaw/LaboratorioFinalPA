@@ -86,9 +86,27 @@ void Controller::inicializarDatos()
     Curso* C4 = new Curso("Curso avanzado de ingles","Dirigido a personas con un nivel intermedio-alto que desean perfeccionar sus habilidades en todos los aspectos del idioma. Incluye gramatica avanzada, vocabulario y comprension escrita y auditiva.", avanzado, U12, I1, true);
     Curso* C5 = new Curso("Portugues intermedio","Curso para aquellos que tienen conocimientos basicos de portugues y desean mejorar su nivel. Incluye practica de lectura, escritura y comprension auditiva.", medio, U12, I3, true);
     Curso* C6 = new Curso("Portugues avanzado","Curso avanzado para personas con un nivel intermedio-alto de portugues que desean perfeccionar su fluidez y dominio del idioma. Se trabaja en la gramatica avanzada y la expresion oral.", avanzado, U14, I3, false);
-	
-	
 
+    //crear lecciones y añadirlas alos cursos
+	//USAR 	OPERACION DE ANDRES CON DATOS AQUI.
+	
+    //Linkear y crear ejercicios con lecciones 1- completar 2- traduccion
+	Leccion* L1 = new Leccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L2 = new Leccion(2,"Comprender y utilizar los articulos definidos e indefinidos","Aprender a formar los plurales regulares e irregulares de sustantivos");
+	Leccion* L3 = new Leccion(3,"Comprender y utilizar los articulos definidos e indefinidos","Aprender a formar los plurales regulares e irregulares de sustantivos");
+	Leccion* L4 = new Leccion(4,"Presente Simple","Aprender el uso del presente simple");
+	Leccion* L5 = new Leccion(5,"Conversaciones cotidianas","Aprender a hacer preguntas y respuestas en situaciones comunes");
+	Leccion* L6 = new Leccion(6,"Uso de modales avanzados","Explorar el uso de los modales complejos");
+	Leccion* L7 = new Leccion(7,"Lectura y comprension de textos","Analizar el contenido, vocabulario y estructuras gramaticales utilizadas");
+
+    L1->agregarEjercicio("E1","Presentaciones","Mucho gusto en conocerte","Nice to meet you",2);
+    L1->agregarEjercicio("E2","Presentaciones formales","Please --- me to introduce ---","allow, myself",1);
+    L1->agregarEjercicio("E3","Plurales regulares","I have two brothers and three sisters","Tengo dos hermanos y tres hermanas",2);
+    L1->agregarEjercicio("E4","Sustantivos contables en plural","Can I have --- water, please?","some",1);
+    L1->agregarEjercicio("E5","Actividades diarias","Wake ---","up",1);
+    L1->agregarEjercicio("E6","Consultas de la hora","Q: Do you --- the time?, A: Yes, it is half --- 4","have, past",1);
+    L1->agregarEjercicio("E7","Dar consejos o expresar obligacion","You should visit that museum","Deberias visitar ese museo",2);
+    L1->agregarEjercicio("E8","Imperativo","Fale comigo","Habla conmigo",2);
 	
 	
     ListaIdiomas.insert(I1);
@@ -102,7 +120,7 @@ void Controller::inicializarDatos()
     ListaCursos.insert(C4);
     ListaCursos.insert(C5);
     ListaCursos.insert(C6);
-	ListaCursos.insert(Cp);
+    ListaCursos.insert(Cp);
     //C3->linkearProfesor(U12);
 }
 
