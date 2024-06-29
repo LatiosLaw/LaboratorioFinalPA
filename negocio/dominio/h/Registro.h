@@ -32,7 +32,7 @@ public:
 	void aprobar(Ejercicio* ejercicio);
 	void VerificarRespuesta();
 	void obtenerEstadisticasE();
-	set<Ejercicio*> obtenerEjerciciosDelCurso();
+	void actualizarTodosEjerciciosDelCurso();
 	void calcularAvance();
 	string getAvance(); // Esto es un getter, por lo que no es realmente solo mio XD
 

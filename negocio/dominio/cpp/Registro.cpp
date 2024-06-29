@@ -11,7 +11,7 @@ Registro::Registro(Curso* curso, Estudiante* estudiante)
     this->curso = curso;
     this->estudiante = estudiante;
     this->fechaInscripcion = fechaR;
-    this->ListaEjercicios = this->obtenerEjerciciosDelCurso();
+    this->actualizarTodosEjerciciosDelCurso();
     this->calcularAvance();
 }
 
@@ -20,7 +20,7 @@ Registro::Registro(Fecha fecha, Curso* curso, Estudiante* estudiante)
     this->curso = curso;
     this->estudiante = estudiante;
     this->fechaInscripcion = fecha;
-    this->ListaEjercicios = this->obtenerEjerciciosDelCurso();
+    this->actualizarTodosEjerciciosDelCurso();
     this->calcularAvance();
 }
 
@@ -72,9 +72,9 @@ this->ListaEjerciciosAprobados.insert(ejercicio);
 this->calcularAvance();
 }
 
-set<Ejercicio*> Registro::obtenerEjerciciosDelCurso(){
+void Registro::actualizarTodosEjerciciosDelCurso(){
     set<Ejercicio *> ejerciciosDelCurso = curso->devolverTodosLosEjercicios();
-    return ejerciciosDelCurso;
+    this->ListaEjercicios = ejerciciosDelCurso;
 }
 
 void Registro::calcularAvance(){
