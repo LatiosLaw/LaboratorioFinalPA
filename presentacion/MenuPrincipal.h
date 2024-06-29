@@ -9,6 +9,7 @@
 #include "HabilitarCurso.h"
 #include "ConsultarCurso.h"
 #include "AgregarLeccion.h"
+#include "AgregarEjercicio.h"
 #include <iostream>
 
 using namespace std;
