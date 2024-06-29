@@ -41,3 +41,11 @@ Ejercicio *Ejercicio::obtenerDataType()
 {
     return this;
 }
+
+bool Ejercicio::verificarNombre(string nom){
+    if(this->getnombreEjercicio()==nom){
+        return true;
+    }else{
+        return false;
+    }
+}

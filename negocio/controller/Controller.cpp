@@ -201,6 +201,23 @@ Estudiante* Controller::buscarEstudiante(string nick)
 	return nullptr;	
 }
 
+Estudiante* Controller::buscarEstudiante_peroCallao(string nick){
+for (Usuario* usuario : ListaUsuarios)
+	{
+		Estudiante* student = dynamic_cast<Estudiante*>(usuario);
+		if(student != nullptr)
+		{
+			if (student->getNickname() == nick)
+		{
+			Estudiante* estudiante = dynamic_cast<Estudiante*>(usuario);
+			return estudiante;
+			break;
+		}
+		}
+	}
+	return nullptr;	
+}
+
 Curso *Controller::buscarCurso(string nombreCurso)
 {
 	for (Curso *curso : ListaCursos)
@@ -534,24 +551,20 @@ void Controller::listarNicksEstudiantes(){
 	}
 }
 
-bool Controller::listarCursosPendientesDeAlumno(string nickname)
+bool Controller::listarCursosPendientesDeAlumno(Estudiante* estudiante)
 {
-	Estudiante *estudiante = this->buscarEstudiante(nickname);
 	if (estudiante != nullptr)
 	{
-		cout << "entre al if" << endl;
 		set<Curso *> cursosPendientes;
 		cursosPendientes = estudiante->buscarCursosPendientes();
 		if (cursosPendientes.empty())
 		{
-			cout << "El estudiante no tiene cursos pendientes." << endl;
 			return false;
 		}
 		else
 		{
 			for (Curso *curso : cursosPendientes)
 			{
-				cout << "entre al for" << endl;
 				if (curso != nullptr)
 				{
 					cout << curso->getNombreCurso() << endl;
@@ -564,10 +577,10 @@ bool Controller::listarCursosPendientesDeAlumno(string nickname)
 }
 
 //<<<<<<< Updated upstream
-set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante *estudiante)
+set<Ejercicio *> Controller::listarEjerciciosPendientesDeCurso(Estudiante *estudiante, Registro* registro)
 {
 	set<Ejercicio *> EjerciciosPendientes;
-	EjerciciosPendientes = estudiante->buscarCursoYEjercicios(nom_cur);
+	EjerciciosPendientes = estudiante->buscarCursoYEjercicios(registro);
 	cout << "El programa ahora listara los ejercicios pendientes de la ultima leccion que aun no ha completado en este curso, queda avisado, no todos los ejercicios pendientes DEL CURSO seran visibles." << endl;
 	cout << "Inicio de la lista de Ejercicios Pendientes" << endl;
 	for (Ejercicio *ejercicio : EjerciciosPendientes) // Esto lo deberiamos hacer con dynamic cast, por lo que convendria usar iteradores

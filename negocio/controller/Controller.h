@@ -30,6 +30,8 @@ public:
 	virtual Estudiante* buscarEstudiante(string nick);
 	virtual Curso* buscarCurso(string nombreCurso);
 
+	virtual Estudiante* buscarEstudiante_peroCallao(string nick);
+
 	virtual bool verificarNick(string nickname); // Nueva función para verificar el nick
 	virtual void agregarEstudiante(string nickname, string password, string nombre, string desc, string pais);
 	virtual void agregarProfesor(string nickname, string password,string nombre,string desc,string instituto, set<string> idioma);
@@ -56,14 +58,13 @@ public:
 	virtual void inscribirseACurso(string curso, string nick);
 
 	virtual void cosoEjercicio();
-	virtual bool listarCursosPendientesDeAlumno(string nickname); // FUNCIONANDO (Aparte de lo que ya dije de los cursos)
-	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso(string nom_cur, Estudiante* estudiante);
+	virtual bool listarCursosPendientesDeAlumno(Estudiante* estudiante); // FUNCIONANDO (Aparte de lo que ya dije de los cursos)
+	virtual set<Ejercicio*> listarEjerciciosPendientesDeCurso(Estudiante *estudiante, Registro* registro);
 	virtual void IngresarSolucion();
 	virtual void listarNicksEstudiantes();
 
 	virtual set<string> listarCursosNoHabilitados();
 	virtual void habilitarCurso(string nombreCurso);
-	
 	
 	virtual Leccion* confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo);
 	virtual set<string> listarNombreCursosHabilitados();

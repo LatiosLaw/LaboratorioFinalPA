@@ -29,7 +29,7 @@ public:
 	Curso* obtenerDataCursoSiPendiente(); // FUNCIONANDO(? Falta reemplazar Curso por el DT con los mismos parametros pero menos.
 	bool verificarCurso(string nom_cur);
 	set<Ejercicio*> buscarEjerciciosPendientes();
-	void IngresarSolucionEjercicio();
+	void aprobar(Ejercicio* ejercicio);
 	void VerificarRespuesta();
 	void obtenerEstadisticasE();
 	string getAvance(); // Esto es un getter, por lo que no es realmente solo mio XD

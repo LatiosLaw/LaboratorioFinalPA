@@ -35,7 +35,7 @@ public:
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
 	set<Curso*> buscarCursosPendientes();
-	set<Ejercicio*> buscarCursoYEjercicios(string nom_cur);
+	set<Ejercicio*> buscarCursoYEjercicios(Registro* registro);
 	void obtenerDataType();
 	void estadisticasEstudiante();
 

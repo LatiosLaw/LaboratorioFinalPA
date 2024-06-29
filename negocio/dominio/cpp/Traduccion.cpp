@@ -15,3 +15,26 @@ Traduccion::~Traduccion()
 {
 
 }
+
+string Traduccion::getFrase(){
+return this->fraseATraducir;
+}
+
+string Traduccion::getTraduccionCorrecta(){
+return this->traduccionCorrecta;
+}
+
+void Traduccion::mostrarEjercicio(){
+cout << "Ejercicio : " << this->getnombreEjercicio() << endl;
+cout << "Traduzca la siguiente frase a idioma español." << endl;
+cout << "Frase a traducir : " << endl;
+cout << this->getFrase();
+}
+
+bool Traduccion::enviarSolucion(string solu){
+    if(this->getTraduccionCorrecta()==solu){
+        return true;
+    }else{
+        return false;
+    }
+}

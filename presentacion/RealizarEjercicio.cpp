@@ -16,22 +16,47 @@ void RealizarEjercicio::realizarEjercicio()
 {
     string nickname_estu;
     string nombre_curso;
+    string solucion;
     string nombre_ejercicio;
     bool existen_pendientes;
     Estudiante* estudiante;
+    set<Ejercicio*> ejercicios_pendientes;
     cout << "Seleccione su nickname de estudiante : " << endl;
     this->controlador->listarNicksEstudiantes();
-    cin >> nickname_estu;
-    estudiante = this->controlador->buscarEstudiante(nickname_estu);
+    getline(cin,nickname_estu);
+    estudiante = this->controlador->buscarEstudiante_peroCallao(nickname_estu);
     cout << "Seleccione el curso que quiere continuar : " << endl;
-    existen_pendientes = this->controlador->listarCursosPendientesDeAlumno(nickname_estu);
+    existen_pendientes = this->controlador->listarCursosPendientesDeAlumno(estudiante);
     if(existen_pendientes==true){
-    cin >> nombre_curso;
+    getline(cin,nombre_curso);
+    bool bucle=true;
+    int confirmacion=0;
+    while(bucle==true){
     cout << "Seleccione el ejercicio que quiere realizar : " << endl;
-    this->controlador->listarEjerciciosPendientesDeCurso(nombre_curso, estudiante);
-    cin >> nombre_ejercicio;
-    }else{
-    cout << "Vos sabes que el estudiante esta re-zarpado y no tiene na' pa' hacer." << endl;
+    Registro *registro = estudiante->buscarRegistroACurso(nombre_curso);
+    ejercicios_pendientes = this->controlador->listarEjerciciosPendientesDeCurso(estudiante, registro);
+    getline(cin,nombre_ejercicio);
+    for(Ejercicio* ejercicio : ejercicios_pendientes){
+        if(ejercicio->verificarNombre(nombre_ejercicio)){
+            ejercicio->mostrarEjercicio();
+            getline(cin,solucion);
+            if(ejercicio->enviarSolucion(solucion)){
+                registro->aprobar(ejercicio);
+                cout << "Ejercicio aprobado!" << endl;
+            }else{
+                cout << "Error en la sintaxis de la respuesta, no aprobado." << endl;
+            }
+        }
     }
-    cout << "Final de la Demo - Work In Progress" << endl;
+    cout << "Quiere realizar/reintentar otro ejercicio? (1=si , 2=no)" << endl;
+    cin.ignore();
+    cin >> confirmacion;
+    if(confirmacion=2){
+        bucle=false;
+    }
+    }
+    }else{
+    cout << "-----------------------------------------------" << endl;
+    cout << "El estudiante no cuenta con cursos pendientes." << endl;
+    }
 }

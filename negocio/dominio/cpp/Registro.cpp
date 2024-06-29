@@ -52,14 +52,14 @@ set<Ejercicio *> Registro::buscarEjerciciosPendientes()
     return ejerciciosPendientes;
 }
 
-void Registro::IngresarSolucionEjercicio(){
-
-}
-
 void Registro::VerificarRespuesta(){
 
 }
 
 void Registro::obtenerEstadisticasE(){
     
+}
+
+void Registro::aprobar(Ejercicio* ejercicio){
+this->ListaEjerciciosAprobados.insert(ejercicio);
 }
