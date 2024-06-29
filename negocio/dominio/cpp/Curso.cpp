@@ -337,3 +337,65 @@ for (Leccion *leccion : ListaLecciones)
 	return todosLosEjercicios;
 }
 
+bool Curso::estasAprobado(set<Ejercicio *> ListaEjerciciosAprobados)
+{
+	int cantLecciones = 0;
+	int cantEjercicios = 0;
+
+	for (auto cantLec : ListaLecciones)
+	{
+		cantLecciones = cantLecciones + 1;
+		for (auto cantEjer : cantLec->obtenerEjercicios())
+		{
+			cantEjercicios = cantEjercicios + 1;
+		}
+	}
+
+	int misEjercicios = 0;
+
+	for (auto lec : ListaLecciones)
+	{
+		for (auto ejercicio : lec->obtenerEjercicios())
+		{
+			for (auto ejer : ListaEjerciciosAprobados)
+			{
+				if (ejercicio->getnombreEjercicio() == ejer->getnombreEjercicio())
+				{
+					misEjercicios = misEjercicios + 1;
+				}
+			}
+		}
+	}
+
+	if (cantEjercicios == misEjercicios)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool Curso::cumplePrevias(set<Curso *> cursos)
+{
+	if (ListaCursosPrevios.empty())
+	{
+		cout << "Este curso no tiene cursos previos." << endl;
+		return true;
+	}
+	else
+	{
+		for (auto elCurso : ListaCursosPrevios)
+		{
+			for (auto cursoPrevio : cursos)
+			{
+				if (cursos == ListaCursosPrevios)
+				{
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}

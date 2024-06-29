@@ -21,6 +21,8 @@ public:
 	Registro();
 	Registro(Curso* curso, Estudiante* estudiante);
 	Registro(Fecha fecha, Curso* curso, Estudiante* estudiante);
+
+	Curso* devolverCursoAprobado();
 	
 	virtual ~Registro();
 

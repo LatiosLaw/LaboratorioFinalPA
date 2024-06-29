@@ -97,3 +97,13 @@ void Estudiante::obtenerDataType(){
 void Estudiante::estadisticasEstudiante(){
 
 }
+
+set<Curso*> Estudiante::buscarCursosAprobados(){
+	set<Curso*> cursosAprobados;
+	for(auto registro : ListaRegistros)
+	{
+		cursosAprobados.insert(registro->devolverCursoAprobado());
+	}
+
+	return cursosAprobados;
+}

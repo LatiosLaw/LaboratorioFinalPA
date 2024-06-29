@@ -1,4 +1,5 @@
 #include "../h/Registro.h"
+#include <ctime>
 
 Registro::Registro()
 {
@@ -7,12 +8,21 @@ Registro::Registro()
 
 Registro::Registro(Curso* curso, Estudiante* estudiante)
 {
-    Fecha fechaR(1,1,1);
+    ListaEjercicios = set<Ejercicio *>();
+    ListaEjerciciosAprobados = set<Ejercicio *>();
+
+    // Obtener la fecha actual
+    time_t now = time(0);
+    tm *localTime = localtime(&now);
+
+    // Crear un objeto Fecha con la fecha actual
+    Fecha fechaR(localTime->tm_mday, localTime->tm_mon + 1, localTime->tm_year + 1900);
+
     this->curso = curso;
     this->estudiante = estudiante;
     this->fechaInscripcion = fechaR;
     this->actualizarTodosEjerciciosDelCurso();
-    this->calcularAvance();
+    //this->calcularAvance();
 }
 
 Registro::Registro(Fecha fecha, Curso* curso, Estudiante* estudiante)
@@ -78,9 +88,9 @@ void Registro::actualizarTodosEjerciciosDelCurso(){
 }
 
 void Registro::calcularAvance(){
-    int cantidad_ejercicios=0;
-    double valor;
-    double avance=0;
+    int cantidad_ejercicios = 0;
+    double valor = 0;
+    double avance = 0;
     for(Ejercicio* ejercicio : ListaEjercicios){
 		cantidad_ejercicios = cantidad_ejercicios+1;
 	}
@@ -89,4 +99,18 @@ void Registro::calcularAvance(){
 		avance = avance+valor;
 	}
     this->avance = to_string(avance);
+}
+
+Curso *Registro::devolverCursoAprobado()
+{
+    bool aprobado = this->curso->estasAprobado(this->ListaEjerciciosAprobados);
+
+    if (aprobado)
+    {
+        return this->curso;
+    }
+    else
+    {
+        return nullptr;
+    }
 }

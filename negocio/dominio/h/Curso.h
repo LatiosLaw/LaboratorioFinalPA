@@ -52,6 +52,9 @@ public:
 	void listarCursosPrevios();
 	void inscribirse(Estudiante* estudiante);
 	Leccion* agregarLeccion(int numero, string tema, string objetivo);
+
+	bool estasAprobado(set<Ejercicio*>ListaEjerciciosAprobados);
+	bool cumplePrevias(set<Curso*> cursos);
 	virtual ~Curso();
 
 	// Metodos de los casos de Martin, faltan retornos y parametros

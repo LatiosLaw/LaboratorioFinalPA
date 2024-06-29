@@ -19,10 +19,20 @@ void InscribirseAlCurso::inscribirse() //en proceso
     string nickname;
     cin >> nickname;
 
-    //this->controlador->listarCursosDisponibles(nickname);
-    cout << "Ingrese nombre del curso: ";
+    set<string> cursosDisponibles;
+
+    cursosDisponibles = this->controlador->listarCursosDisponibles(nickname);
+
+    cout << "Curso disponibles: ";
+
+    for(auto curso : cursosDisponibles)
+    {
+        cout << curso << ", ";
+    }
+    cout << endl << "Ingrese nombre del curso: ";
     string nombreCurso;
-    cin >> nombreCurso;
+    cin.ignore();
+    getline(cin, nombreCurso);
 
     this->controlador->inscribirseACurso(nombreCurso, nickname);
 }
