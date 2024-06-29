@@ -14,6 +14,7 @@ void AgregarEjercicio::agregarEjercicio()
     cout << "Cursos no habilitados : " << endl;
     for (auto n : nombres)
     {
+
         cout << endl
              << n;
     }
@@ -22,7 +23,10 @@ void AgregarEjercicio::agregarEjercicio()
     // seleccionamos el curso por nombre
     cout << endl
          << "Elije un curso ingresando su nombre..." << endl;
-    cin >> nomC;
+    // leer variable con espacios.
+    getline(cin, nomC);
+    // limpiar buffer
+
     Curso *c;
     c = this->controlador->buscarCurso(nomC);
 
@@ -40,7 +44,8 @@ void AgregarEjercicio::agregarEjercicio()
         set<Leccion *> lecciones = c->obtenerLecciones();
 
         // dataLeccion ayuda !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        int num;
+        int numL;
+        int numOpcion;
         string tema;
         string obj;
 
@@ -50,19 +55,20 @@ void AgregarEjercicio::agregarEjercicio()
         for (auto &&i : lecciones)
         {
 
-            num = i->getNumero();
+            numL = i->getNumero();
             tema = i->getTema();
             obj = i->getObjetivo();
 
             cout << endl
-                 << num << " - " << tema << " - " << obj;
+                 << numL << " - " << tema << " - " << obj;
         }
 
         cout << "Selecciona el numero de la leccion la cual quieres agregar el ejercicio.." << endl;
-        cin >> num;
+        cin >> numL;
+        cin.ignore();
         // Leccion *l = c->buscarLeccion(num); //instanciarlo si se precisa para el if de abajo, y comparar esa l con el nullptr si no funciona
 
-        if (c->buscarLeccion(num) == nullptr) // control que no exista la leccion
+        if (c->buscarLeccion(numL) == nullptr) // control que no exista la leccion
         {
             cout << "El numero de la leccion ingresada no existe..." << endl;
             return;
@@ -75,30 +81,34 @@ void AgregarEjercicio::agregarEjercicio()
         string fraseB;
         cout << "Ingrese el nombre del ejercicio.." << endl;
         cin >> nomE;
+        cin.ignore();
         cout << "Ingrese la descripcion del ejercicio.." << endl;
         cin >> descE;
+        cin.ignore();
 
         cout << "Que tipo de ejercicio quieres agregar? /n 1- Completar Palabra  /n 2- Traduccion " << endl;
-        cin >> num;
-        if (num == 1)
+        cin >> numOpcion;
+        if (numOpcion == 1)
         { // Completar Palabra
             cout << "Ingrese la frase a completar del ejercicio.." << endl;
-            cin >> fraseA;
+            getline(cin, fraseA);
+            cin.ignore();
             cout << "Ingrese la frase correcta del ejercicio.." << endl;
-            cin >> fraseB;
+            getline(cin, fraseB);
+            cin.ignore();
         }
-        else if (num == 2)
+        else if (numOpcion == 2)
         { // Traduccion
             cout << "Ingrese la frase a traducir del ejercicio.." << endl;
-            cin >> fraseA;
+            getline(cin, fraseA);
             cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
-            cin >> fraseB;
+            getline(cin, fraseB);
         }
         else
         {
             cout << "Opcion invalida..." << endl;
             return;
         }
-        c->buscarLeccion(num)->agregarEjercicio(nomE, descE, fraseA, fraseB, num);
+        c->buscarLeccion(numL)->agregarEjercicio(nomE, descE, fraseA, fraseB, numOpcion);
     }
 }
