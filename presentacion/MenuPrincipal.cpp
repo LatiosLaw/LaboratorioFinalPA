@@ -13,12 +13,12 @@ MenuPrincipal::~MenuPrincipal()
 void MenuPrincipal::mostrarOpciones()
 {
     cout << endl;
-    cout << "*** Menu principal ***" << endl <<endl;
+    cout << "*** Menu principal ***" << endl << endl;
     cout << "1) Cargar Datos" << endl;
     cout << "2) Alta Usuario" << endl;
     cout << "3) Alta Idioma" << endl;
     cout << "4) Alta Curso" << endl;
-	cout << "5) Agregar Leccion" << endl;
+    cout << "5) Agregar Leccion" << endl;
     cout << "6) Inscribirse al Curso" << endl;
     cout << "7) Realizar Ejercicio" << endl;
     cout << "8) Consulta de Usuario" << endl;
@@ -105,6 +105,8 @@ void MenuPrincipal::mostrarMenu()
             break;
 		case 11:
 			{
+                AgregarEjercicio agregarEjercicio;
+                agregarEjercicio.agregarEjercicio();
 				//Sampletext
 			}
 			break;
