@@ -65,7 +65,11 @@ public:
 
 	virtual set<string> listarCursosNoHabilitados();
 	virtual void habilitarCurso(string nombreCurso);
-	
+
+	virtual void nicksEstudiantes();
+	virtual void nicksProfesores();
+	virtual void nombresCursos();
+
 	virtual Leccion* confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo);
 	virtual set<string> listarNombreCursosHabilitados();
 	virtual ~Controller();

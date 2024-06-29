@@ -25,7 +25,8 @@ void MenuPrincipal::mostrarOpciones()
     cout << "9) Consultar Curso" << endl;
     cout << "10) Habilitar Curso" << endl;
     cout << "11) Siguiente Operacion" << endl;
-    cout << "12) Salir" << endl << endl;
+    cout << "12) Consultar Estadisticas" << endl << endl;
+    cout << "13) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -109,10 +110,15 @@ void MenuPrincipal::mostrarMenu()
 			{
                 AgregarEjercicio agregarEjercicio;
                 agregarEjercicio.agregarEjercicio();
-				//Sampletext
 			}
 			break;
-		case 12:
+        case 12:
+			{
+                ConsultarEstadistica consultarEstadisticas;
+                consultarEstadisticas.consultarEstadisticas();
+			}
+			break;
+		case 13:
 			break;
         default:
             cout << "Opcion desconocida." << endl;

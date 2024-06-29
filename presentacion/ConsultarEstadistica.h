@@ -8,9 +8,8 @@ private:
 public:
 	ConsultarEstadistica();
 	virtual ~ConsultarEstadistica();
-	void listarDataEstudiantes();
-	void listarDataCursos();
-	void listarDataProfesores();
+	void consultarEstadisticas();
+
 	void ElegirEstudiante();
 	void ElegirCurso();
 	void ElegirProfesor();

@@ -686,7 +686,46 @@ void Controller::habilitarCurso(string nombreCurso){
 	}
 }
 
+void Controller::nicksEstudiantes()
+{
+	cout << endl << "Nicknames de los Estudiantes existentes: " << endl;
+	set<Estudiante*> estudiantes;
 
+	for (Usuario* usuario : ListaUsuarios)
+	{
+		Estudiante* student = dynamic_cast<Estudiante*>(usuario);
+		if(student != nullptr)
+		{
+			cout << student->getNickname() << endl;
+		}
+	}
+}
+
+void Controller::nicksProfesores()
+{
+	cout << endl << "Nicknames de los Profesores existentes: " << endl;
+	set<Profesor*> profesores;
+
+	for (Usuario* usuario : ListaUsuarios)
+	{
+		Profesor* teacher = dynamic_cast<Profesor*>(usuario);
+		if(teacher != nullptr)
+		{
+			cout << teacher->getNickname() << endl;
+		}
+	}
+}
+
+void Controller::nombresCursos()
+{
+	cout << endl << "Nicknames de los Cursos existentes: " << endl;
+	set<Curso*> cursos;
+
+	for (Curso* curso : ListaCursos)
+	{
+			cout << curso->getNombreCurso() << endl;
+	}
+}
 
 
 
