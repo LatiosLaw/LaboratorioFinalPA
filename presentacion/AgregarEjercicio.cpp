@@ -1,13 +1,9 @@
 #include "AgregarEjercicio.h"
 
-AgregarEjercicio::AgregarEjercicio()
-{
-    this->controlador = Controller::getInstance();
-}
+AgregarEjercicio::AgregarEjercicio(){this->controlador = Controller::getInstance();}
+AgregarEjercicio::~AgregarEjercicio(){}
 
-AgregarEjercicio::~AgregarEjercicio() {}
-
-/*void AgregarEjercicio::agregarEjercicio()
+void AgregarEjercicio::agregarEjercicio()
 {
 
     // listamos los cursos no habilitados
@@ -15,23 +11,28 @@ AgregarEjercicio::~AgregarEjercicio() {}
     string nomC;
     nombres = this->controlador->listarCursosNoHabilitados();
 
+    cout << "Cursos no habilitados : " << endl;
     for (auto n : nombres)
     {
-
-        cout << endl << n;
+        cout << endl
+             << n;
     }
+    cout << endl;
 
-    cout << endl << "Elije un curso.." << endl;
+    // seleccionamos el curso por nombre
+    cout << endl
+         << "Elije un curso ingresando su nombre..." << endl;
     cin >> nomC;
-
     Curso *c;
     c = this->controlador->buscarCurso(nomC);
 
-    if (c == nullptr){
+    if (c == nullptr)
+    {
         cout << "El curso ingresado no existe" << endl;
         return;
     }
 
+    // si el curso tiene leccioens
     if (c->tieneLecciones() == true)
     {
 
@@ -43,14 +44,15 @@ AgregarEjercicio::~AgregarEjercicio() {}
         string tema;
         string obj;
 
-        cout << "Lecciones del curso " << nomC << " --- " << endl << endl;
+        cout << "Lecciones del curso " << nomC << " --- " << endl
+             << endl;
 
         for (auto &&i : lecciones)
         {
 
             num = i->getNumero();
-            tema = i->obtenerTema();
-            obj = i->obtenerObjetivo();
+            tema = i->getTema();
+            obj = i->getObjetivo();
 
             cout << endl
                  << num << " - " << tema << " - " << obj;
@@ -58,7 +60,7 @@ AgregarEjercicio::~AgregarEjercicio() {}
 
         cout << "Selecciona el numero de la leccion la cual quieres agregar el ejercicio.." << endl;
         cin >> num;
-        //Leccion *l = c->buscarLeccion(num); //instanciarlo si se precisa para el if de abajo, y comparar esa l con el nullptr si no funciona
+        // Leccion *l = c->buscarLeccion(num); //instanciarlo si se precisa para el if de abajo, y comparar esa l con el nullptr si no funciona
 
         if (c->buscarLeccion(num) == nullptr) // control que no exista la leccion
         {
@@ -66,7 +68,11 @@ AgregarEjercicio::~AgregarEjercicio() {}
             return;
         }
 
-        //DATOS DEL EJ
+        // DATOS DEL EJ
+        string nomE;
+        string descE;
+        string fraseA;
+        string fraseB;
         cout << "Ingrese el nombre del ejercicio.." << endl;
         cin >> nomE;
         cout << "Ingrese la descripcion del ejercicio.." << endl;
@@ -93,8 +99,6 @@ AgregarEjercicio::~AgregarEjercicio() {}
             cout << "Opcion invalida..." << endl;
             return;
         }
-        c->buscarLeccion(num)->agregarEjercicio(nomE,descE,fraseA, string fraseB,num)
-        
+        c->buscarLeccion(num)->agregarEjercicio(nomE, descE, fraseA, fraseB, num);
     }
 }
-*/
