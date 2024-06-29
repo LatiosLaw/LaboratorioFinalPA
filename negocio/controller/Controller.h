@@ -66,7 +66,6 @@ public:
 	
 	
 	virtual Leccion* confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo);
-	virtual bool crearEjercicio(string desc, string nombreEjer, string nombreCurso);
 	virtual set<string> listarNombreCursosHabilitados();
 	virtual ~Controller();
 };

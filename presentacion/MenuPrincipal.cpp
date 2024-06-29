@@ -66,12 +66,14 @@ void MenuPrincipal::mostrarMenu()
             {
                 AltaCurso pAltaCurso;
                 pAltaCurso.altaCurso();
+				break;
             }
             break;
 		case 5:
 		    {
 			    AgregarLeccion agregarLeccionn;
 			    agregarLeccionn.agregarLeccion();
+				break;
 		    }
         case 6:
             {

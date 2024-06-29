@@ -10,6 +10,7 @@ AgregarLeccion::~AgregarLeccion(){
 }
 void AgregarLeccion::agregarLeccion(){
 	
+	string querry;
 	string nombreCurso;
 	string tema;//Data taip p1
 	string objetivo;//Data taip p2
@@ -30,12 +31,11 @@ void AgregarLeccion::agregarLeccion(){
 	
 	
 	
-	cin >> nombreCurso;
+	getline(cin,nombreCurso);
 	cout <<"Ingrese el tema de la Leccion nueva"<<endl;
-	cin >> tema;
+	getline(cin,tema);
 	cout <<"Ingrese el objetivo de la Leccion nueva"<<endl;
-	cin >> objetivo;
-	
+	getline(cin,objetivo);
 	Leccion* tokenLec = this->controlador->confirmarDatosAgregarLeccion(nombreCurso,tema,objetivo);
 	if(tokenLec == nullptr){
 		cout << "No se pudo ingresar de manera correcta, corrobore los datos e eintenet otra vez." <<endl;
@@ -47,6 +47,7 @@ void AgregarLeccion::agregarLeccion(){
 		cout << "2-No"<< endl;
 		int token;
 		cin >> token;
+		cin.ignore();
 		if(token == 1){
 			string nombreEjer;
 			string desc;
@@ -55,11 +56,46 @@ void AgregarLeccion::agregarLeccion(){
 			int num;
 			int tokenopt;
 				while (true){
+					cout << "Que tipo de ejercicio quieres agregar?"<< endl << "1- Completar Palabra " << endl << "2- Traduccion " << endl;
+					//cin.ignore();
+					cin >> num;
 					cout << "Ingrese nombre para el nuevo ejerciso" <<endl;
-					cin >> nombreEjer;
+					cin.ignore();
+					getline(cin,nombreEjer);
 					cout << "Ingrese descripcion para el mismo" <<endl;
-					cin >> desc;
+					cin.ignore();
+					getline(cin,desc);
+					if (num == 1)
+					{ // Completar Palabra
+						cout << "Ingrese la frase a completar del ejercicio.." << endl;
+						cin.ignore();
+						getline(cin,fraseA);
+						cout << "Ingrese la frase correcta del ejercicio.." << endl;
+						
+						getline(cin,fraseB);
+					}
 					
+					else if (num == 2)
+					{ // Traduccion
+						cout << "Ingrese la frase a traducir del ejercicio.." << endl;
+						cin.ignore();
+						getline(cin,fraseA);
+						cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
+						cin.ignore();
+						getline(cin,fraseB);
+					}
+					else
+					{
+						cout << "Opcion invalida..." << endl;
+						return;
+					}
+					
+					
+					
+					
+					
+				
+					cout << "Ingrese descripcion para el mismo" <<endl;
 					tokenLec->agregarEjercicio(nombreEjer, desc, fraseA, fraseB, num);
 					
 					cout << "Desea continuar agregando ejercicios?" <<endl;
@@ -72,6 +108,8 @@ void AgregarLeccion::agregarLeccion(){
 						break;
 					}
 				}
+		}else{
+			cout << "Opt incorrecta saliendo del sub menu" <<endl;
 		}
 		
 		

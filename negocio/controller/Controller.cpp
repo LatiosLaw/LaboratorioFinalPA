@@ -599,26 +599,6 @@ Leccion* Controller :: confirmarDatosAgregarLeccion(string cursoNombre,string te
 	return lecci;
 }
 
-bool Controller :: crearEjercicio(string desc, string nombreEjer, string nombreCurso){
-	
-	bool token = false;
-	Curso *cursoEncontrado;
-	
-	for (Curso *curso : ListaCursos)
-	{
-		if(curso->getNombreCurso() == nombreCurso){
-			token = true;
-			cursoEncontrado = curso;
-		}
-		if(token == true){
-			break;
-		}
-	}
-	cursoEncontrado->crearLeccion(nombreEjer,desc);
-	
-	
-	
-}
 
 set<string> Controller::listarNombreCursosHabilitados(){
 	set<string> cursos;
