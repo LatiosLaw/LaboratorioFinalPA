@@ -324,5 +324,16 @@ for (auto &&i : l)
 	return nullptr;
 }
 
-
+set<Ejercicio*> Curso::devolverTodosLosEjercicios(){
+set<Ejercicio*> todosLosEjercicios;
+for (Leccion *leccion : ListaLecciones)
+	{
+		set<Ejercicio*> EjerciciosDeLeccion;
+		EjerciciosDeLeccion = leccion->retornarEjercicios();
+		for(Ejercicio* ejercicio : EjerciciosDeLeccion){
+			todosLosEjercicios.insert(ejercicio);
+		}
+	}
+	return todosLosEjercicios;
+}
 

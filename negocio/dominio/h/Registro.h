@@ -19,8 +19,8 @@ private:
 	
 public:
 	Registro();
-	Registro(Fecha fechaInscripcion, string avance);
 	Registro(Curso* curso, Estudiante* estudiante);
+	Registro(Fecha fecha, Curso* curso, Estudiante* estudiante);
 	
 	virtual ~Registro();
 
@@ -32,6 +32,8 @@ public:
 	void aprobar(Ejercicio* ejercicio);
 	void VerificarRespuesta();
 	void obtenerEstadisticasE();
+	set<Ejercicio*> obtenerEjerciciosDelCurso();
+	void calcularAvance();
 	string getAvance(); // Esto es un getter, por lo que no es realmente solo mio XD
 
 	///////////////////////////////////////////////////////////////

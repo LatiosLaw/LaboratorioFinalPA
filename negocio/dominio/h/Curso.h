@@ -71,6 +71,7 @@ public:
 	Leccion* crearLeccion(string tema, string objetivo);
 	set<Leccion*> obtenerLecciones();
 	Leccion* buscarLeccion(int n);
+	set<Ejercicio*> devolverTodosLosEjercicios();
 
 	///////////////////////////////////////////////////////////////
 };

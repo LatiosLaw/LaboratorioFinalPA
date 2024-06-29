@@ -95,6 +95,15 @@ set<Ejercicio*> Leccion::buscarEjerciciosPendientes(set<Ejercicio*>aprobados)
     return ejerciciosPendientes;
 }
 
+set<Ejercicio*> Leccion::retornarEjercicios(){
+set<Ejercicio*>ejercicios;
+    for (Ejercicio* ejercicio : ListaEjercicios)
+    {
+            ejercicios.insert(ejercicio);
+    }
+    return ejercicios;
+}
+
 set<Ejercicio*> Leccion::obtenerEjercicios(){
 return this->ListaEjercicios;
 }

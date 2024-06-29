@@ -5,18 +5,25 @@ Registro::Registro()
 
 }
 
-Registro::Registro(Fecha fechaInscripcion, string avance)//falta agregarle parametros
+Registro::Registro(Curso* curso, Estudiante* estudiante)
 {
-    this->fechaInscripcion = fechaInscripcion;
-    this->avance = avance;
+    Fecha fechaR(1,1,1);
+    this->curso = curso;
+    this->estudiante = estudiante;
+    this->fechaInscripcion = fechaR;
+    this->ListaEjercicios = this->obtenerEjerciciosDelCurso();
+    this->calcularAvance();
 }
 
-Registro::Registro(Curso* curso, Estudiante* estudiante)
+Registro::Registro(Fecha fecha, Curso* curso, Estudiante* estudiante)
 {
     this->curso = curso;
     this->estudiante = estudiante;
+    this->fechaInscripcion = fecha;
+    this->ListaEjercicios = this->obtenerEjerciciosDelCurso();
+    this->calcularAvance();
 }
-	
+
 Registro::~Registro()
 {
 
@@ -62,4 +69,24 @@ void Registro::obtenerEstadisticasE(){
 
 void Registro::aprobar(Ejercicio* ejercicio){
 this->ListaEjerciciosAprobados.insert(ejercicio);
+this->calcularAvance();
+}
+
+set<Ejercicio*> Registro::obtenerEjerciciosDelCurso(){
+    set<Ejercicio *> ejerciciosDelCurso = curso->devolverTodosLosEjercicios();
+    return ejerciciosDelCurso;
+}
+
+void Registro::calcularAvance(){
+    int cantidad_ejercicios=0;
+    double valor;
+    double avance=0;
+    for(Ejercicio* ejercicio : ListaEjercicios){
+		cantidad_ejercicios = cantidad_ejercicios+1;
+	}
+    valor = 100/cantidad_ejercicios;
+    for(Ejercicio* ejercicio : ListaEjerciciosAprobados){
+		avance = avance+valor;
+	}
+    this->avance = to_string(avance);
 }
