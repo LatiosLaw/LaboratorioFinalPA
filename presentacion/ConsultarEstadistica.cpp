@@ -1,7 +1,4 @@
 #include "ConsultarEstadistica.h"
-#include "../negocio/dto/DT_EstadisticasCurso.cpp"
-#include "../negocio/dto/DT_EstadisticasEstudiante.cpp"
-#include "../negocio/dto/DT_EstadisticasProfesor.cpp"
 
 //Falta pasar las operaciones al controlador principal, haré eso según tenga idea de los retornos y demás.
 

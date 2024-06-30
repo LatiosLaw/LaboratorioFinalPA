@@ -2,7 +2,7 @@
 #define PROFESOR_H
 #include "Usuario.h"
 #include "Idioma.h"
-#include "../../dto/DT_EstadisticasProfesor.cpp"
+#include "../../dto/DT_EstadisticasProfesor.h"
 #include "Curso.h"
 #include <string>
 #include <set>

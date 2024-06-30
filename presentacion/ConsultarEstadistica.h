@@ -1,6 +1,9 @@
 #ifndef PRESENTACION_CONSULTARESTADISTICA_H_
 #define PRESENTACION_CONSULTARESTADISTICA_H_
 #include "../negocio/controller/Controller.h"
+#include "../negocio/dto/DT_EstadisticasEstudiante.h"
+#include "../negocio/dto/DT_EstadisticasProfesor.h"
+#include "../negocio/dto/DT_EstadisticasCurso.h"
 
 class ConsultarEstadistica{
 private:

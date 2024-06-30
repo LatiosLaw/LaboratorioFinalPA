@@ -1,7 +1,7 @@
 #ifndef CURSO_H
 #define CURSO_H
 #include "Ejercicio.h"
-#include "../../dto/DT_EstadisticasCurso.cpp"
+#include "../../dto/DT_EstadisticasCurso.h"
 #include "Idioma.h"
 #include "Leccion.h"
 #include <set>

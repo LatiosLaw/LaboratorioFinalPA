@@ -1,7 +1,7 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 #include "Usuario.h"
-#include "../../dto/DT_EstadisticasEstudiante.cpp"
+#include "../../dto/DT_EstadisticasEstudiante.h"
 #include "Fecha.h"
 #include "Curso.h"
 #include <string>
