@@ -122,3 +122,20 @@ void Leccion:: nukearEejers(){
 void Leccion::chao(){
 	delete this;
 }
+
+bool Leccion::yaExisteEj(string nomE)
+{
+
+    for (auto &&i : this->ListaEjercicios)
+    {
+        if (i->getnombreEjercicio() == nomE)
+        {
+
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
