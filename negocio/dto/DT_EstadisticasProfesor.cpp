@@ -13,18 +13,6 @@ DT_EstadisticasProfesor::~DT_EstadisticasProfesor(){
 	
 }
 
-string DT_EstadisticasProfesor::getnombreCurso(){
-return this->nombreCurso;
-}
-
-string DT_EstadisticasProfesor::getavance_promedio(){
-return this->avance_promedio;
-}
-
-void DT_EstadisticasProfesor::setnombreCurso(string nomcur){
-this->nombreCurso = nomcur;
-}
-
-void DT_EstadisticasProfesor::setavance_promedio(string avan){
-this->avance_promedio = avan;
+void DT_EstadisticasProfesor::mostrarDatos(){
+cout << "Nombre del Curso : " << this->nombreCurso << " , Avance Promedio en el Curso : " << this->avance_promedio << endl; 
 }

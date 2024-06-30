@@ -118,11 +118,27 @@ void Curso::listarProfesorDelCurso()
 	}
 }
 
+string Curso::nombreDificultad()
+{
+	if (dificultadCurso == dificultad::principiante)
+	{
+		return "Principiante";
+	}
+	else if (dificultadCurso == dificultad::media)
+	{
+		return "Medio";
+	}
+	else
+	{
+		return "Avanzado";
+	}
+}
+
 void Curso::mostrarInfo()
 {
 	cout << "Nombre: " << this->nombreCurso << endl;
 	cout << "Descripcion: " << this->descripcion << endl;
-	cout << "Dificultad: " << enumToString(this->dificultadCurso) << endl;
+	cout << "Dificultad: " << this->nombreDificultad() << endl;
 	listarIdiomasDelCurso();
 
 	if(this->profe == nullptr){
@@ -229,8 +245,13 @@ void Curso::obtenerEstadisticasP()
 {
 }
 
-void Curso::estadisticasCurso()
+DT_EstadisticasCurso* Curso::estadisticasCurso()
 {
+	DT_EstadisticasCurso* estadisticas_curso;
+	string avance_promedio;
+	avance_promedio = this->obtenerAvancePromedio();
+	estadisticas_curso = new DT_EstadisticasCurso(this->getNombreCurso(), this->getDescripcion(), this->getDificultad(), avance_promedio);
+	return estadisticas_curso;
 }
 
 bool Curso::tieneLecciones()
@@ -398,4 +419,18 @@ bool Curso::cumplePrevias(set<Curso *> cursos)
 		}
 	}
 	return false;
+
+}
+
+string Curso::obtenerAvancePromedio()
+{
+	int cantidad_registros = 0;
+	float suma_avances = 0;
+	string promedio;
+	for (Registro *registro : ListaRegistros)
+	{
+		suma_avances = stof(registro->getAvance());
+		cantidad_registros = cantidad_registros + 1;
+	}
+	return to_string(suma_avances / cantidad_registros);
 }

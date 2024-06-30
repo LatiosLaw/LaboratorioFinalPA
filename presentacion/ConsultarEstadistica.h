@@ -9,10 +9,6 @@ public:
 	ConsultarEstadistica();
 	virtual ~ConsultarEstadistica();
 	void consultarEstadisticas();
-
-	void ElegirEstudiante();
-	void ElegirCurso();
-	void ElegirProfesor();
 };
 
 #endif /* PRESENTACION_CONSULTARESTADISTICA_H_ */

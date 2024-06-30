@@ -15,11 +15,8 @@ public:
 	DT_EstadisticasEstudiante();
 	DT_EstadisticasEstudiante(string nomcur, string avan);
 	
-	string getnombreCurso();
-	string getavance();
-	void setnombreCurso(string nomcur);
-	void setavance(string avan);
-	
+	void mostrarDatos();
+
 	virtual ~DT_EstadisticasEstudiante();
 };
 #endif

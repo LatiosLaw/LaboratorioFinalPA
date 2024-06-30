@@ -1,6 +1,7 @@
 #ifndef CURSO_H
 #define CURSO_H
 #include "Ejercicio.h"
+#include "../../dto/DT_EstadisticasCurso.cpp"
 #include "Idioma.h"
 #include "Leccion.h"
 #include <set>
@@ -8,10 +9,6 @@
 class Estudiante;
 class Registro;
 class Profesor;
-
-enum dificultad{
-	principiante, medio, avanzado
-};
 
 class Curso{
 	
@@ -35,6 +32,8 @@ public:
 	string getDescripcion();
 	bool getHabilitado();
 	dificultad getDificultad();
+
+	string nombreDificultad();
 	
 	void setNombreCurso(string nom);
 	void setDescripcion(string desc);
@@ -66,7 +65,7 @@ public:
 	Curso* obtenerDataType();
 	set<Ejercicio*> buscarEjerciciosLeccionPendiente(set<Ejercicio*>aprobados);
 	void obtenerEstadisticasP();
-	void estadisticasCurso();
+	DT_EstadisticasCurso* estadisticasCurso();
 	bool tieneLecciones();
 	bool todasLasLeccionesTienenEjercicios();
 	void Habilitate();
@@ -75,6 +74,8 @@ public:
 	set<Leccion*> obtenerLecciones();
 	Leccion* buscarLeccion(int n);
 	set<Ejercicio*> devolverTodosLosEjercicios();
+
+	string obtenerAvancePromedio();
 
 	///////////////////////////////////////////////////////////////
 };

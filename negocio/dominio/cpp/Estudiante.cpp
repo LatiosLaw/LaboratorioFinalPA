@@ -94,10 +94,6 @@ void Estudiante::obtenerDataType(){
 
 }
 
-void Estudiante::estadisticasEstudiante(){
-
-}
-
 set<Curso*> Estudiante::buscarCursosAprobados(){
 	set<Curso*> cursosAprobados;
 	for(auto registro : ListaRegistros)
@@ -106,4 +102,18 @@ set<Curso*> Estudiante::buscarCursosAprobados(){
 	}
 
 	return cursosAprobados;
+
+}
+
+set<DT_EstadisticasEstudiante*> Estudiante::estadisticasEstudiante(){
+set<DT_EstadisticasEstudiante*> estadisticas;
+string nombre_curso;
+string avance;
+for (Registro *registros : ListaRegistros)
+{
+		nombre_curso = registros->pedirNombreACurso();
+		avance = registros->getAvance();
+		estadisticas.insert(new DT_EstadisticasEstudiante(nombre_curso,avance));
+}
+return estadisticas;
 }

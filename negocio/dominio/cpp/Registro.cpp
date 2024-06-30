@@ -114,3 +114,9 @@ Curso *Registro::devolverCursoAprobado()
         return nullptr;
     }
 }
+
+string Registro::pedirNombreACurso(){
+    string retorno;
+    retorno = curso->getNombreCurso();
+    return retorno;
+}

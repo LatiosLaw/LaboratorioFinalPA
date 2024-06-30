@@ -10,15 +10,11 @@ class DT_EstadisticasProfesor{
 private:
 	string nombreCurso;
 	string avance_promedio;
-	
 public:
 	DT_EstadisticasProfesor();
 	DT_EstadisticasProfesor(string nomcur, string avan_prom);
 	
-	string getnombreCurso();
-	string getavance_promedio();
-	void setnombreCurso(string nomcur);
-	void setavance_promedio(string avan);
+	void mostrarDatos();
 	
 	virtual ~DT_EstadisticasProfesor();
 };

@@ -2,6 +2,7 @@
 #define PROFESOR_H
 #include "Usuario.h"
 #include "Idioma.h"
+#include "../../dto/DT_EstadisticasProfesor.cpp"
 #include "Curso.h"
 #include <string>
 #include <set>
@@ -34,7 +35,7 @@ public:
 	// Metodos de los casos de Martin, faltan retornos y parametros
 
 	void obtenerDataType();
-	void estadisticasProfesor();
+	set<DT_EstadisticasProfesor*> estadisticasProfesor();
 
 	///////////////////////////////////////////////////////////////
 };

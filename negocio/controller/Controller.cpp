@@ -77,15 +77,15 @@ void Controller::inicializarDatos()
     ListaUsuarios.insert(U15);
 
 	
-	Curso* Cp = new Curso("cp",". Curso de Prueba", principiante, U11, I1, true);
+	Curso* Cp = new Curso("cp",". Curso de Prueba", dificultad::principiante, U11, I1, true);
 	
 	
-    Curso* C1 = new Curso("Ingles para principiantes","Curso para personas con poco o ningun conocimiento de ingles. Se enfoca en vocabulario basico, gramatica y habilidades de conversacion.", principiante, U11, I1, true);
-    Curso* C2 = new Curso("Curso de ingles basico","Construye una base solida en el idioma. Cubre gramatica, vocabulario, comprension auditiva y expresion oral.", principiante, U11, I1, false);
-    Curso* C3 = new Curso("Ingles intermedio: mejora tu nivel","Para estudiantes con conocimientos basicos de ingles que desean avanzar en su habilidad comunicativa. Se centra en la fluidez oral, lectura comprensiva y escritura.", medio, U12, I1, true);
-    Curso* C4 = new Curso("Curso avanzado de ingles","Dirigido a personas con un nivel intermedio-alto que desean perfeccionar sus habilidades en todos los aspectos del idioma. Incluye gramatica avanzada, vocabulario y comprension escrita y auditiva.", avanzado, U12, I1, true);
-    Curso* C5 = new Curso("Portugues intermedio","Curso para aquellos que tienen conocimientos basicos de portugues y desean mejorar su nivel. Incluye practica de lectura, escritura y comprension auditiva.", medio, U12, I3, true);
-    Curso* C6 = new Curso("Portugues avanzado","Curso avanzado para personas con un nivel intermedio-alto de portugues que desean perfeccionar su fluidez y dominio del idioma. Se trabaja en la gramatica avanzada y la expresion oral.", avanzado, U14, I3, false);
+    Curso* C1 = new Curso("Ingles para principiantes","Curso para personas con poco o ningun conocimiento de ingles. Se enfoca en vocabulario basico, gramatica y habilidades de conversacion.", dificultad::principiante, U11, I1, true);
+    Curso* C2 = new Curso("Curso de ingles basico","Construye una base solida en el idioma. Cubre gramatica, vocabulario, comprension auditiva y expresion oral.", dificultad::principiante, U11, I1, false);
+    Curso* C3 = new Curso("Ingles intermedio: mejora tu nivel","Para estudiantes con conocimientos basicos de ingles que desean avanzar en su habilidad comunicativa. Se centra en la fluidez oral, lectura comprensiva y escritura.", dificultad::media, U12, I1, true);
+    Curso* C4 = new Curso("Curso avanzado de ingles","Dirigido a personas con un nivel intermedio-alto que desean perfeccionar sus habilidades en todos los aspectos del idioma. Incluye gramatica avanzada, vocabulario y comprension escrita y auditiva.", dificultad::avanzado, U12, I1, true);
+    Curso* C5 = new Curso("Portugues intermedio","Curso para aquellos que tienen conocimientos basicos de portugues y desean mejorar su nivel. Incluye practica de lectura, escritura y comprension auditiva.", dificultad::media, U12, I3, true);
+    Curso* C6 = new Curso("Portugues avanzado","Curso avanzado para personas con un nivel intermedio-alto de portugues que desean perfeccionar su fluidez y dominio del idioma. Se trabaja en la gramatica avanzada y la expresion oral.", dificultad::avanzado, U14, I3, false);
 
     //crear lecciones y añadirlas alos cursos
 	//USAR 	OPERACION DE ANDRES CON DATOS AQUI.
@@ -429,7 +429,7 @@ Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string
 	}
 	else
 	{
-		curso = new Curso(NombreCurso, descripcion, false, principiante);
+		curso = new Curso(NombreCurso, descripcion, false, dificultad::principiante);
 
 		// Agregar los idiomas seleccionados al curso
 		for (string idiomaSeleccionado : idiomasSeleccionados)

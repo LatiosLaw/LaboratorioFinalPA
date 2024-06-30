@@ -72,6 +72,15 @@ void Profesor::obtenerDataType(){
 
 }
 
-void Profesor::estadisticasProfesor(){
-
+set<DT_EstadisticasProfesor*> Profesor::estadisticasProfesor(){
+set<DT_EstadisticasProfesor*> estadisticas;
+string nombre_curso;
+string av_promedio;
+for (Curso *cursos : ListaCursos)
+{
+		nombre_curso = cursos->getNombreCurso();
+		av_promedio = cursos->obtenerAvancePromedio();
+		estadisticas.insert(new DT_EstadisticasProfesor(nombre_curso, av_promedio));
+}
+return estadisticas;
 }
