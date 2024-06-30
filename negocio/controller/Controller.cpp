@@ -741,6 +741,63 @@ void Controller::nombresCursos()
 			cout << curso->getNombreCurso() << endl;
 	}
 }
+void Controller::eliminarCursoYsusDerivados(string nombreCurso){
+	Curso *c;
+	c = buscarCurso(nombreCurso);
+	
+	
+	if (c == nullptr){
+		cout << "error Curso no existe. " << endl;
+	}
+	else{
+		eliminarDeProfe(nombreCurso);
+		
+		c->nukearRegistros();
+		c->nukearLecciones();
+		
+		ListaCursos.erase(c);
+		c->chao();
+		
+		cout << "Curso y sus derivados eliminados correctamente" <<endl;
+		
+	}
+	
+}
+void Controller::eliminarDeProfe(string nombreCurso){
+	set <Usuario*> profes = listaProfes();
+	/*int pepe = 0;
+	for (Usuario* prro : profes)
+	{
+	pepe ++;
+	
+	cout << pepe << prro->getNombreProfesor() << endl;
+	
+	}
+	*/
+	for (Usuario* pof : profes)
+	{
+		dynamic_cast<Profesor*>(pof)->eliminarCursoDeLista(nombreCurso);
+	}
+}
+
+set<Usuario*> Controller::listaProfes()
+{
+	set<Usuario*> profesores;
+	
+	for (Usuario* usuario : ListaUsuarios)
+	{
+		string nombreProfe = usuario->getNombreProfesor();
+		if (nombreProfe != "")
+		{
+			profesores.insert(usuario);
+		}
+	}
+	return profesores;
+	
+}
+
+
+
 
 
 

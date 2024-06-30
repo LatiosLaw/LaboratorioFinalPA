@@ -13,6 +13,7 @@ Leccion::Leccion(int numero, string tema, string objetivo)
 
 Leccion::~Leccion()
 {
+	//cout << "DESTRUCTOR DE LECCION" <<endl;
 }
 
 int Leccion::getNumero()
@@ -106,4 +107,18 @@ set<Ejercicio*>ejercicios;
 
 set<Ejercicio*> Leccion::obtenerEjercicios(){
 return this->ListaEjercicios;
+}
+
+void Leccion:: nukearEejers(){
+	
+	for (Ejercicio *lista : ListaEjercicios)
+	{
+		ListaEjercicios.erase(lista);
+		lista->solonggaybowser();
+		
+	}
+	
+}
+void Leccion::chao(){
+	delete this;
 }

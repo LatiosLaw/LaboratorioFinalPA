@@ -60,5 +60,8 @@ public:
 	virtual Leccion* confirmarDatosAgregarLeccion(string cursoNombre,string tema,string objetivo) = 0;
 	
 	virtual void habilitarCurso(string nombreCurso)= 0;
+	virtual void eliminarCursoYsusDerivados(string nombreCurso) = 0;
+	virtual set<Usuario*> listaProfes() = 0;
+	virtual void eliminarDeProfe(string nombreCurso) = 0;
 };
 #endif

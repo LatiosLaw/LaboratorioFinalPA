@@ -10,7 +10,6 @@ AgregarLeccion::~AgregarLeccion(){
 }
 void AgregarLeccion::agregarLeccion(){
 	
-	string querry;
 	string nombreCurso;
 	string tema;//Data taip p1
 	string objetivo;//Data taip p2
@@ -48,71 +47,83 @@ void AgregarLeccion::agregarLeccion(){
 		int token;
 		cin >> token;
 		cin.ignore();
-		if(token == 1){
+		switch (token) {
+		case 1:
+		{
 			string nombreEjer;
 			string desc;
 			string fraseA;
 			string fraseB;
 			int num;
 			int tokenopt;
-				while (true){
-					cout << "Que tipo de ejercicio quieres agregar?"<< endl << "1- Completar Palabra " << endl << "2- Traduccion " << endl;
-					//cin.ignore();
-					cin >> num;
-					cout << "Ingrese nombre para el nuevo ejerciso" <<endl;
+			while (true){
+				cout << "Que tipo de ejercicio quieres agregar?"<< endl << "1- Completar Palabra " << endl << "2- Traduccion " << endl;
+				//cin.ignore();
+				cin >> num;
+				cout << "Ingrese nombre para el nuevo ejerciso" <<endl;
+				cin.ignore();
+				getline(cin,nombreEjer);
+				cout << "Ingrese descripcion para el mismo" <<endl;
+				cin.ignore();
+				getline(cin,desc);
+				if (num == 1)
+				{ // Completar Palabra
+					cout << "Ingrese la frase a completar del ejercicio.." << endl;
 					cin.ignore();
-					getline(cin,nombreEjer);
-					cout << "Ingrese descripcion para el mismo" <<endl;
-					cin.ignore();
-					getline(cin,desc);
-					if (num == 1)
-					{ // Completar Palabra
-						cout << "Ingrese la frase a completar del ejercicio.." << endl;
-						cin.ignore();
-						getline(cin,fraseA);
-						cout << "Ingrese la frase correcta del ejercicio.." << endl;
-						
-						getline(cin,fraseB);
-					}
+					getline(cin,fraseA);
+					cout << "Ingrese la frase correcta del ejercicio.." << endl;
 					
-					else if (num == 2)
-					{ // Traduccion
-						cout << "Ingrese la frase a traducir del ejercicio.." << endl;
-						cin.ignore();
-						getline(cin,fraseA);
-						cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
-						cin.ignore();
-						getline(cin,fraseB);
-					}
-					else
-					{
-						cout << "Opcion invalida..." << endl;
-						return;
-					}
-					
-					
-					
-					
-					
-				
-					cout << "Ingrese descripcion para el mismo" <<endl;
-					tokenLec->agregarEjercicio(nombreEjer, desc, fraseA, fraseB, num);
-					
-					cout << "Desea continuar agregando ejercicios?" <<endl;
-					cout << "1-Si" <<endl;
-					cout << "2-No" <<endl;
-					
-					cin >> tokenopt;
-					
-					if(tokenopt == 2){
-						break;
-					}
+					getline(cin,fraseB);
 				}
-		}else{
+				
+				else if (num == 2)
+				{ // Traduccion
+					cout << "Ingrese la frase a traducir del ejercicio.." << endl;
+					cin.ignore();
+					getline(cin,fraseA);
+					cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
+					cin.ignore();
+					getline(cin,fraseB);
+				}
+				else
+				{
+					cout << "Opcion invalida..." << endl;
+					return;
+				}
+				
+				
+				
+				
+				
+				
+				cout << "Ingrese descripcion para el mismo" <<endl;
+				tokenLec->agregarEjercicio(nombreEjer, desc, fraseA, fraseB, num);
+				
+				cout << "Desea continuar agregando ejercicios?" <<endl;
+				cout << "1-Si" <<endl;
+				cout << "2-No" <<endl;
+				
+				cin >> tokenopt;
+				
+				if(tokenopt != 1){
+					if(tokenopt != 2){
+						cout << "Opt incorrecta saliendo del sub menu" <<endl;
+					}
+					break;
+				}
+			}
+		}
+		break;
+		default:
+		{
 			cout << "Opt incorrecta saliendo del sub menu" <<endl;
+			break;
 		}
 		
 		
 		
+		}
 	}
+
+		
 }

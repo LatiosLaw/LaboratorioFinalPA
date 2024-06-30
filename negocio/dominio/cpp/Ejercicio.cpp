@@ -13,7 +13,7 @@ Ejercicio::Ejercicio(string nombreEjercicio, string descripcion)
 	
 Ejercicio::~Ejercicio()
 {
-
+	//cout << "OH NO, AN ASTEROID "<<endl;
 }
 
 string Ejercicio::getDescripcion(){
@@ -49,3 +49,7 @@ bool Ejercicio::verificarNombre(string nom){
         return false;
     }
 }
+void Ejercicio::solonggaybowser(){
+	delete this;
+}
+

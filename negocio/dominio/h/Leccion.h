@@ -32,6 +32,8 @@ public:
 	set<Ejercicio*> buscarEjerciciosPendientes(set<Ejercicio*>aprobados); // Esto requiere una lista de ejercicios
 	set<Ejercicio*> obtenerEjercicios();
 	set<Ejercicio*> retornarEjercicios();
+	void nukearEejers();
+	void chao();
 
 };
 #endif

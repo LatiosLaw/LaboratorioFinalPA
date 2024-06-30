@@ -76,6 +76,9 @@ public:
 	set<Ejercicio*> devolverTodosLosEjercicios();
 
 	string obtenerAvancePromedio();
+	void nukearLecciones();
+	void nukearRegistros();
+	void chao();
 
 	///////////////////////////////////////////////////////////////
 };
