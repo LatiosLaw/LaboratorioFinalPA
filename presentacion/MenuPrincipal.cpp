@@ -24,7 +24,7 @@ void MenuPrincipal::mostrarOpciones()
     cout << "8) Consulta de Usuario" << endl;
     cout << "9) Consultar Curso" << endl;
     cout << "10) Habilitar Curso" << endl;
-	cout << "11) El�iminar Curso" << endl;
+	cout << "11) Eliminar Curso" << endl;
     cout << "12) Agregar Ejercicio" << endl;
     cout << "13) Consultar Estadisticas" << endl;
     cout << "14) Salir" << endl << endl;

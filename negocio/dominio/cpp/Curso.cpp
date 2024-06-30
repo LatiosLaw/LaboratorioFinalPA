@@ -63,6 +63,8 @@ dificultad Curso::convertirDificultad(int n)
 		return dificultad::media;
 	else if (n == 2)
 		return dificultad::avanzado;
+	else
+		return dificultad::principiante;
 }
 
 void Curso::setNombreCurso(string nom)
