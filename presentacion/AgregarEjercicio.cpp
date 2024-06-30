@@ -63,9 +63,9 @@ void AgregarEjercicio::agregarEjercicio()
                  << numL << " - " << tema << " - " << obj;
         }
 
-        cout << "Selecciona el numero de la leccion la cual quieres agregar el ejercicio.." << endl;
-        cin >> numL;
+        cout << endl << "Selecciona el numero de la leccion la cual quieres agregar el ejercicio.." << endl;
         cin.ignore();
+        cin >> numL;
         // Leccion *l = c->buscarLeccion(num); //instanciarlo si se precisa para el if de abajo, y comparar esa l con el nullptr si no funciona
 
         if (c->buscarLeccion(numL) == nullptr) // control que no exista la leccion
@@ -80,11 +80,13 @@ void AgregarEjercicio::agregarEjercicio()
         string fraseA;
         string fraseB;
         cout << "Ingrese el nombre del ejercicio.." << endl;
+        cin.ignore();
         cin >> nomE;
-        cin.ignore();
+        
         cout << "Ingrese la descripcion del ejercicio.." << endl;
-        cin >> descE;
         cin.ignore();
+        cin >> descE;
+        
 
         cout << "Que tipo de ejercicio quieres agregar? /n 1- Completar Palabra  /n 2- Traduccion " << endl;
         cin >> numOpcion;
