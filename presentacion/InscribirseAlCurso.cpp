@@ -14,7 +14,6 @@ void InscribirseAlCurso::inscribirse() //en proceso
 {
     cout << "Bienvenido a Inscribirse a Curso" << endl;
     
-   
     cout << "Ingrese nickname del estudiante: ";
     string nickname;
     cin >> nickname;

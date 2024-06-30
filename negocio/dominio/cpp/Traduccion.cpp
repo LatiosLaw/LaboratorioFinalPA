@@ -28,7 +28,7 @@ void Traduccion::mostrarEjercicio(){
 cout << "Ejercicio : " << this->getnombreEjercicio() << endl;
 cout << "Traduzca la siguiente frase a idioma español." << endl;
 cout << "Frase a traducir : " << endl;
-cout << this->getFrase();
+cout << this->getFrase() << endl;
 }
 
 bool Traduccion::enviarSolucion(string solu){

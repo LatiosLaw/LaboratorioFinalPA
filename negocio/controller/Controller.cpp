@@ -100,12 +100,12 @@ void Controller::inicializarDatos()
 
     L1->agregarEjercicio("E1","Presentaciones","Mucho gusto en conocerte","Nice to meet you",2);
     L1->agregarEjercicio("E2","Presentaciones formales","Please --- me to introduce ---","allow, myself",1);
-    L1->agregarEjercicio("E3","Plurales regulares","I have two brothers and three sisters","Tengo dos hermanos y tres hermanas",2);
-    L1->agregarEjercicio("E4","Sustantivos contables en plural","Can I have --- water, please?","some",1);
-    L1->agregarEjercicio("E5","Actividades diarias","Wake ---","up",1);
-    L1->agregarEjercicio("E6","Consultas de la hora","Q: Do you --- the time?, A: Yes, it is half --- 4","have, past",1);
-    L1->agregarEjercicio("E7","Dar consejos o expresar obligacion","You should visit that museum","Deberias visitar ese museo",2);
-    L1->agregarEjercicio("E8","Imperativo","Fale comigo","Habla conmigo",2);
+    L2->agregarEjercicio("E3","Plurales regulares","I have two brothers and three sisters","Tengo dos hermanos y tres hermanas",2);
+    L2->agregarEjercicio("E4","Sustantivos contables en plural","Can I have --- water, please?","some",1);
+    L3->agregarEjercicio("E5","Actividades diarias","Wake ---","up",1);
+    L5->agregarEjercicio("E6","Consultas de la hora","Q: Do you --- the time?, A: Yes, it is half --- 4","have, past",1);
+    L6->agregarEjercicio("E7","Dar consejos o expresar obligacion","You should visit that museum","Deberias visitar ese museo",2);
+    L7->agregarEjercicio("E8","Imperativo","Fale comigo","Habla conmigo",2);
 	
 	
     ListaIdiomas.insert(I1);

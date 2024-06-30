@@ -27,7 +27,8 @@ void MenuPrincipal::mostrarOpciones()
 	cout << "11) Eliminar Curso" << endl;
     cout << "12) Agregar Ejercicio" << endl;
     cout << "13) Consultar Estadisticas" << endl;
-    cout << "14) Salir" << endl << endl;
+	cout << "14) Consultar Idiomas" <<endl;
+    cout << "15) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -127,12 +128,18 @@ void MenuPrincipal::mostrarMenu()
 			}
 			break;
 		case 14:
+		{
+			consultarIdioma ci;
+			ci.listarIdomas();
+		}
+		break;
+		case 15:
 			break;
         default:
             cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 13);
+    } while (opcion != 15);
 
     cout << "Fin del programa." << endl;
 }
