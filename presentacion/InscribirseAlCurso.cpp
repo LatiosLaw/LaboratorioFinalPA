@@ -10,12 +10,12 @@ InscribirseAlCurso::~InscribirseAlCurso()
 
 }
 
-void InscribirseAlCurso::inscribirse() //en proceso
+void InscribirseAlCurso::inscribirse() // en proceso
 {
     cout << "Bienvenido a Inscribirse a Curso" << endl;
 
     this->controlador->listarNicksEstudiantes();
-    
+
     cout << "Ingrese nickname del estudiante: ";
     string nickname;
     cin >> nickname;
@@ -24,17 +24,25 @@ void InscribirseAlCurso::inscribirse() //en proceso
 
     cursosDisponibles = this->controlador->listarCursosDisponibles(nickname);
 
-    cout << "Curso disponibles: ";
-
-    for(auto curso : cursosDisponibles)
+    if (cursosDisponibles.empty())
     {
-        cout << curso << ", ";
+        cout << "Error." << endl;
     }
-    
-    cout << endl << "Ingrese nombre del curso: ";
-    string nombreCurso;
-    cin.ignore();
-    getline(cin, nombreCurso);
+    else
+    {
+        cout << "Curso disponibles: ";
 
-    this->controlador->inscribirseACurso(nombreCurso, nickname);
+        for (auto curso : cursosDisponibles)
+        {
+            cout << curso << ", ";
+        }
+
+        cout << endl
+             << "Ingrese nombre del curso: ";
+        string nombreCurso;
+        cin.ignore();
+        getline(cin, nombreCurso);
+
+        this->controlador->inscribirseACurso(nombreCurso, nickname);
+    }
 }

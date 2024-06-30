@@ -444,7 +444,6 @@ bool Curso::cumplePrevias(set<Curso *> cursos)
 {
 	if (ListaCursosPrevios.empty())
 	{
-		cout << "Este curso no tiene cursos previos." << endl;
 		return true;
 	}
 	else

@@ -513,27 +513,28 @@ void Controller::agregarEjercicio(Leccion* leccion, string nombreEjercicio, stri
 
 set<string> Controller::listarCursosDisponibles(string nick)
 {
-	Estudiante* estudiante = buscarEstudiante(nick);
-	set<Curso*> cursosAprobados;
-
-	if(estudiante != nullptr){
-		cursosAprobados = estudiante->buscarCursosAprobados();
-	}
-
+	Estudiante *estudiante = buscarEstudiante(nick);
+	set<Curso *> cursosAprobados;
 	set<string> cursosDisponibles;
 
-	for(auto curso : ListaCursos)
+	if (estudiante != nullptr)
 	{
-		bool siCumple = false;
-		if(curso->getHabilitado() == true){
-			siCumple = curso->cumplePrevias(cursosAprobados);
-			if(siCumple == true){
-				cursosDisponibles.insert(curso->getNombreCurso());
+		cursosAprobados = estudiante->buscarCursosAprobados();
+
+		for (auto curso : ListaCursos)
+		{
+			bool siCumple = false;
+			if (curso->getHabilitado() == true)
+			{
+				siCumple = curso->cumplePrevias(cursosAprobados);
+				if (siCumple == true)
+				{
+					cursosDisponibles.insert(curso->getNombreCurso());
+				}
 			}
-		}else{
-			cout << "El curso no esta habilitado" << endl;
 		}
 	}
+
 	return cursosDisponibles;
 }
 
