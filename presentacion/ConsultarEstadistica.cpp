@@ -1,5 +1,6 @@
 #include "ConsultarEstadistica.h"
 
+
 //Falta pasar las operaciones al controlador principal, haré eso según tenga idea de los retornos y demás.
 
 ConsultarEstadistica::ConsultarEstadistica()

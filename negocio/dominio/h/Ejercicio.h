@@ -26,6 +26,8 @@ public:
 	bool verificarNombre(string nom);
 	virtual void mostrarEjercicio()=0;
 	virtual bool enviarSolucion(string solu)=0;
+	void solonggaybowser();
+
 	///////////////////////////////////////////////////////////////
 };
 #endif

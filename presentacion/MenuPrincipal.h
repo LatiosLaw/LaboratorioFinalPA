@@ -11,6 +11,7 @@
 #include "ConsultarCurso.h"
 #include "AgregarLeccion.h"
 #include "AgregarEjercicio.h"
+#include "EliminarCurso.h"
 #include <iostream>
 
 using namespace std;

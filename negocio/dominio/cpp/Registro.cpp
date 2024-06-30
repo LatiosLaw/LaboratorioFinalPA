@@ -36,7 +36,7 @@ Registro::Registro(Fecha fecha, Curso* curso, Estudiante* estudiante)
 
 Registro::~Registro()
 {
-
+	//cout << "DESTRUCTOR DE REGISTRO" <<endl;
 }
 
 string Registro::getAvance(){
@@ -120,3 +120,8 @@ string Registro::pedirNombreACurso(){
     retorno = curso->getNombreCurso();
     return retorno;
 }
+void Registro::chao (){
+	delete this;
+	
+}
+

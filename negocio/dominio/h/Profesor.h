@@ -31,6 +31,7 @@ public:
 	void agregarCurso(Curso* curso);
 	void asociarIdioma(Idioma* idioma);
 	void listarMisIdiomas();
+	void eliminarCursoDeLista(string nombreCurso);
 
 	// Metodos de los casos de Martin, faltan retornos y parametros
 

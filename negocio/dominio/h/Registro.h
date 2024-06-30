@@ -25,6 +25,7 @@ public:
 	Curso* devolverCursoAprobado();
 	
 	virtual ~Registro();
+	void chao();
 
 	// Metodos de los casos de Martin, faltan retornos y parametros
 

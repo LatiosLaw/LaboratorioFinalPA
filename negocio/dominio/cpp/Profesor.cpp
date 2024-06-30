@@ -84,3 +84,15 @@ for (Curso *cursos : ListaCursos)
 }
 return estadisticas;
 }
+
+void Profesor::eliminarCursoDeLista(string nombreCurso){
+	
+	for (Curso *curso : ListaCursos)
+	{
+		if (curso->getNombreCurso() == nombreCurso)
+		{
+			ListaCursos.erase(curso);
+		}
+	}
+	
+}

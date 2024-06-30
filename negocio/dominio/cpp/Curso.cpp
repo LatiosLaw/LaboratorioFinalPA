@@ -13,6 +13,7 @@ Curso::Curso()
 
 Curso::~Curso()
 {
+	//cout << "DESTRUCTOR DE CURSO" <<endl;
 }
 
 Curso::Curso(string nombreCurso, string descripcion, bool habilitado, int df)
@@ -316,25 +317,23 @@ int Curso :: calcularNumLeccion(){
 }
 
 Leccion* Curso :: crearLeccion(string tema, string objetivo){
-	
-	int numLecc = calcularNumLeccion();
-	
-	Leccion *nuevaLeccion = new Leccion(numLecc, tema, objetivo);
-	
-	ListaLecciones.insert(nuevaLeccion);
-	
-	/*
+	Leccion *nuevaLeccion = nullptr;
+	bool token = true;
 	for (Leccion *leccion : this->ListaLecciones){
-		
-		int token = leccion->getNumero();
-		//string tokenTema = 
-		cout << "Numero de Leccion:" << std::to_string(token) <<endl;
-		cout << "Tema: " << leccion->getTema()<<endl;
-		cout << "Objetivo: " << leccion->getObjetivo() <<endl;
-		cout << "------------------------------------------" <<endl;
-	
+		if (leccion->getTema() == tema){
+			token = false;
+		}
 	}
-	*/
+	
+	if(token == true){
+		int numLecc = calcularNumLeccion();
+		
+		nuevaLeccion = new Leccion(numLecc, tema, objetivo);
+		ListaLecciones.insert(nuevaLeccion);
+	}
+	
+	
+	
 	return nuevaLeccion;
 }
 
@@ -381,9 +380,9 @@ bool Curso::estasAprobado(set<Ejercicio *> ListaEjerciciosAprobados)
 			cantEjercicios = cantEjercicios + 1;
 		}
 	}
-
+	
 	int misEjercicios = 0;
-
+	
 	for (auto lec : ListaLecciones)
 	{
 		for (auto ejercicio : lec->obtenerEjercicios())
@@ -397,7 +396,7 @@ bool Curso::estasAprobado(set<Ejercicio *> ListaEjerciciosAprobados)
 			}
 		}
 	}
-
+	
 	if (cantEjercicios == misEjercicios)
 	{
 		return true;
@@ -407,6 +406,37 @@ bool Curso::estasAprobado(set<Ejercicio *> ListaEjerciciosAprobados)
 		return false;
 	}
 }
+	
+	
+
+	
+void Curso::nukearLecciones(){
+	
+	for (Leccion *lista : ListaLecciones)
+	{
+		//cout << "nokear Lecciones" <<endl;
+		lista->nukearEejers();
+		ListaLecciones.erase(lista);
+		lista->chao();
+	}
+}
+void Curso::nukearRegistros(){
+	
+	for (Registro *lista : ListaRegistros)
+	{
+		ListaRegistros.erase(lista);
+		lista->chao();
+	}
+	
+	
+	
+	
+}
+void Curso::chao(){
+	delete this;
+}
+
+	
 
 bool Curso::cumplePrevias(set<Curso *> cursos)
 {

@@ -24,9 +24,10 @@ void MenuPrincipal::mostrarOpciones()
     cout << "8) Consulta de Usuario" << endl;
     cout << "9) Consultar Curso" << endl;
     cout << "10) Habilitar Curso" << endl;
-    cout << "11) Siguiente Operacion" << endl;
-    cout << "12) Consultar Estadisticas" << endl << endl;
-    cout << "13) Salir" << endl << endl;
+	cout << "11) El�iminar Curso" << endl;
+    cout << "12) Agregar Ejercicio" << endl;
+    cout << "13) Consultar Estadisticas" << endl;
+    cout << "14) Salir" << endl << endl;
     cout << "Ingrese una opcion: ";
 }
 
@@ -107,24 +108,31 @@ void MenuPrincipal::mostrarMenu()
             }
             break;
 		case 11:
+		{
+			EliminarCurso eli;
+			eli.eliminarCurso();
+			//Sampletext
+		}
+		break;
+		case 12:
 			{
                 AgregarEjercicio agregarEjercicio;
                 agregarEjercicio.agregarEjercicio();
 			}
 			break;
-        case 12:
+        case 13:
 			{
                 ConsultarEstadistica consultarEstadisticas;
                 consultarEstadisticas.consultarEstadisticas();
 			}
 			break;
-		case 13:
+		case 14:
 			break;
         default:
             cout << "Opcion desconocida." << endl;
             break;
         }
-    } while (opcion != 12);
+    } while (opcion != 13);
 
     cout << "Fin del programa." << endl;
 }
