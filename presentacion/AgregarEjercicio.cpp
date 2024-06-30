@@ -63,7 +63,7 @@ void AgregarEjercicio::agregarEjercicio()
                  << numL << " - " << tema << " - " << obj;
         }
 
-        cout << endl << "Selecciona el numero de la leccion la cual quieres agregar el ejercicio.." << endl;
+        cout << endl << "  Selecciona el numero de la leccion la cual quieres agregar el ejercicio.." << endl;
         cin.ignore();
         cin >> numL;
         // Leccion *l = c->buscarLeccion(num); //instanciarlo si se precisa para el if de abajo, y comparar esa l con el nullptr si no funciona
@@ -89,6 +89,7 @@ void AgregarEjercicio::agregarEjercicio()
         
 
         cout << "Que tipo de ejercicio quieres agregar? /n 1- Completar Palabra  /n 2- Traduccion " << endl;
+        cin.ignore();
         cin >> numOpcion;
         if (numOpcion == 1)
         { // Completar Palabra
@@ -103,8 +104,10 @@ void AgregarEjercicio::agregarEjercicio()
         { // Traduccion
             cout << "Ingrese la frase a traducir del ejercicio.." << endl;
             getline(cin, fraseA);
+            cin.ignore();
             cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
             getline(cin, fraseB);
+            cin.ignore();
         }
         else
         {
