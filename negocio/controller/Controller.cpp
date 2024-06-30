@@ -179,6 +179,30 @@ Profesor* Controller::buscarProfesor(string nombreProfesor)
 	return nullptr;
 }
 
+Profesor* Controller::buscarProfesor2(string nickprofe)
+{
+	bool profesorEncontrado = false;
+
+	for (Usuario* usuario : ListaUsuarios)
+	{
+		if (usuario->getNickname() == nickprofe)
+		{
+			cout << "Profesor encontrado" << endl;
+			profesorEncontrado = true;
+			Profesor *profesor = dynamic_cast<Profesor*>(usuario);
+			return profesor;
+			break;
+		}
+	}
+
+	if (!profesorEncontrado)
+	{
+		cout << "Profesor no encontrado" << endl;
+		return nullptr;
+	}
+	return nullptr;
+}
+
 Estudiante* Controller::buscarEstudiante(string nick)
 {
 	for (Usuario* usuario : ListaUsuarios)

@@ -27,6 +27,7 @@ public:
 	
 	virtual Usuario* buscarUsuario(string nick);
 	virtual Profesor* buscarProfesor(string nombreProfesor);
+	virtual Profesor* buscarProfesor2(string nickprofe);
 	virtual Estudiante* buscarEstudiante(string nick);
 	virtual Curso* buscarCurso(string nombreCurso);
 

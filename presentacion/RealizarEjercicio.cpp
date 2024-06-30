@@ -17,28 +17,32 @@ void RealizarEjercicio::realizarEjercicio()
     string nickname_estu;
     string nombre_curso;
     string solucion;
-    string nombre_ejercicio;
     bool existen_pendientes;
     Estudiante* estudiante;
     set<Ejercicio*> ejercicios_pendientes;
     cout << "Seleccione su nickname de estudiante : " << endl;
     this->controlador->listarNicksEstudiantes();
+    cout << "Ingrese el nickname del estudiante : ";
     getline(cin,nickname_estu);
     estudiante = this->controlador->buscarEstudiante_peroCallao(nickname_estu);
     cout << "Seleccione el curso que quiere continuar : " << endl;
     existen_pendientes = this->controlador->listarCursosPendientesDeAlumno(estudiante);
+    cout << "Ingrese el nombre del curso : ";
     if(existen_pendientes==true){
     getline(cin,nombre_curso);
     bool bucle=true;
     int confirmacion=0;
-    do{
+    while(bucle==true){
+    string nombre_ejercicio;
     cout << "Seleccione el ejercicio que quiere realizar : " << endl;
     Registro *registro = estudiante->buscarRegistroACurso(nombre_curso);
     ejercicios_pendientes = this->controlador->listarEjerciciosPendientesDeCurso(estudiante, registro);
-    getline(cin,nombre_ejercicio);
+    cout << "Ingrese el nombre del ejericio : ";
+    cin >> nombre_ejercicio;
     for(Ejercicio* ejercicio : ejercicios_pendientes){
         if(ejercicio->verificarNombre(nombre_ejercicio)){
             ejercicio->mostrarEjercicio();
+            cin.ignore();
             getline(cin,solucion);
             if(ejercicio->enviarSolucion(solucion)){
                 registro->aprobar(ejercicio);
@@ -49,14 +53,13 @@ void RealizarEjercicio::realizarEjercicio()
         }
     }
     cout << "Quiere realizar/reintentar otro ejercicio? (1=si , 2=no)" << endl;
-    cin.ignore();
     cin >> confirmacion;
     if(confirmacion==2){
         bucle=false;
     }else{
         bucle=true;
     }
-    }while(bucle==true);
+    }
     }else{
     cout << "-----------------------------------------------" << endl;
     cout << "El estudiante no cuenta con cursos pendientes." << endl;

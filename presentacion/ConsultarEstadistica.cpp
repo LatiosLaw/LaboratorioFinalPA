@@ -16,7 +16,7 @@ ConsultarEstadistica::~ConsultarEstadistica()
 void ConsultarEstadistica::consultarEstadisticas(){
     int eleccion = 0;
     string busqueda;
-    cout << "Coso (1=estudiante, 2=profesor, 3=curso)" << endl;
+    cout << "Seleccione que tipo de estadisticas quiere ver. (1=Estudiante, 2=Profesor, 3=Curso)" << endl;
     cin >> eleccion;
     if (eleccion == 1)
     {
@@ -49,7 +49,7 @@ void ConsultarEstadistica::consultarEstadisticas(){
         cout << "Seleccione el nickname de un profesor : " << endl;
         cin.ignore();
         getline(cin, busqueda);
-        profesor_elegido = controlador->buscarProfesor(busqueda);
+        profesor_elegido = controlador->buscarProfesor2(busqueda);
         if (profesor_elegido != nullptr)
         {
             set<DT_EstadisticasProfesor *> estadisticas_p;

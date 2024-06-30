@@ -13,7 +13,8 @@ class Icontroller{
 public:
 
 	virtual Usuario* buscarUsuario(string nick) = 0;
-	virtual Profesor* buscarProfesor(string nick) = 0;
+	virtual Profesor* buscarProfesor(string nombreProfesor) = 0;
+	virtual Profesor* buscarProfesor2(string nickprofe)=0;
 	virtual Estudiante* buscarEstudiante(string nick) = 0;
 	virtual Curso* buscarCurso(string nombreCurso) = 0;
 
