@@ -91,12 +91,6 @@ void AgregarLeccion::agregarLeccion(){
 					return;
 				}
 				
-				
-				
-				
-				
-				
-				cout << "Ingrese descripcion para el mismo" <<endl;
 				tokenLec->agregarEjercicio(nombreEjer, desc, fraseA, fraseB, num);
 				
 				cout << "Desea continuar agregando ejercicios?" <<endl;
