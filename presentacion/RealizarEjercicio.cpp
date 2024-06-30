@@ -31,7 +31,7 @@ void RealizarEjercicio::realizarEjercicio()
     getline(cin,nombre_curso);
     bool bucle=true;
     int confirmacion=0;
-    while(bucle==true){
+    do{
     cout << "Seleccione el ejercicio que quiere realizar : " << endl;
     Registro *registro = estudiante->buscarRegistroACurso(nombre_curso);
     ejercicios_pendientes = this->controlador->listarEjerciciosPendientesDeCurso(estudiante, registro);
@@ -51,10 +51,12 @@ void RealizarEjercicio::realizarEjercicio()
     cout << "Quiere realizar/reintentar otro ejercicio? (1=si , 2=no)" << endl;
     cin.ignore();
     cin >> confirmacion;
-    if(confirmacion=2){
+    if(confirmacion==2){
         bucle=false;
+    }else{
+        bucle=true;
     }
-    }
+    }while(bucle==true);
     }else{
     cout << "-----------------------------------------------" << endl;
     cout << "El estudiante no cuenta con cursos pendientes." << endl;

@@ -470,7 +470,8 @@ string Curso::obtenerAvancePromedio()
 	string promedio;
 	for (Registro *registro : ListaRegistros)
 	{
-		suma_avances = stof(registro->getAvance());
+		float avance_singular = stof(registro->getAvance());
+		suma_avances = suma_avances + avance_singular;
 		cantidad_registros = cantidad_registros + 1;
 	}
 	return to_string(suma_avances / cantidad_registros);

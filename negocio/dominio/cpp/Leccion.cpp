@@ -133,9 +133,6 @@ bool Leccion::yaExisteEj(string nomE)
 
             return true;
         }
-        else
-        {
-            return false;
-        }
     }
+    return false;
 }
