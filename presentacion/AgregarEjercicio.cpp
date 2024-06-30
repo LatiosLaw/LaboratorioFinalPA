@@ -94,26 +94,30 @@ void AgregarEjercicio::agregarEjercicio()
         if (numOpcion == 1)
         { // Completar Palabra
             cout << "Ingrese la frase a completar del ejercicio.." << endl;
+            cin.ignore();
             getline(cin, fraseA);
-            cin.ignore();
+            
             cout << "Ingrese la frase correcta del ejercicio.." << endl;
-            getline(cin, fraseB);
             cin.ignore();
+            getline(cin, fraseB);
+            
         }
         else if (numOpcion == 2)
         { // Traduccion
             cout << "Ingrese la frase a traducir del ejercicio.." << endl;
+            cin.ignore();
             getline(cin, fraseA);
-            cin.ignore();
             cout << "Ingrese la traduccion correcta del ejercicio.." << endl;
-            getline(cin, fraseB);
             cin.ignore();
+            getline(cin, fraseB);
         }
         else
         {
             cout << "Opcion invalida..." << endl;
             return;
         }
+
         c->buscarLeccion(numL)->agregarEjercicio(nomE, descE, fraseA, fraseB, numOpcion);
+
     }
 }
