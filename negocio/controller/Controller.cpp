@@ -77,7 +77,7 @@ void Controller::inicializarDatos()
     ListaUsuarios.insert(U15);
 
 	
-	Curso* Cp = new Curso("cp",". Curso de Prueba", dificultad::principiante, U11, I1, true);
+
 	
 	
     Curso* C1 = new Curso("Ingles para principiantes","Curso para personas con poco o ningun conocimiento de ingles. Se enfoca en vocabulario basico, gramatica y habilidades de conversacion.", dificultad::principiante, U11, I1, true);
@@ -119,7 +119,6 @@ void Controller::inicializarDatos()
     ListaCursos.insert(C4);
     ListaCursos.insert(C5);
     ListaCursos.insert(C6);
-    ListaCursos.insert(Cp);
     //C3->linkearProfesor(U12);
 }
 
