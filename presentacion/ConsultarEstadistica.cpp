@@ -16,14 +16,14 @@ ConsultarEstadistica::~ConsultarEstadistica()
 void ConsultarEstadistica::consultarEstadisticas(){
     int eleccion = 0;
     string busqueda;
-    cout << "Coso (1=estudiante, 2=curso, 3=profesor)" << endl;
-    cin.ignore();
+    cout << "Coso (1=estudiante, 2=profesor, 3=curso)" << endl;
     cin >> eleccion;
     if (eleccion == 1)
     {
         Estudiante *estudiante_elegido;
         controlador->nicksEstudiantes();
         cout << "Seleccione el nickname de un estudiante : " << endl;
+        cin.ignore();
         getline(cin, busqueda);
         estudiante_elegido = controlador->buscarEstudiante(busqueda);
         if (estudiante_elegido != nullptr)
@@ -40,12 +40,14 @@ void ConsultarEstadistica::consultarEstadisticas(){
         {
             cout << "Error de sintaxis." << endl;
         }
+        system("pause"); 
     }
     else if (eleccion == 2)
     {
         Profesor *profesor_elegido;
         controlador->nicksProfesores();
         cout << "Seleccione el nickname de un profesor : " << endl;
+        cin.ignore();
         getline(cin, busqueda);
         profesor_elegido = controlador->buscarProfesor(busqueda);
         if (profesor_elegido != nullptr)
@@ -62,12 +64,14 @@ void ConsultarEstadistica::consultarEstadisticas(){
         {
             cout << "Error de sintaxis." << endl;
         }
+        system("pause"); 
     }
-    else
+    else if (eleccion==3)
     {
         Curso *curso_elegido;
         controlador->nombresCursos();
         cout << "Seleccione el nombre de un curso : " << endl;
+        cin.ignore();
         getline(cin, busqueda);
         curso_elegido = controlador->buscarCurso(busqueda);
         if (curso_elegido != nullptr)
@@ -81,5 +85,6 @@ void ConsultarEstadistica::consultarEstadisticas(){
         {
             cout << "Error de sintaxis." << endl;
         }
+        system("pause"); 
     }
 }

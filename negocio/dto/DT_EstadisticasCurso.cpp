@@ -16,7 +16,10 @@ DT_EstadisticasCurso::~DT_EstadisticasCurso(){
 }
 
 void DT_EstadisticasCurso::mostrarDatos(){
-cout << "Nombre del Curso : " << this->nombreCurso << " , Descripcion del Curso : " << this->descripcion << " , Dificultad del Curso : " << this->mostrardificultad() << " , Avance Promedio en el Curso : " << this->avance_promedio << endl; 
+cout << "Nombre del Curso : " << this->nombreCurso << endl;
+cout << "Descripcion del Curso : " << this->descripcion << endl;
+cout << "Dificultad del Curso : " << this->mostrardificultad() << endl;
+cout << "Avance Promedio en el Curso : " << this->avance_promedio << endl; 
 }
 
 string DT_EstadisticasCurso::mostrardificultad()
