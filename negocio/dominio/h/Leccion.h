@@ -34,6 +34,7 @@ public:
 	set<Ejercicio*> retornarEjercicios();
 	void nukearEejers();
 	void chao();
+	bool yaExisteEj(string nomE);
 
 };
 #endif
