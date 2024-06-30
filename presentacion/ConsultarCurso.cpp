@@ -32,10 +32,10 @@ void ConsultarCurso::listarCursos()
     else
     {
         cout << "Listando cursos..." << endl;
-
+		
         for (auto curso : cursos)
         {
-            cout << curso << ",";
+            cout <<  "-" << curso << endl;;
         }
         cout << endl << "Seleccione un Curso: ";
     }
