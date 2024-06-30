@@ -43,6 +43,8 @@ void AltaUsuario::ingresarEstudiante(string nick)
 {
     string pass, nom, descrip, pais;
 
+    int dia, mes, anio;
+
     cout << "Ingresar pass: ";
     cin >> pass;
     cout << "Ingresar nombre: ";
@@ -52,8 +54,18 @@ void AltaUsuario::ingresarEstudiante(string nick)
     getline(cin, descrip);
     cout << "Ingresar pais: ";
     cin >> pais;
+    cout << "Ingrese Fecha de Nacimiento" << endl;
+    
+    cout << "Dia: ";
+    cin >> dia ;
+    cout << "Mes: ";
+    cin >> mes ;
+    cout << "Anio: ";
+    cin >> anio;
 
-    this->controlador->agregarEstudiante(nick, pass, nom, descrip, pais);
+    Fecha fecha(dia,mes,anio);
+
+    this->controlador->agregarEstudiante(nick, pass, nom, descrip, pais, fecha);
 }
 
 void AltaUsuario::ingresarProfesor(string nick)

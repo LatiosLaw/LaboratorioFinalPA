@@ -242,9 +242,9 @@ bool Controller::verificarNick(string nickname) // Recibe nickname y se fija si 
 	return false;
 }
 
-void Controller::agregarEstudiante(string nickname, string password, string nombre, string desc, string pais) // ver este metodo luego, porque se supone que ya verifique que el usuario no exista
+void Controller::agregarEstudiante(string nickname, string password, string nombre, string desc, string pais, Fecha fecha) // ver este metodo luego, porque se supone que ya verifique que el usuario no exista
 {
-	Estudiante *nuevoEstudiante = new Estudiante(nickname, password, nombre, desc, pais);
+	Estudiante *nuevoEstudiante = new Estudiante(nickname, password, nombre, desc, fecha, pais);
 	ListaUsuarios.insert(nuevoEstudiante);
 	cout << "Estudiante agregado exitosamente." << endl;
 }

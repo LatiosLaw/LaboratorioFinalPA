@@ -33,7 +33,7 @@ public:
 	virtual Estudiante* buscarEstudiante_peroCallao(string nick);
 
 	virtual bool verificarNick(string nickname); // Nueva función para verificar el nick
-	virtual void agregarEstudiante(string nickname, string password, string nombre, string desc, string pais);
+	virtual void agregarEstudiante(string nickname, string password, string nombre, string desc, string pais, Fecha fecha);
 	virtual void agregarProfesor(string nickname, string password,string nombre,string desc,string instituto, set<string> idioma);
 	virtual void altaIdioma(string nombre);
 

@@ -43,7 +43,8 @@ string Estudiante::getNombreProfesor(){
 void Estudiante::listarInfoUsuario()
 {
 	Usuario::listarInfoUsuario();
-	cout << "Pais: " <<this->pais << endl;
+	cout << "Pais: " << this->pais << endl;
+	cout << "Fecha Nacimiento: " << this->fechaNacimiento.getDia() << "/" << this->fechaNacimiento.getMes() << "/" << this->fechaNacimiento.getAnio() << endl;
 }
 
 void Estudiante::agregarInscripcion(Registro* registro)

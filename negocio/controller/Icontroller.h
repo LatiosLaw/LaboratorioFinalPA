@@ -20,7 +20,7 @@ public:
 	virtual Estudiante* buscarEstudiante_peroCallao(string nick) = 0;
 
 	virtual bool verificarNick(string nickname) = 0; // Nueva función para verificar el nick
-	virtual void agregarEstudiante(string nickname, string password, string nombre, string desc, string pais) = 0;
+	virtual void agregarEstudiante(string nickname, string password, string nombre, string desc, string pais, Fecha fecha) = 0;
 	virtual void agregarProfesor(string nickname, string password, string nombre, string desc, string instituto, set<string> idioma) = 0;
 	virtual void altaIdioma(string nombre) = 0;
 
