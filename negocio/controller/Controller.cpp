@@ -87,17 +87,15 @@ void Controller::inicializarDatos()
     Curso* C5 = new Curso("Portugues intermedio","Curso para aquellos que tienen conocimientos basicos de portugues y desean mejorar su nivel. Incluye practica de lectura, escritura y comprension auditiva.", dificultad::media, U12, I3, true);
     Curso* C6 = new Curso("Portugues avanzado","Curso avanzado para personas con un nivel intermedio-alto de portugues que desean perfeccionar su fluidez y dominio del idioma. Se trabaja en la gramatica avanzada y la expresion oral.", dificultad::avanzado, U14, I3, false);
 
-    //crear lecciones y añadirlas alos cursos
-	//USAR 	OPERACION DE ANDRES CON DATOS AQUI.
-	
-    //Linkear y crear ejercicios con lecciones 1- completar 2- traduccion
-	Leccion* L1 = new Leccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L2 = new Leccion(2,"Comprender y utilizar los articulos definidos e indefinidos","Aprender a formar los plurales regulares e irregulares de sustantivos");
-	Leccion* L3 = new Leccion(3,"Comprender y utilizar los articulos definidos e indefinidos","Aprender a formar los plurales regulares e irregulares de sustantivos");
-	Leccion* L4 = new Leccion(4,"Presente Simple","Aprender el uso del presente simple");
-	Leccion* L5 = new Leccion(5,"Conversaciones cotidianas","Aprender a hacer preguntas y respuestas en situaciones comunes");
-	Leccion* L6 = new Leccion(6,"Uso de modales avanzados","Explorar el uso de los modales complejos");
-	Leccion* L7 = new Leccion(7,"Lectura y comprension de textos","Analizar el contenido, vocabulario y estructuras gramaticales utilizadas");
+   
+	Leccion* L1 = C1->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L2 = C1->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L3 = C2->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L4 = C2->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L5 = C3->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L6 = C4->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L7 = C5->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+
 
     L1->agregarEjercicio("E1","Presentaciones","Mucho gusto en conocerte","Nice to meet you",2);
     L1->agregarEjercicio("E2","Presentaciones formales","Please --- me to introduce ---","allow, myself",1);
