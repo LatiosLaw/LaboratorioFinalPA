@@ -12,7 +12,7 @@
 #include "AgregarLeccion.h"
 #include "AgregarEjercicio.h"
 #include "EliminarCurso.h"
-#include "consultarIdioma.h";
+#include "consultarIdioma.h"
 #include <iostream>
 
 using namespace std;
