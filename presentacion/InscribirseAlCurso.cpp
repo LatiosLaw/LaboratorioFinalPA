@@ -13,6 +13,8 @@ InscribirseAlCurso::~InscribirseAlCurso()
 void InscribirseAlCurso::inscribirse() //en proceso
 {
     cout << "Bienvenido a Inscribirse a Curso" << endl;
+
+    this->controlador->listarNicksEstudiantes();
     
     cout << "Ingrese nickname del estudiante: ";
     string nickname;
@@ -28,6 +30,7 @@ void InscribirseAlCurso::inscribirse() //en proceso
     {
         cout << curso << ", ";
     }
+    
     cout << endl << "Ingrese nombre del curso: ";
     string nombreCurso;
     cin.ignore();
@@ -35,29 +38,3 @@ void InscribirseAlCurso::inscribirse() //en proceso
 
     this->controlador->inscribirseACurso(nombreCurso, nickname);
 }
-/*
-set<string> InscribirseAlCurso::listarCursosDisponibles()
-{
-    set<string> nombreCursos;
-    char opcion;
-
-    do {
-        cout << "Cursos disponibles:\n";
-        set<string> cursos = this->controlador->listarCursos();
-        for (string curso : cursos)
-        {
-            cout << curso << endl;
-        }
-
-        string cursoSeleccionado;
-        cout << "Ingrese el curso a agregar a la lista de previas: ";
-        cin >> cursoSeleccionado;
-        nombreCursos.insert(cursoSeleccionado);
-
-        cout << "Desea agregar otro curso previo? (s/n): ";
-        cin >> opcion;
-    } while (opcion == 's' || opcion == 'S');
-
-    return nombreCursos;
-}
-*/

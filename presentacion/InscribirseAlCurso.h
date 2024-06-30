@@ -9,7 +9,6 @@ public:
 	InscribirseAlCurso();
 	virtual ~InscribirseAlCurso();
 	void inscribirse();
-	set<string> listarCursosDisponibles();
 };
 
 #endif /* PRESENTACION_INSCRIBIRSEALCURSO_H_ */

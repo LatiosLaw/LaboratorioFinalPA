@@ -2,41 +2,48 @@
 #include "../h/Curso.h"
 #include "../h/Registro.h"
 
-Estudiante::Estudiante(string nick, string pass, string nom, string desc, Fecha fecha, string pai ) : Usuario(nick, pass, nom, desc) {
+Estudiante::Estudiante(string nick, string pass, string nom, string desc, Fecha fecha, string pai) : Usuario(nick, pass, nom, desc)
+{
 	pais = pai;
 	fechaNacimiento = fecha;
 }
 
-Estudiante::Estudiante(string nick, string nom, string pass, string desc, string pai) : Usuario(nick, nom, pass, desc) {
+Estudiante::Estudiante(string nick, string nom, string pass, string desc, string pai) : Usuario(nick, nom, pass, desc)
+{
 	pais = pai;
 }
 
 Estudiante::Estudiante(string nick, string pass, string nom, string desc) : Usuario(nick, pass, nom, desc)
 {
-
 }
 
-string Estudiante::getPais() {
+string Estudiante::getPais()
+{
 	return this->pais;
 }
 
-Fecha Estudiante::getFechaNacimiento() {
+Fecha Estudiante::getFechaNacimiento()
+{
 	return this->fechaNacimiento;
 }
 
-void Estudiante::setPais(string pai) {
+void Estudiante::setPais(string pai)
+{
 	pais = pai;
 }
 
-void Estudiante::setFechaNacimiento(Fecha fecha) {
+void Estudiante::setFechaNacimiento(Fecha fecha)
+{
 	fechaNacimiento = fecha;
 }
 
-string Estudiante::getNickname(){
+string Estudiante::getNickname()
+{
 	return this->nickname;
 }
 
-string Estudiante::getNombreProfesor(){
+string Estudiante::getNombreProfesor()
+{
 	return "";
 }
 
@@ -47,23 +54,25 @@ void Estudiante::listarInfoUsuario()
 	cout << "Fecha Nacimiento: " << this->fechaNacimiento.getDia() << "/" << this->fechaNacimiento.getMes() << "/" << this->fechaNacimiento.getAnio() << endl;
 }
 
-void Estudiante::agregarInscripcion(Registro* registro)
+void Estudiante::agregarInscripcion(Registro *registro)
 {
 	this->ListaRegistros.insert(registro);
 	cout << "Registro agregado a la lista del estudiante." << endl;
 }
 
-Registro* Estudiante::buscarRegistroACurso(string nom_cur){
-for (Registro* registro : ListaRegistros){
+Registro *Estudiante::buscarRegistroACurso(string nom_cur)
+{
+	for (Registro *registro : ListaRegistros)
 	{
-		if (registro->verificarCurso(nom_cur))
 		{
-			return registro;
-			break;
+			if (registro->verificarCurso(nom_cur))
+			{
+				return registro;
+				break;
+			}
 		}
 	}
-  }
-  return nullptr;
+	return nullptr;
 }
 
 set<Curso *> Estudiante::buscarCursosPendientes()
@@ -81,7 +90,7 @@ set<Curso *> Estudiante::buscarCursosPendientes()
 	return cursosPendientes;
 }
 
-set<Ejercicio *> Estudiante::buscarCursoYEjercicios(Registro* registro)
+set<Ejercicio *> Estudiante::buscarCursoYEjercicios(Registro *registro)
 {
 	set<Ejercicio *> ejercicioPendientes;
 	if (registro != nullptr)
@@ -91,30 +100,31 @@ set<Ejercicio *> Estudiante::buscarCursoYEjercicios(Registro* registro)
 	return ejercicioPendientes;
 }
 
-void Estudiante::obtenerDataType(){
-
+void Estudiante::obtenerDataType()
+{
 }
 
-set<Curso*> Estudiante::buscarCursosAprobados(){
-	set<Curso*> cursosAprobados;
-	for(auto registro : ListaRegistros)
+set<Curso *> Estudiante::buscarCursosAprobados()
+{
+	set<Curso *> cursosAprobados;
+	for (auto registro : ListaRegistros)
 	{
 		cursosAprobados.insert(registro->devolverCursoAprobado());
 	}
 
 	return cursosAprobados;
-
 }
 
-set<DT_EstadisticasEstudiante*> Estudiante::estadisticasEstudiante(){
-set<DT_EstadisticasEstudiante*> estadisticas;
-string nombre_curso;
-string avance;
-for (Registro *registros : ListaRegistros)
+set<DT_EstadisticasEstudiante *> Estudiante::estadisticasEstudiante()
 {
+	set<DT_EstadisticasEstudiante *> estadisticas;
+	string nombre_curso;
+	string avance;
+	for (Registro *registros : ListaRegistros)
+	{
 		nombre_curso = registros->pedirNombreACurso();
 		avance = registros->getAvance();
-		estadisticas.insert(new DT_EstadisticasEstudiante(nombre_curso,avance));
-}
-return estadisticas;
+		estadisticas.insert(new DT_EstadisticasEstudiante(nombre_curso, avance));
+	}
+	return estadisticas;
 }
