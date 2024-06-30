@@ -89,12 +89,13 @@ void Controller::inicializarDatos()
 
    
 	Leccion* L1 = C1->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L2 = C1->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L3 = C2->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L4 = C2->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L5 = C3->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L6 = C4->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
-	Leccion* L7 = C5->agregarLeccion(1,"Saludos y Presentaciones","Aprender a saludar y despedirse");
+	Leccion* L2 = C1->agregarLeccion(2,"Artículos y Plurales","Comprender y utilizar los articulos definidos e indefinidos, Aprender a formar los plurales regulares e irregulares de sustantivos");
+	Leccion* L3 = C2->agregarLeccion(3,"Actividades Cotidianas","Comprender y utilizar los articulos definidos e indefinidos, Aprender a formar los plurales regulares e irregulares de sustantivos");
+	Leccion* L4 = C2->agregarLeccion(4,"Presente Simple","Aprender el uso del presente simple");
+	Leccion* L5 = C3->agregarLeccion(5,"Conversaciones cotidianas","Aprender a hacer preguntas y respuestas en situaciones comunes");
+	Leccion* L6 = C4->agregarLeccion(6,"Uso de modales avanzados","Explorar el uso de los modales complejos");
+	Leccion* L7 = C5->agregarLeccion(7,"Lectura y comprension de textos","Analizar el contenido, vocabulario y estructuras gramaticales utilizadas");
+
 
 
     L1->agregarEjercicio("E1","Presentaciones","Mucho gusto en conocerte","Nice to meet you",2);
