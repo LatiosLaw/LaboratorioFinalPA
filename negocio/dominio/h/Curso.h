@@ -25,13 +25,14 @@ private:
 	
 public:
 	Curso();
-	Curso(string nombreCurso, string descripcion, bool habilitado, dificultad df);
+	Curso(string nombreCurso, string descripcion, bool habilitado, int df);
 	Curso(string nombreCurso, string descripcion, dificultad df, Profesor* prof, Idioma* i, bool habilitado);
 	
 	string getNombreCurso();
 	string getDescripcion();
 	bool getHabilitado();
 	dificultad getDificultad();
+	dificultad convertirDificultad(int n);
 
 	string nombreDificultad();
 	

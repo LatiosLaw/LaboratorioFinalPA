@@ -14,13 +14,15 @@ void AltaCurso::altaCurso()
 {
     cout << "Bienvenido a Ingresar Curso" << endl;
 
-    string nombreCurso, descripcion, dificultad, nombreProfe;
+    string nombreCurso, descripcion, nombreProfe;
+
+    int dificultad = 0;
 
     cout << "Ingrese nombre del curso: ";
     getline(cin, nombreCurso);
     cout << "Ingrese descripcion: ";
     getline(cin, descripcion);
-    cout << "Ingrese dificultad: ";
+    cout << "Ingrese dificultad (0 = Principiante. 1 = Medio. 2 = Avanzado.): ";
     cin >> dificultad;
 
     cout << "Ingrese nombre del profesor: ";
@@ -69,13 +71,6 @@ void AltaCurso::altaCurso()
     nuevoCurso->listarCursosPrevios();
 
     this->controlador->daDeAltaCurso(nuevoCurso);
-
-    // nuevoCurso->listarIdiomasDelCurso();
-    // nuevoCurso->listarProfesorDelCurso();
-
-    // cout << endl;
-
-    // this->controlador->listarCursos();
 }
 
 set<string> AltaCurso::seleccionarIdiomas()

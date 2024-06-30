@@ -15,12 +15,12 @@ Curso::~Curso()
 {
 }
 
-Curso::Curso(string nombreCurso, string descripcion, bool habilitado, dificultad df)
+Curso::Curso(string nombreCurso, string descripcion, bool habilitado, int df)
 {
 	this->nombreCurso = nombreCurso;
 	this->descripcion = descripcion;
 	this->habilitado = habilitado;
-	this->dificultadCurso = df;
+	this->dificultadCurso = convertirDificultad(df);
 	this->profe = nullptr;
 }
 
@@ -52,6 +52,16 @@ bool Curso::getHabilitado()
 dificultad Curso::getDificultad()
 {
 	return this->dificultadCurso;
+}
+
+dificultad Curso::convertirDificultad(int n)
+{
+	if (n == 0)
+		return dificultad::principiante;
+	else if (n == 1)
+		return dificultad::media;
+	else if (n == 2)
+		return dificultad::avanzado;
 }
 
 void Curso::setNombreCurso(string nom)

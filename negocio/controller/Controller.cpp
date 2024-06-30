@@ -413,7 +413,7 @@ void Controller::listarInfoUsuario(string nickname)
 	}
 }
 
-Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombreP, set<string> idiomasSeleccionados)
+Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, int dificultad, string nombreP, set<string> idiomasSeleccionados)
 {
 	Profesor *profesor = buscarProfesor(nombreP);
 	if (profesor == nullptr)
@@ -429,7 +429,7 @@ Curso* Controller::ingresaElCurso(string NombreCurso, string descripcion, string
 	}
 	else
 	{
-		curso = new Curso(NombreCurso, descripcion, false, dificultad::principiante);
+		curso = new Curso(NombreCurso, descripcion, false, dificultad);
 
 		// Agregar los idiomas seleccionados al curso
 		for (string idiomaSeleccionado : idiomasSeleccionados)

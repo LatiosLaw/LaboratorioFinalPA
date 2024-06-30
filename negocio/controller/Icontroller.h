@@ -33,7 +33,7 @@ public:
 	virtual void listarInfoCurso(string nombreCurso) = 0;
 	virtual void listarInfoUsuario(string nickname) = 0;
 
-	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, string dificultad, string nombre, set<string>idiomas) = 0;
+	virtual Curso* ingresaElCurso(string NombreCurso, string descripcion, int dificultad, string nombre, set<string>idiomas) = 0;
 	virtual void seleccionarCursosPrevios(set<string> cursos, Curso* nuevoCurso) = 0;
 	virtual Idioma* seleccionarIdioma(string nombreIdioma) = 0;
 	virtual Leccion* agregarLeccion(Curso* curso, int numero, string tema, string objetivo) = 0;
